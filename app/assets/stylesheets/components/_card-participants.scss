@@ -1,0 +1,46 @@
+.card-participant {
+  overflow: hidden;
+  height: 80px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border: solid 1px $light-grey;
+  background-color: $lighter-grey;
+  border-radius: 8px;
+  width: 360px;
+}
+
+
+.card-participant .card-participant-infos {
+  padding: 16px;
+  margin-left: 24px;
+  padding-top: 42px;
+}
+
+.fa-check-circle {
+  position: relative;
+  bottom: 30px;
+  left: -50px;
+  color: #7DC980;
+}
+
+.avatar-large {
+  margin-left: 16px;
+  height: 54px;
+  width: 54px;
+  border-radius: 50%;
+}
+
+
+.card {
+  margin: 0 auto;
+  align-items: center;
+  border: none;
+}
+
+.fa-stopwatch{
+  position: relative;
+  bottom: 41px;
+  left: 94px;
+  color: #7DC980;
+}
