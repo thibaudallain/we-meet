@@ -5,6 +5,18 @@ h1 {
   color: $darker-grey;
 }
 
+h2 {
+  font-family: $headers-font;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: $headers-font;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 
 .white {
   font-family: $headers-font;
