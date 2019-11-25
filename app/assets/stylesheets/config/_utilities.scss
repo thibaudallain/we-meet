@@ -1,0 +1,19 @@
+h1 {
+  font-family: $headers-font;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.white {
+  font-family: $headers-font;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: $darker-grey
+}
+
+p {
+  font-family: $body-font;
+  font-size: 16px;
+}
