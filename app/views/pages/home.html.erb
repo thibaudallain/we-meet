@@ -39,12 +39,25 @@
 <br><br><br>
 <%= link_to "Crée ton événement", "#", class: "btn-white-wm" %>
 <br><br>
-<h1 class="white">Sale journée ? Promotion à fêter ?<br>Sors ce soir !</h1>
-<h1>Partage ton événement</h1> => enlever le background-color: $darker-grey dans _utilities.scss
+<h1 class="white">Sale journée ? Promotion à fêter ?<br>Sors ce soir !</h1> => enlever le background-color: $darker-grey dans _utilities.scss
+<h1>Partage ton événement</h1>
 <h1>On va où ?</h1>
 <h1>À ce soir !</h1>
 
 <p>Avec WeMeet, tu envoies l’invit mais on se charge du reste. Liste des participants, bar arrangeant pour tout le monde, itinéraire : on s’en occupe !</p>
+
+<div class="card">
+  <div class="card-participant">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+
+    <div class="card-participant-infos">
+      <h1>Marie</h1>
+      <p>Dispo à l'heure</p>
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-stopwatch"></i>
+    </div>
+  </div>
+</div>
 
 <h1>Sergio</h1>
 <h1>Thibaud</h1>
