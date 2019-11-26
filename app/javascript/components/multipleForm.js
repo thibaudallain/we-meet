@@ -28,6 +28,8 @@ next.addEventListener("click", (event) => {
 fas.addEventListener("click", (event) => {
     formAvailability.classList.add("d-none");
     formUser.classList.remove("d-none");
+    step1.classList.add("active");
+    step2.classList.remove("active");
 
   });
 };
