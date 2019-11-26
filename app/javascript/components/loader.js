@@ -1,0 +1,6 @@
+const loader = () => {
+
+
+}
+
+export { loader }
