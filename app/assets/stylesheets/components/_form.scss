@@ -1,13 +1,29 @@
-.red-na {
-  color: white;
-  background: #B10F2E;
-  border-radius: 16px;
-  height: 60px;
+#form {
   width: 200px;
   text-decoration: none;
 }
-#form {
-  width: 200px;
+
+.form-input {
+  color: white;
+}
+
+.form-input {
+  border: none;
+  border-bottom: 2px solid #7DC980;
+  padding: 0;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+.active {
+  color: red;
+}
+
+.next {
+  margin-top: 100px;
+  margin-left: 80px;
 }
 
 .container-link {
@@ -19,6 +35,7 @@
   display: inline-block;
   margin: 0 2px 0 2px;
   height: 100px;
+
   position: relative;
   top: 240px;
   width: 80%;
@@ -26,14 +43,15 @@
   margin: 0 auto;
   padding-left: 8px;
   padding-right: 8px;
+
 }
 
 .container-link .link-share{
-    color: black;
-    background-color: transparent;
-    background-color: #F9F9F9;
-    overflow-wrap: break-word;
-    text-decoration: underline;;
+  color: black;
+  background-color: transparent;
+  background-color: #F9F9F9;
+  overflow-wrap: break-word;
+  text-decoration: underline;;
 }
 
 .link-white a {

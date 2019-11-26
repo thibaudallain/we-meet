@@ -1,0 +1,32 @@
+.text-dispo p {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top:50px;
+  font-size: 24px;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.event-dispo {
+  padding-top: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-dispo {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.non-dispo {
+    color: white;
+    text-decoration: underline;
+    background-color: transparent !important;
+    justify-content: center;
+    display: flex;
+    margin-top: 220px;
+}
