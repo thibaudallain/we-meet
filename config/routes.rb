@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :events, only: [:new, :create] do
     get "/share", to: "events#share"
   end
+
+  resources :events, only: [:show] do
+    resources :suggested_bars, only: [:index]
+  end
 end
 
 

@@ -1,0 +1,68 @@
+.card-bar {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-bar > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-bar h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-bar p {
+  opacity: .7;
+  margin: 0;
+}
+
+.card-bar .card-bar-infos {
+  padding: 10px;
+  display: flex;
+  position: relative;
+}
+
+.card-category-bar {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 180px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-category-bar h1 {
+  color: white;
+  font-size: 26px;
+  margin-top: 30px;
+}
+
+.justify-content-between {
+  margin-top: 20px;
+}
+
+.card-bar .card-bar-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-bar-heart {
+  position: absolute;
+    right: 16px;
+    font-size: 28px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 50%;
+    border: 2px solid $red;
+    color: $dark-grey;
+    margin-top: -350px;
+}
+

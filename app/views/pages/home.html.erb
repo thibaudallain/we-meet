@@ -1,3 +1,41 @@
+<div class="bg-image-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1546171753-97d7676e4602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60)">
+  <div class="container">
+    <div class="d-flex align-items-start pt-3">
+      <%= image_tag "WeMeet-white.png" %>
+    </div>
+      <div class="home-description">
+        <h1>Sale journée ? Promotion à fêter ? Sors ce soir !</h1>
+      </div>
+      <div class= "pt-4">
+        <%= link_to "Crée ton événement", "#", class: "btn-white-wm" %>
+      </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="bg-image-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80)">
+  <div class="container">
+    <div class="d-flex align-items-start pt-3">
+      <%= image_tag "WeMeet-white.png" %>
+    </div>
+    <div class="event-dispo">
+      <%= link_to "Dispo", "#", class: "btn-white-wm btn-dispo" %>
+    </div>
+    <div class="link-white">
+      <%= link_to "Pas ce soir malheureusement", "#", class: "non-dispo" %>
+    </div>
+
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+--------------------------------------------------------------------
+>>>>>>> master
 <h1>Tanguy</h1>
 <%#= simple_form_for (@user) do |f| %>
   <%#= f.input :name, placeholder: "Marie" %>
@@ -21,11 +59,16 @@
   </form>
 </div>
 
+---------------------------------------------------------
 
+<h1> Partage ton évènement !</h1>
+<div class="container-link">
+  <a href="www.wemeet.com/your-event" class="link-share">www.wemeet.com/your-event/191108/ppdijfoihibbbbeiubiubeiubdkkckjbiuebiub</a>
+</div>
 
-
-
-
+<div class="link-white">
+  <a href=""> pas ce soir malheureusement </a>
+</div>
 
 
 <h1>Adé</h1>
@@ -34,12 +77,93 @@
 <br><br><br>
 <%= link_to "Crée ton événement", "#", class: "btn-white-wm" %>
 <br><br>
-<h1 class="white">Sale journée ? Promotion à fêter ?<br>Sors ce soir !</h1>
-<h1>Partage ton événement</h1> => enlever le background-color: $darker-grey dans _utilities.scss
+<h1 class="white">Sale journée ? Promotion à fêter ?<br>Sors ce soir !</h1> => enlever le background-color: $darker-grey dans _utilities.scss
+<h1>Partage ton événement</h1>
 <h1>On va où ?</h1>
 <h1>À ce soir !</h1>
 
 <p>Avec WeMeet, tu envoies l’invit mais on se charge du reste. Liste des participants, bar arrangeant pour tout le monde, itinéraire : on s’en occupe !</p>
 
+<div class="card">
+  <div class="card-participant">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+
+    <div class="card-participant-infos">
+      <h1>Marie</h1>
+      <p>Dispo à l'heure</p>
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-stopwatch"></i>
+    </div>
+  </div>
+</div>
+
 <h1>Sergio</h1>
+
+<div class="container">
+  <div class="card-bar">
+    <div class="card-category-bar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <div class="d-flex justify-content-center p-2 pt-5">
+        <h1>NOM DU BAR<h1>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="p-2">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <div class="p-2">
+          <i class="fas fa-euro-sign"></i>
+          <i class="fas fa-euro-sign"></i>
+          <i class="fas fa-euro-sign"></i>
+        </div>
+      </div>
+    </div>
+    <div class="card-bar-infos">
+      <div>
+        <h2>11 rue de Venise, 75010 Paris</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="card-bar">
+    <div class="card-category-bar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <div class="d-flex justify-content-center p-2 pt-5">
+        <h1>NOM DU BAR<h1>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="p-2">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <div class="p-2">
+          <i class="fas fa-euro-sign"></i>
+          <i class="fas fa-euro-sign"></i>
+          <i class="fas fa-euro-sign"></i>
+        </div>
+      </div>
+    </div>
+    <div class="card-bar-infos">
+      <div>
+        <h2>11 rue de Venise, 75010 Paris</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+      <i class="fa fa-heart card-bar-heart"></i>
+  </div>
+</div>
+
+-------------------------------------------------------
+
 <h1>Thibaud</h1>
