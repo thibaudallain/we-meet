@@ -1,7 +1,7 @@
 require 'json'
 require 'open-uri'
 
-class GooglePlacesServices
+class GooglePlacesService
   def initialize(params)
     @location = params[:location]
     @key = params[:key]
