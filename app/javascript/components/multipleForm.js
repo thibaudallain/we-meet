@@ -4,6 +4,7 @@ const multipleForm = () => {
   const formUser = document.getElementById("form-user");
   const formAvailability = document.getElementById("form-availability");
   const next = document.querySelector(".next");
+  const fas = document.querySelector(".fas");
   step1.addEventListener("", (event) => {
     formUser.classList.remove("d-none");
     formAvailability.classList.add("d-none");
@@ -22,6 +23,12 @@ next.addEventListener("click", (event) => {
     formUser.classList.add("d-none");
     step1.classList.remove("active");
     step2.classList.add("active");
+  });
+
+fas.addEventListener("click", (event) => {
+    formAvailability.classList.add("d-none");
+    formUser.classList.remove("d-none");
+
   });
 };
 

@@ -13,9 +13,11 @@
 
         </div>
         <div id="form-availability" class="d-none">
+          <i class="fas fa-chevron-left"></i>
           <%= f.input :start_time, input_html: {value: "", class: "form-input"}, placeholder: "20h", label: "A partir de"%>
           <%= f.input :deadline, input_html: {value: "", class: "form-input"}, placeholder:"", label: "Pas de réponse après" %>
           <%= f.submit "Crée ton événement", class: "create btn-red-wm" %>
+
         </div>
       <% end %>
 </div>
