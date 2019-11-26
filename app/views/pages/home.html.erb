@@ -9,17 +9,23 @@
       <div class= "pt-4">
         <%= link_to "Crée ton événement", "#", class: "btn-white-wm" %>
       </div>
+      <div class="home-explication">
+        <p>Avec WeMeet, tu envoies l’invit mais on se charge du reste. Liste des participants, bar arrangeant pour tout le monde, itinéraire : on s’en occupe !</p>
+      </div>
   </div>
 </div>
 
 <br>
 <br>
 <br>
-
+------------------------------------
 <div class="bg-image-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80)">
   <div class="container">
     <div class="d-flex align-items-start pt-3">
       <%= image_tag "WeMeet-white.png" %>
+    </div>
+    <div class="text-dispo">
+      <p>Marie a envie de boire un verre ce soir !</p>
     </div>
     <div class="event-dispo">
       <%= link_to "Dispo", "#", class: "btn-white-wm btn-dispo" %>
@@ -34,8 +40,29 @@
 <br>
 <br>
 <br>
---------------------------------------------------------------------
->>>>>>> master
+--------------------------------------
+<div class="bg-image-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80)">
+  <div class="container">
+    <div class="d-flex align-items-start pt-3">
+      <%= image_tag "WeMeet-white.png" %>
+    </div>
+    <div class="text-dispo pt-3">
+      <p>Dommage, une prochaine <br>fois !</p>
+    </div>
+    <form class="mt-5">
+  <div class="form-group">
+    <input type="text" class="form-control input-nom mt-5 " placeholder="Ton nom..">
+  </div>
+  <button type="submit" class="btn-white-wm dommage mt-5">On la prévient</button>
+</form>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+----------------------------------------
 <h1>Tanguy</h1>
 <%#= simple_form_for (@user) do |f| %>
   <%#= f.input :name, placeholder: "Marie" %>
@@ -59,7 +86,7 @@
   </form>
 </div>
 
----------------------------------------------------------
+-----------------------------------------
 
 <h1> Partage ton évènement !</h1>
 <div class="container-link">
@@ -164,6 +191,6 @@
   </div>
 </div>
 
--------------------------------------------------------
+-----------------------------------------
 
 <h1>Thibaud</h1>
