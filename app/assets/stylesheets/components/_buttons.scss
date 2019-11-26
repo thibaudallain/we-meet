@@ -8,6 +8,10 @@
 }
 
 
+.btn-red-wm:hover {
+    color: white;
+    text-decoration: none;
+}
 
 .btn-white-wm {
     padding: 16px 24px;
@@ -19,3 +23,11 @@
     font-size: 18px;
 }
 
+.share {
+  margin: 0 auto;
+  display: block;
+  width: 60%;
+  text-align: center;
+  position: relative;
+  top: 400px;
+}

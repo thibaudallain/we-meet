@@ -19,8 +19,13 @@
   display: inline-block;
   margin: 0 2px 0 2px;
   height: 100px;
-
-
+  position: relative;
+  top: 240px;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .container-link .link-share{

@@ -1,2 +1,13 @@
-<h1>Events#share</h1>
-<p>Find me in app/views/events/share.html.erb</p>
+<h3 class="share-h3"> Partage ton événement !</h3>
+
+
+<div class="container-link">
+  <%= link_to "www.wemeet.bar/events/#event.id/home", "www.wemeet.bar/events/event.id/home" %>
+</div>
+
+
+<p class="share-p">Clique sur le bouton <em>Partage ton événement</em> pour inviter les amis de ton choix</p>
+<%= link_to "Partage ton événement", "#", class: "btn-red-wm share", data: { event: params[:event_id] } %>
+
+
+<%= link_to "" %>
