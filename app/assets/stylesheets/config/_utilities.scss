@@ -31,3 +31,12 @@ p {
   font-size: 16px;
   color: $darker-grey;
 }
+
+body {
+  margin: 0;
+}
+
+.container {
+  width: 98vw;
+  margin: 0 auto;
+}
