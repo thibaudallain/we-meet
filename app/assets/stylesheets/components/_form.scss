@@ -9,12 +9,18 @@
 .form-input {
   border: none;
   border-bottom: 2px solid #7DC980;
-}
-
-::placeholder {
-  font-weight: 1;
+  padding: 0;
 }
 
 .container {
-  margin: 0 5px 0 5px;
+  margin-top: 100px;
+}
+
+.active {
+  color: red;
+}
+
+   .next {
+  margin-top: 100px;
+  margin-left: 80px;
 }
