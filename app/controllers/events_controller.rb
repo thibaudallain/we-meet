@@ -12,8 +12,8 @@ class EventsController < ApplicationController
     @user.save
     @event = Event.new(event_params)
     if @event.save
-      # meeting = Meeting.create(event: @event)
-      # meeting.save
+      # @meeting = Meeting.create(event: @event)
+      # @meeting.save
       redirect_to event_share_path(@event)
     else
       redirect_to root_path

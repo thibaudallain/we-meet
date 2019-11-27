@@ -4,12 +4,12 @@
 }
 
 .form-input {
-  color: black;
+  color: $darker-grey;
 }
 
 .form-input {
   border: none;
-  border-bottom: 2px solid #7DC980;
+  border-bottom: 2px solid $green-a;
   padding: 0;
   height: 30px !important;
 }
@@ -19,7 +19,7 @@
 }
 
 .active {
-  color: red;
+  color: $red;
 }
 
 .onglet-form {
@@ -56,11 +56,11 @@
 // }
 
 .container-link {
-  border: 2px solid #DF5F77;
+  border: 2px solid $red-na;
   color: black;
   text-decoration: none;
   text-align: center;
-  background-color: #F9F9F9;
+  background-color: $lighter-grey;
   display: inline-block;
   margin: 0 2px 0 2px;
   height: 100px;
@@ -78,7 +78,7 @@
 .container-link .link-share{
   color: black;
   background-color: transparent;
-  background-color: #F9F9F9;
+  background-color: $lighter-grey;
   overflow-wrap: break-word;
   text-decoration: underline;;
 }
@@ -86,7 +86,7 @@
 .link-white a {
   color: white;
   text-decoration: underline;
-  background-color: #999999;
+  background-color: $dark-grey;
 }
 
 .form-check-input {
