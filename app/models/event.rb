@@ -6,6 +6,7 @@ class Event < ApplicationRecord
   validates :start_time, presence: true
   validates :deadline, presence: true
   validate :deadline_is_before_start_time
+  validates :name, presence: true
 
   private
 

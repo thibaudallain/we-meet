@@ -1,7 +1,7 @@
 <div class="bg-image-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1546171753-97d7676e4602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60)">
   <div class="container">
-    <div class="d-flex align-items-start pt-3 mb-3">
-      <%= image_tag "WeMeet-white.png" %>
+    <div class="d-flex align-items-start pt-3 pb-3">
+      <%= image_tag "WeMeet-white.png", class: "logo-white"  %>
     </div>
       <div class="home-description">
         <h1>Sale journée ? Promotion à fêter ? Sors ce soir !</h1>
@@ -10,8 +10,7 @@
         <%= link_to "Crée ton événement", new_event_path, class: "btn-white-wm" %>
       </div>
   </div>
-  <div class="home-explication">
+  <div class="footer">
     <p>Avec WeMeet, tu envoies l’invit mais on se charge du reste. Liste des participants, bar arrangeant pour tout le monde, itinéraire : on s’en occupe !</p>
   </div>
 </div>
-

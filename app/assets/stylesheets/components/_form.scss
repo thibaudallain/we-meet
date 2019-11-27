@@ -1,3 +1,11 @@
+.logo-black {
+  height: 48px;
+}
+
+.top-margin {
+  border-bottom: 1px solid $darker-grey;
+}
+
 #form {
   width: 200px;
   text-decoration: none;
@@ -23,6 +31,7 @@
 }
 
 .onglet-form {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -37,23 +46,9 @@
   margin: 0 auto;
   display: block;
   text-align: center;
-  margin-top: 110px;
+  margin-top: 60px;
 
 }
-
-// .next {
-//   margin: 0 auto;
-//   display: block;
-//   text-align: center;
-//   margin-top: 110px;
-// }
-
-// .create {
-//   margin: 0 auto;
-//   display: block;
-//   text-align: center;
-//   margin-top: 110px;
-// }
 
 .container-link {
   border: 2px solid $red-na;
@@ -109,4 +104,15 @@
   margin: 0 auto;
   display: block;
   text-align: center;
+}
+
+.times{
+  display: grid;
+  text-align: center;
+  justify-content: center;
+}
+
+input[type="time"] {
+    text-align: center;
+    justify-content: center;
 }
