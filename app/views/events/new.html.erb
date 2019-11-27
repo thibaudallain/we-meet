@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="d-flex align-items-start pt-3">
-    <%= image_tag "WeMeet-black.png" %>
+  <div class="d-flex align-items-start top-margin pt-3 pb-2">
+    <%= image_tag "WeMeet-black.png", class: "logo-black" %>
   </div>
   <div class="onglet-form">
     <span class="onglet step-1 active">Identité</span>
@@ -8,24 +8,27 @@
   </div>
   <%= form_tag('/events/', method: :post) do %>
     <div id="form-user">
-      <%= label_tag 'Name' %>
+      <%= label_tag 'NOM' %>
       <%= text_area_tag :name, "", class: 'form-control form-input', placeholder: "Marie", required: true%>
+      <br>
       <%= label_tag 'Téléphone' %>
       <%= text_area_tag :phone_number, "", class: 'form-control form-input', placeholder: "0660832635", required: true %>
-
-
       <div class="next-btn">
         <span class="next btn-red-wm">Suivant</span>
       </div>
     </div>
+
     <div id="form-availability" class="d-none">
       <i class="fas fa-chevron-left"></i>
-      <%#= label_tag "Tu pars d'où" %>
-<!--       <%#= text_area_tag "meeting[address]", "", class: "form-control form-input", placeholder: "16 villa Gaudelet", required: true%>
- -->      <%= label_tag 'À partir de' %>
-      <%= time_field_tag "event[start_time]", input_html: {value: "", class: "form-input"}, placeholder: "20h"%>
-      <%= label_tag 'Pas de réponse après' %>
-      <%= time_field_tag "event[deadline]", input_html: {value: "", class: "form-input"}, placeholder:"" %>
+      <br>
+      <div class="times">
+        <%= label_tag 'À partir de:' %>
+        <%= time_field_tag "event[start_time]", input_html: {value: "", class: "form-input"}, placeholder: "20h"%>
+        <br>
+        <br>
+        <%= label_tag 'Pas de réponse après:' %>
+        <%= time_field_tag "event[deadline]", input_html: {value: "", class: "form-input"}, placeholder:"" %>
+      </div>
       <div class="create-btn">
         <%= submit_tag "Crée ton événement", class: "create btn-red-wm" %>
       </div>
