@@ -87,3 +87,25 @@
   text-decoration: underline;
   background-color: #999999;
 }
+
+.form-check-input {
+  display: none;
+}
+
+.form-check-label {
+  width: 100px;
+  background-color: $light-grey;
+  border: solid 1px ;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    color: white;
+    background-color: $darker-grey;
+    border-color: $darker-grey;
+}
+
+.buttons-toggle {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
