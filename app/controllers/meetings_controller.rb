@@ -1,11 +1,17 @@
 class MeetingsController < ApplicationController
 
   def new
+    @event = Event.find(params[:event_id])
     @meeting = Meeting.new
   end
 
   def create
-    @meeting = Meeting.find(params[:id])
+    @meeting = Meeting.new
+    @meeting.attending = params[:attending]
+    @meeting.organizer = params[:organizer]
+
+    @event = Event.find(params[:event_id])
+    @meeting.event = @event
     @meeting.save
     redirect_to edit_event_meeting_path(@meeting.event, @meeting)
   end
@@ -18,11 +24,5 @@ class MeetingsController < ApplicationController
     else
       redirect_to root_path
     end
-  end
-
-private
-
-  def meeting_params
-    params.require(:meeting).permit(:attending)
   end
 end
