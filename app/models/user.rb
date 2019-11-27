@@ -7,4 +7,12 @@ class User < ApplicationRecord
   # validates :name, :phone_number, :address, presence: :true
 
   has_many :meetings
+
+  def password_required?
+    false
+  end
+
+  def email_required?
+    false
+  end
 end

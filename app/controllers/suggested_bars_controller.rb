@@ -1,5 +1,6 @@
 class SuggestedBarsController < ApplicationController
   def index
+    authenticate_user!
     @event = Event.find(params[:event_id])
     if Bar.near(Geocoder::Calculations.geographic_center(@event.meetings.where(attending: true)), 0.5).length >= 5
       @message = "pas d'API"
@@ -50,6 +51,7 @@ class SuggestedBarsController < ApplicationController
           )
       end
     end
+    @meeting = Meeting.where(event: @event, user: current_user)[0]
   end
 
   private
