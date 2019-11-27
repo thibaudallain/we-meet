@@ -3,24 +3,28 @@
     <span class="onglet step-1 active">Identité</span>
     <span class="onglet step-2">Evénement</span>
   </div>
-  <%= simple_form_for(@event) do |f| %>
+  <%= form_tag events_path, method: :post do %>
     <div id="form-user">
-          <%= f.input :name, input_html: {value: "",class: "form-input"}, placeholder: "Marie", label: "Nom"%>
-          <%= f.input :phone_number, input_html: {value: "", class: "form-input"}, placeholder: "0683193546", label: "Téléphone" %>
-          <%= f.input :address, input_html: {value: "", class: "form-input"}, placeholder: "16 Villa Gaudelet", label: "Adresse" %>
-          <div class="next-btn">
-            <span class="next btn-red-wm">Suivant</span>
-          </div>
-        </div>
-        <div id="form-availability" class="d-none">
-          <i class="fas fa-chevron-left"></i>
-          <%= f.input :start_time, input_html: {value: "", class: "form-input"}, placeholder: "20h", label: "A partir de"%>
-          <%= f.input :deadline, input_html: {value: "", class: "form-input"}, placeholder:"", label: "Pas de réponse après" %>
-          <div class="create-btn">
-            <%= f.submit "Crée ton événement", class: "create btn-red-wm" %>
-          </div>
-        </div>
-      <% end %>
+      <%= label_tag 'Name' %>
+      <%= text_area_tag :name, "", class: 'form-control form-input', placeholder: "Marie", required: true%>
+      <%= label_tag 'Téléphone' %>
+      <%= text_area_tag :phone_number, "", class: 'form-control form-input', placeholder: "0660832635", required: true %>
+      <%= label_tag 'Adresse' %>
+      <%= text_area_tag :address, "", class: 'form-control form-input', placeholder: "16 Villa Gaudelet", required: true %>
+
+      <div class="next-btn">
+        <span class="next btn-red-wm">Suivant</span>
+      </div>
+    </div>
+    <div id="form-availability" class="d-none">
+      <i class="fas fa-chevron-left"></i>
+      <%= time_field_tag :start_time, input_html: {value: "", class: "form-input"}, placeholder: "20h", label: "A partir de"%>
+      <%= time_field_tag :deadline, input_html: {value: "", class: "form-input"}, placeholder:"", label: "Pas de réponse après" %>
+      <div class="create-btn">
+        <%= submit_tag "Crée ton événement", class: "create btn-red-wm" %>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 
