@@ -1,13 +1,13 @@
 h1 {
   font-family: $headers-font;
-  font-size: 20px;
+  font-size: 32px;
   font-weight: bold;
   color: $darker-grey;
 }
 
 h2 {
   font-family: $headers-font;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -36,7 +36,7 @@ body {
   margin: 0;
 }
 
-.container {
+.container-wm {
   width: 98vw;
   margin: 0 auto;
 }
