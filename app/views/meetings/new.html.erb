@@ -7,11 +7,10 @@
       <p>Marie a envie de boire un verre ce soir !</p>
     </div>
     <div class="event-dispo">
-
-      <%= link_to "Dispo", event_meetings_path(@event, attending: true, organizer: false), method: :post , class: "btn-white-wm btn-dispo" %>
+      <%= link_to "Dispo", event_meetings_path(@event, attending: true, organizer: false), method: :post, class: "btn-white-wm btn-dispo" %>
     </div>
     <div class="link-white">
-      <%= link_to "Pas ce soir malheureusement", "#", class: "non-dispo" %>
+      <%= link_to "Pas ce soir malheureusement", event_meetings_path(@event, attending: false, organizer: false), method: :post, class: "non-dispo" %>
     </div>
 
   </div>

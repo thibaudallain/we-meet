@@ -6,8 +6,7 @@ class Meeting < ApplicationRecord
 
 
   validates_inclusion_of :organizer, in: [true, false]
-  # validates_inclusion_of :attending, in: [true, false]
-  validates :attending, presence: true
+  validates_inclusion_of :attending, in: [true, false]
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 end

@@ -9,7 +9,6 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new
     @meeting.attending = params[:attending]
     @meeting.organizer = params[:organizer]
-
     @event = Event.find(params[:event_id])
     @meeting.event = @event
     @meeting.save
