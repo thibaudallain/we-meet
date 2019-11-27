@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :meetings
+
+  def password_required?
+    false
+  end
+
+  def email_required?
+    false
+  end
 end

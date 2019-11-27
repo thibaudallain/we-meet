@@ -1,0 +1,20 @@
+.cadre-central {
+  width: 80vw;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.center-check {
+  color: $green-a;
+  font-size: 60px;
+}
+
+.check {
+  position: absolute;
+}
+

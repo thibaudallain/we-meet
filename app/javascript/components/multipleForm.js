@@ -1,6 +1,7 @@
 const multipleForm = () => {
   const step1 = document.querySelector(".step-1");
   const step2 = document.querySelector(".step-2");
+  if (step1 || step2) {
   const formUser = document.getElementById("form-user");
   const formAvailability = document.getElementById("form-availability");
   const next = document.querySelector(".next");
@@ -41,7 +42,8 @@ const multipleForm = () => {
     step1.classList.add("active");
     step2.classList.remove("active");
 
-  });
+    });
+  }
 };
 
 

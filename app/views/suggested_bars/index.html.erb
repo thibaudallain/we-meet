@@ -1,44 +1,51 @@
-<div class="container-wm">
-  <% @bars.each do |bar| %>
-    <div class="card-bar">
-      <i class="fa fa-heart card-bar-heart" id="<%= bar.id %>"></i>
-      <div class="card-img-name">
-        <%= cl_image_tag bar.photo.key, alt: "alttext" %>
-        <div class="bar-name">
-          <h1><%= bar.name %><h1>
-        </div>
-      </div>
-      <div class="card-bar-infos">
-        <h2><%= bar.address %></h2>
-        <div class="card-bar-ratings-price">
-          <div>
-            <% bar.rating.times do %>
-              <i class="fa fa-star"></i>
-            <% end %>
-            <% (5 - bar.rating).times do %>
-              <i class="far fa-star"></i>
-            <% end %>
-          </div>
-          <div>
-            <% 3.times do %>
-              <i class="fas fa-euro-sign"></i>
-            <% end %>
-            <% 2.times do %>
-              <i class="fas fa-euro-sign cheap"></i>
-            <% end %>
+<% if @meeting.voted == true %>
+  <%= render "shared/waiting_after_vote", event: @event %>
+<% else %>
+
+  <%= form_tag event_meeting_path(@event, @meeting), method: :patch do %>
+
+  <div class="container-wm">
+    <% @bars.each do |bar| %>
+      <%= text_field_tag bar.id, 0, hidden: true%>
+      <div class="card-bar">
+        <i class="fa fa-heart card-bar-heart" id="heart<%= bar.id %>"></i>
+        <div class="card-img-name">
+          <%= cl_image_tag bar.photo.key, alt: "alttext" %>
+          <div class="bar-name">
+            <h1><%= bar.name %><h1>
           </div>
         </div>
+        <div class="card-bar-infos">
+          <h2><%= bar.address %></h2>
+          <div class="card-bar-ratings-price">
+            <div>
+              <% bar.rating.times do %>
+                <i class="fa fa-star"></i>
+              <% end %>
+              <% (5 - bar.rating).times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            </div>
+            <div>
+              <% 3.times do %>
+                <i class="fas fa-euro-sign"></i>
+              <% end %>
+              <% 2.times do %>
+                <i class="fas fa-euro-sign cheap"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
+    <% end %>
+  </div>
+    <div class="center-btn confirm-choice">
+      <%= submit_tag "je vote", class: "btn-red-wm" %>
     </div>
   <% end %>
-</div>
 
-<div class="center-btn confirm-choice">
-  <div class="btn-red-wm">
-    Confirm
-  </div>
-</div>
 
+<% end %>
 
 
 
