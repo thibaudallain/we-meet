@@ -1,0 +1,58 @@
+<div class="container-wm">
+  <h1 style="text-align: center"> À ce soir ! </h1>
+  <div id="map"
+    style="width: 100%;
+    height: 500px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <div class= "btn-map btn-red-wm">
+    <h3>Votre temps de trajet est de <%=  @t.travel_time_minutes%> minutes </h3>
+  </div>
+</div>
+
+
+
+<!-- <div class="card-bar">
+  <div class="bar-name">
+            <h1><%#= counter.to_s + ". " + bar.name %><h1>
+            <%# counter += 1 %>
+  </div>
+  <div Àlass="card-bar-infos">
+            <h2><%#= @bar.address %></h2>
+            <div class="card-bar-ratings-price">
+              <div>
+                <%# @bar.rating.times do %>
+                  <i class="fa fa-star"></i>
+                <#% end %>
+              </div>
+            </div>
+          </div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- # <h1><%#= @event.name %> <small><%#= @restaurant.address %></small></h1>
+# <h2>
+#   <#%= pluralize @restaurant.reviews.size, "review" %>
+# </h2>
+
+# <div id="reviews">
+#   <#% if @restaurant.reviews.blank? %>
+#     Be the first to leave a review for <#%= @restaurant.name %>
+#   <#% else %>
+#     <#% @restaurant.reviews.each do |review| %>
+#       <#%= render 'reviews/show', review: review %>
+#     <#% end %>
+#   <#% end %>
+# </div> -->

@@ -4,7 +4,6 @@ class Meeting < ApplicationRecord
   # validates :event_id, presence: true
   # validates :user_id, presence: true
 
-
   validates_inclusion_of :organizer, in: [true, false]
   validates_inclusion_of :attending, in: [true, false]
   geocoded_by :address
