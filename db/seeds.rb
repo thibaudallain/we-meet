@@ -5,9 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Meeting.destroy_all
+SuggestedBar.destroy_all
 Event.destroy_all
 User.destroy_all
-Meeting.destroy_all
 
 event = Event.create(
   date: Date.today,
