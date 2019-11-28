@@ -15,7 +15,9 @@ class EventsController < ApplicationController
       sign_in(@user)
     end
     @event = Event.new(event_params)
+    @event.date = Date.today
     if @event.save
+      @meeting = Meeting.create(event_id: @event.id, user_id: @user.id, attending: true, address: params[:address], organizer: true)
       redirect_to event_share_path(@event)
     else
       redirect_to root_path
