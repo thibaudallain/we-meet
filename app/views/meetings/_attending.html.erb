@@ -1,17 +1,42 @@
-
-<div class="buttons-toggle">
-  <div class="btn-group" data-toggle="buttons">
-    <label class="btn btn-primary form-check-label">
-    <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off">
-    Plus tôt
-    </label>
-
-    <label class="btn btn-primary form-check-label active">
-      <input class="form-check-input" type="radio" name="options" id="option2" autocomplete="off" checked> Pareil
-    </label>
-
-    <label class="btn btn-primary form-check-label">
-      <input class="form-check-input" type="radio" name="options" id="option3" autocomplete="off"> Plus tard
-    </label>
+<div class="container">
+  <div class="d-flex align-items-start pt-3 pb-3">
+    <%= image_tag "WeMeet-black.png", class: "logo-white"  %>
   </div>
+  <div class="onglet-form">
+    <span class="onglet step-1 active">Identité</span>
+    <span class="onglet step-2">Ce soir</span>
+  </div>
+  <%= form_tag('/events/', method: :post) do %>
+    <div id="form-user">
+      <%= label_tag 'NOM' %>
+      <%= text_area_tag :name, "", class: 'form-control form-input', placeholder: "Marie", required: true%>
+      <br>
+      <%= label_tag 'Téléphone' %>
+      <%= text_area_tag :phone_number, "", class: 'form-control form-input', placeholder: "0660832635", required: true %>
+      <div class="next-btn">
+        <span class="next btn-red-wm">Suivant</span>
+      </div>
+    </div>
+    <div id="form-availability" class="d-none">
+      <i class="fas fa-chevron-left"></i>
+      <br>
+      <div class="buttons-toggle">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary form-check-label">
+          <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off">
+          Plus tôt
+          </label>
+          <label class="btn btn-primary form-check-label active">
+          <input class="form-check-input" type="radio" name="options" id="option2" autocomplete="off" checked> Pareil
+          </label>
+          <label class="btn btn-primary form-check-label">
+          <input class="form-check-input" type="radio" name="options" id="option3" autocomplete="off"> Plus tard
+          </label>
+        </div>
+      </div>
+      <div class="create-btn">
+        <%= submit_tag "Je confirme", class: "create btn-red-wm" %>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -2,10 +2,9 @@ const multipleForm = () => {
   const step1 = document.querySelector(".step-1");
   const step2 = document.querySelector(".step-2");
   if (step1 || step2) {
-  const formUser = document.getElementById("form-user");
-  const formAvailability = document.getElementById("form-availability");
-  const next = document.querySelector(".next");
-  const fas = document.querySelector(".fas");
+  const formUser = document.querySelector(".form-step1");
+  const formAvailability = document.querySelector(".form-step2");
+  const next = document.querySelector(".next-btn");
   // step1.addEventListener("", (event) => {
   //   formUser.classList.remove("d-none");
   //   formAvailability.classList.add("d-none");
@@ -36,13 +35,18 @@ const multipleForm = () => {
   //     alert("Vous devez remplir les 3 champs ci-dessus");
   });
 
-  fas.addEventListener("click", (event) => {
+  step1.addEventListener("click", (event) => {
     formAvailability.classList.add("d-none");
     formUser.classList.remove("d-none");
     step1.classList.add("active");
     step2.classList.remove("active");
-
-    });
+  });
+  step2.addEventListener("click", (event) => {
+    formAvailability.classList.remove("d-none");
+    formUser.classList.add("d-none");
+    step1.classList.remove("active");
+    step2.classList.add("active");
+  });
   }
 };
 

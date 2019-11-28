@@ -29,6 +29,28 @@
     text-decoration: none;
 }
 
+.btn-white-wm-extra {
+  padding: 16px 24px;
+  color: #B10F2E;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.4);
+  font-family: $body-font;
+  font-size: 18px;
+  min-width: 200px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: fit-content;
+}
+
+.btn-white-wm-extra:hover {
+  color: #B10F2E;
+  text-decoration: none;
+}
+
 .btn-white-wm:hover {
     color: #B10F2E;
     text-decoration: none;
