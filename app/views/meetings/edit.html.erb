@@ -1,5 +1,8 @@
-<%# if @meeting.attending %>
-<%= render 'attending' %>
-<%#= else render 'declined' %>
-<%# end %>
+<% if @meeting.attending %>
+ <%= render 'attending' %>
+<% else %>
+  <%= render 'declined' %>
+<% end %>
+
+
 
