@@ -1,14 +1,13 @@
 class MeetingsController < ApplicationController
+
+  def index
+    @event = Event.find(params[:event_id])
+    @meetings = @event.meetings
+  end
+
   def new
     @event = Event.find(params[:event_id])
     @meeting = Meeting.new
-  end
-
-  def show
-    @event = Event.find(params[:event_id])
-    @meeting = Meeting.find(params[:id])
-    @users = User.all
-    @meeting.attending = params[:attending]
   end
 
   def create
@@ -42,12 +41,25 @@ class MeetingsController < ApplicationController
       redirect_to event_suggested_bars_path(Event.find(params[:event_id]))
     else
       @meeting = Meeting.find(params[:id])
-      @meeting.update(meeting_params)
-      if @meeting.attending
-        redirect_to event_meetings_path(@meeting.event)
+      # @meeting.address = params[:address]
+      # @meeting.save
+      if @user = User.find_by(phone_number: params[:phone_number])
+        @meeting.update(meeting_params)
+        @meeting.user = @user
+        @meeting.save
+        sign_in(@user)
       else
-        redirect_to root_path
+        @user = User.create(name: params[:name], phone_number: params[:phone_number])
+        @meeting.update(meeting_params)
+        @meeting.user = @user
+        @meeting.save
+        sign_in(@user)
       end
+      redirect_to event_meetings_path(@meeting.event)
     end
+  end
+
+  def meeting_params
+    params.require(:meeting).permit(:address)
   end
 end
