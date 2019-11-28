@@ -4,6 +4,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:event_id])
   end
 
+  def share_again
+    sleep(5)
+    @event = Event.find(params[:event_id])
+  end
+
   def new
     @event = Event.new
   end
