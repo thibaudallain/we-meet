@@ -4,6 +4,13 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new
   end
 
+  def show
+    @event = Event.find(params[:event_id])
+    @meeting = Meeting.find(params[:id])
+    @users = User.all
+    @meeting.attending = params[:attending]
+  end
+
   def create
     @meeting = Meeting.new
     @meeting.attending = params[:attending]
