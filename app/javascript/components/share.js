@@ -1,6 +1,6 @@
 const share = () => {
 const btn = document.querySelector('.share');
-const link = document.querySelector('a');
+const link = document.querySelector('.link-to-share');
 if (btn) {
   btn.addEventListener('click', (event) => {
       console.log(link.innerText)
