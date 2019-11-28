@@ -1,6 +1,0 @@
-const loader = () => {
-
-
-}
-
-export { loader }
