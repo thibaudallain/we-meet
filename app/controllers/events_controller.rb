@@ -22,7 +22,14 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @event = Event.geocoded # returns gps coordinates
+    # @event = current_user.meetings.find(event: @event).where(suggested_bar.chosen == true)
 
+    @markers =
+      [{
+        lat: @event.latitude,
+        lng: @event.longitude
+      }]
   end
 
   private
