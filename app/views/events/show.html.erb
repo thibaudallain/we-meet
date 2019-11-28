@@ -1,26 +1,26 @@
-<h1> final bar </h1>
+<h1> À ce soir ! </h1>
 
-<div class="card-bar">
+<!-- <div class="card-bar">
   <div class="bar-name">
-            <h1><%= counter.to_s + ". " + bar.name %><h1>
-            <% counter += 1 %>
+            <h1><%#= counter.to_s + ". " + bar.name %><h1>
+            <%# counter += 1 %>
   </div>
-  <div class="card-bar-infos">
-            <h2><%= bar.address %></h2>
+  <div Àlass="card-bar-infos">
+            <h2><%#= @bar.address %></h2>
             <div class="card-bar-ratings-price">
               <div>
-                <% bar.rating.times do %>
+                <%# @bar.rating.times do %>
                   <i class="fa fa-star"></i>
-                <% end %>
+                <#% end %>
               </div>
             </div>
           </div>
-  </div>
+  </div> -->
 
 
-<div
+<div class= "container"
     id="map"
-    style="width: 50%;
+    style="width: 100%;
     height: 600px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
