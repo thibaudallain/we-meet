@@ -1,16 +1,14 @@
-<%= user_signed_in? %>
-<%= current_user %>
+<div class="container-wm">
+  <h1> Ton événement a bine été créé !</h1>
 
-<h3 class="share-h3"> Partage ton événement !</h3>
+  <div class="container-link">
+    <% link = "www.wemeet.bar/events/" + @event.id.to_s + "/meetings/new" %>
+    <%= link_to link, class: "link-to-share" %>
+  </div>
 
 
-<div class="container-link">
-  <%= link_to "www.wemeet.bar/events/#event.id/home", "www.wemeet.bar/events/event.id/home" %>
+  <p class="share-p">Clique sur le bouton <em>Partage ton événement</em> pour inviter les amis de ton choix</p>
+  <%= link_to "Partage ton événement", "#", class: "btn-red-wm share", data: { event: params[:event_id] } %>
+
 </div>
 
-
-<p class="share-p">Clique sur le bouton <em>Partage ton événement</em> pour inviter les amis de ton choix</p>
-<%= link_to "Partage ton événement", "#", class: "btn-red-wm share", data: { event: params[:event_id] } %>
-
-
-<%= link_to "" %>

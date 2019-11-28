@@ -1,8 +1,9 @@
 const share = () => {
 const btn = document.querySelector('.share');
+const link = document.querySelector('a');
 if (btn) {
   btn.addEventListener('click', (event) => {
-
+      console.log(link.innerText)
       const eventId = btn.dataset.event;
       console.log(eventId);
     if (navigator.share) {
@@ -10,9 +11,10 @@ if (btn) {
       navigator.share({
         title: "We Meet",
         text: "We Meet - Invitation pour ce soir",
-        url: `/events/${eventId}/share`
+        url: `${link.innerText}`
       }).then(() => {
         console.log("Link shared");
+
       })
       .catch(console.error);
     } else {
