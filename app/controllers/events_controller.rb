@@ -8,8 +8,12 @@ class EventsController < ApplicationController
   end
 
   def create
-    @user = User.create(name: params[:name], phone_number: params[:phone_number])
-    @user.save
+    if @user = User.find_by(phone_number: params[:phone_number])
+      sign_in(@user)
+    else
+      @user = User.create(name: params[:name], phone_number: params[:phone_number])
+      sign_in(@user)
+    end
     @event = Event.new(event_params)
     if @event.save
       redirect_to event_share_path(@event)
