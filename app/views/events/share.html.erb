@@ -1,12 +1,16 @@
-<div class="container-wm relative">
-  <div class="header">
-    <%= image_tag "WeMeet-black.png", class: "logo-black" %>
+<div class="container-wm">
+  <div class="center-top">
+    <i class="fas fa-check-circle"></i>
+    <h1> Ton événement a bien été créé !</h1>
   </div>
-  <h2> Ton événement a bien été créé !</h2>
-  <div class="container-link">
+
+  <div class="container-link link-to-share">
     <% link = "www.wemeet.bar/events/" + @event.id.to_s + "/meetings/new" %>
-    <%= link_to link, class: "link-to-share" %>
+    <%= link %>
   </div>
   <p class="share-p">Clique sur le bouton <em>Partage ton événement</em> pour inviter les amis de ton choix</p>
-  <%= link_to "Partage ton événement", "#", class: "btn-red-wm share", data: { event: params[:event_id] } %>
+
+  <div class="btn-bottom">
+    <%= link_to "Partage ton événement", event_share_again_path(@event), class: "btn-red-wm share", data: { event: params[:event_id] } %>
+  </div>
 </div>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :new, :create, :edit, :update] do
     resources :meetings, only: [:index, :show, :new, :create, :edit, :update]
     get "/share", to: "events#share"
+    get "/share-again", to: "events#share_again"
   end
 
   resources :events, only: [:show] do

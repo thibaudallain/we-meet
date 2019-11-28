@@ -56,12 +56,10 @@
     text-decoration: none;
 }
 
-.share {
-  margin: 0 auto;
-  display: block;
-  width: 60%;
-  text-align: center;
-  position: relative;
-  top: 400px;
+.link-red-wm {
+  color: $red;
+  text-decoration: none;
+  text-decoration: underline;
+  margin-bottom: 3em;
 }
 
