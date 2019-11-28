@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :events, only: [:index, :new, :create, :edit, :update] do
-    resources :meetings, only: [:index, :new, :create, :edit, :update]
+    resources :meetings, only: [:index, :show, :new, :create, :edit, :update]
     get "/share", to: "events#share"
   end
 
