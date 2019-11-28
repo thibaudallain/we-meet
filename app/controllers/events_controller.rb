@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     if @user = User.find_by(phone_number: params[:phone_number])
       sign_in(@user)
     else
-      @user = User.create(name: params[:name], phone_number: params[:phone_number])
+      @user = User.create(name: params[:name], phone_number: params[:phone_number], photo_number: rand(1..8))
       sign_in(@user)
     end
     @event = Event.new(event_params)
