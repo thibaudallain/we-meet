@@ -1,4 +1,3 @@
-
 <div class="container-wm">
   <div class="center-top">
     <i class="fas fa-check-circle"></i>
@@ -9,12 +8,9 @@
     <% link = "www.wemeet.bar/events/" + @event.id.to_s + "/meetings/new" %>
     <%= link %>
   </div>
-
-
   <p class="share-p">Clique sur le bouton <em>Partage ton événement</em> pour inviter les amis de ton choix</p>
+
   <div class="btn-bottom">
     <%= link_to "Partage ton événement", event_share_again_path(@event), class: "btn-red-wm share", data: { event: params[:event_id] } %>
   </div>
-
 </div>
-
