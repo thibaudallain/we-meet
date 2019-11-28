@@ -39,6 +39,12 @@ class MeetingsController < ApplicationController
       @meeting = Meeting.find(params[:id])
       @meeting.update(voted: true)
       redirect_to event_suggested_bars_path(Event.find(params[:event_id]))
+    elsif params['commit'] == "On la prévient"
+      @meeting = Meeting.find(params[:id])
+      @name = params[:name]
+      @meeting.update(name: @name)
+      @meeting.save
+      redirect_to root_path
     else
       @meeting = Meeting.find(params[:id])
       # @meeting.address = params[:address]
