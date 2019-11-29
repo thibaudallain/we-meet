@@ -6,11 +6,20 @@
     <div class="text-dispo pt-3">
       <p>Dommage, une prochaine <br>fois !</p>
     </div>
-    <form class="mt-5">
-      <div class="form-group">
-        <input type="text" class="form-control input-nom mt-5 " placeholder="Ton nom..">
+    <%= form_tag(event_meeting_path(@event, @meeting), method: :patch) do %>
+      <div class="form-container">
+        <div id="form-user">
+          <%= text_area_tag :name, "", class: 'form-control form-input', placeholder: "Ton nom", required: true%>
+          <br>
+        </div>
       </div>
-      <%= link_to "On la prévient", root_path, class: "btn-white-wm-extra" %>
-    </form>
-  </div>
+      <div class="btn-bottom">
+        <div class="next-btn">
+          <%= submit_tag "On la prévient", class: "btn-red-wm no-border" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
+
+
