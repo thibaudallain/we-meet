@@ -23,7 +23,8 @@
       <% @event.meetings.where(attending: false).each do |meeting| %>
     <div class="card-participant">
       <%# [avatars = rand(1..8)] %>
-      <%= image_tag "avatars/avatar-0#{rand(1..8)}.png", class: "avatar-large", alt: "avatar-large" %>
+      <% link2 = "avatars/avatar-0#{meeting.photo_number}.png" %>
+      <%= image_tag link2, class: "avatar-large", alt: "avatar-large" %>
        <div class="card-participant-infos">
         <h2><%= meeting.name %></h2>
         <p>Pas dispo</p>
