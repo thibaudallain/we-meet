@@ -47,23 +47,22 @@ class EventsController < ApplicationController
     @markers = @points.map do |point|
       {
         lat: point.latitude,
-        lng: point.longitude
-        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+        lng: point.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { point: point })
       }
     end
 
-    # clean up
+    # A DECOMMENTER
+    # Citywrapper.configure do |c|
+    #   c.api_key = ENV['CITY_MAPPER_API_KEY']
+    # end
 
-    Citywrapper.configure do |c|
-      c.api_key = ENV['CITY_MAPPER_API_KEY']
-    end
-
-    @t = Citywrapper::TravelTime.between(
-      start_coordinates: [@starting_point.latitude,@starting_point.longitude],
-      end_coordinates: [@ending_point.latitude, @ending_point.longitude],
-      time: DateTime.now.iso8601,
-      time_type: :arrival
-    )
+    # @t = Citywrapper::TravelTime.between(
+    #   start_coordinates: [@starting_point.latitude,@starting_point.longitude],
+    #   end_coordinates: [@ending_point.latitude, @ending_point.longitude],
+    #   time: DateTime.now.iso8601,
+    #   time_type: :arrival
+    # )
 
   end
 

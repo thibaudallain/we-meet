@@ -23,11 +23,19 @@ const phone = document.getElementById('phone_number');
 const start = document.getElementById("event_start_time");
 const deadline = document.getElementById("event_deadline");
 const address = document.getElementById('address');
+const addressMeeting = document.getElementById('meeting_address');
 const btn = document.getElementById('new-event');
-const fields = [name, phone, start, deadline, address];
+const btnMeeting = document.getElementById('new-attending');
 
-btn.disabled = true;
-btn.classList.add('btn-disabled');
+if (btn) {
+  btn.disabled = true;
+  btn.classList.add('btn-disabled');
+}
+
+if (btnMeeting) {
+  btnMeeting.disabled = true;
+  btnMeeting.classList.add('btn-disabled');
+}
 
 if (name && phone) {
   // name
@@ -45,6 +53,7 @@ if (name && phone) {
 };
 
 if (start && deadline && address) {
+
   start.addEventListener('blur', (event) => {
     if (event.currentTarget.value) {
       valid(event.currentTarget);
@@ -52,6 +61,7 @@ if (start && deadline && address) {
       invalid(event.currentTarget);
     };
   });
+
   deadline.addEventListener('blur', (event) => {
     if (event.currentTarget.value) {
       valid(event.currentTarget);
@@ -59,6 +69,7 @@ if (start && deadline && address) {
       invalid(event.currentTarget);
     };
   });
+
   address.addEventListener('blur', (event) => {
     if (event.currentTarget.value) {
       valid(event.currentTarget);
@@ -66,21 +77,17 @@ if (start && deadline && address) {
       invalid(event.currentTarget);
     };
   });
-
-  fields.forEach((field) => {
-    field.addEventListener('focus', (event) => {
-      const fir = name.classList.contains('valid-input');
-      const sec = phone.classList.contains('valid-input');
-      const thi = start.classList.contains('valid-input');
-      const fou = deadline.classList.contains('valid-input');
-      const fif = address.classList.contains('valid-input');
-      if (fir && sec && thi && fou && fif) {
-        btn.disabled = false;
-        btn.classList.remove('btn-disabled');
-      };
-    })
-  });
 };
+
+if (addressMeeting) {
+  addressMeeting.addEventListener('blur', (event) => {
+    if (event.currentTarget.value) {
+      valid(event.currentTarget);
+    } else {
+      invalid(event.currentTarget);
+    };
+  });
+}
 
 };
 
