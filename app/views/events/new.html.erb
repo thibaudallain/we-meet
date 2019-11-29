@@ -6,7 +6,7 @@
     <h3 class="onglet step-1 active">Identité</h3>
     <h3 class="onglet step-2">Evénement</h3>
   </div>
-  <%= form_tag('/events/', method: :post) do %>
+  <%= form_tag(events_path, method: "post") do %>
     <div class="form-step1">
       <div class="form-container">
         <div id="form-user">
@@ -47,13 +47,13 @@
               <%= time_field_tag "event[deadline]", input_html: {value: "", class: "form-input"} %>
             </div>
             <%= label_tag "Adresse" %>
-            <%= text_area_tag :address, "", class: 'form-control form-input', placeholder: "16 villa Gaudelet, 75011", required: true %>
+            <%= text_field_tag :address, "", class: 'form-control form-input', placeholder: "16 villa Gaudelet, 75011", required: true %>
           </div>
         </div>
       </div>
       <div class="btn-bottom">
         <div class="next-btn">
-          <%= submit_tag "Crée ton événement", class: "btn-red-wm no-border" %>
+          <%= submit_tag "Crée ton événement", class: "btn-red-wm no-border", id: "new-event" %>
         </div>
       </div>
     </div>
