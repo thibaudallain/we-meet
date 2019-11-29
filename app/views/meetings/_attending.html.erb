@@ -31,7 +31,7 @@
         <div class="form-container">
           <div>
             <%= label_tag "Adresse" %>
-            <%= text_area_tag "meeting[address]", "", class: 'form-control form-input', placeholder: "16 villa Gaudelet, 75011", required: true %>
+            <%= text_field_tag "meeting[address]", "", class: 'form-control form-input', placeholder: "16 villa Gaudelet, 75011", required: true %>
           </div>
           <br>
           <div class="dispo-question">
@@ -55,7 +55,7 @@
       </div>
       <div class="btn-bottom">
         <div class="next-btn">
-          <%= submit_tag "Je confirme", class: "btn-red-wm no-border" %>
+          <%= submit_tag "Je confirme", class: "btn-red-wm no-border", id: "new-attending" %>
         </div>
       </div>
     </div>
