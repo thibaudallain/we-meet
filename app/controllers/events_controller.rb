@@ -46,18 +46,17 @@ class EventsController < ApplicationController
       }
     end
 
-    # clean up
+    # A DECOMMENTER
+    # Citywrapper.configure do |c|
+    #   c.api_key = ENV['CITY_MAPPER_API_KEY']
+    # end
 
-    Citywrapper.configure do |c|
-      c.api_key = ENV['CITY_MAPPER_API_KEY']
-    end
-
-    @t = Citywrapper::TravelTime.between(
-      start_coordinates: [@starting_point.latitude,@starting_point.longitude],
-      end_coordinates: [@ending_point.latitude, @ending_point.longitude],
-      time: DateTime.now.iso8601,
-      time_type: :arrival
-    )
+    # @t = Citywrapper::TravelTime.between(
+    #   start_coordinates: [@starting_point.latitude,@starting_point.longitude],
+    #   end_coordinates: [@ending_point.latitude, @ending_point.longitude],
+    #   time: DateTime.now.iso8601,
+    #   time_type: :arrival
+    # )
 
   end
 
