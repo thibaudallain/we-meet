@@ -11,8 +11,8 @@
         <i class="fas fa-check-circle"></i>
        <div class="card-participant-infos">
         <h2><%= meeting.user.name %></h2>
-        <p>Dispo à l'heure</p><i class="fas fa-stopwatch"></i>
-       </div>
+        <p>Dispo <%= meeting.available_time %> </p><i class="fas fa-stopwatch"></i>
+        </div>
       </div>
       <% end %>
     </div>
