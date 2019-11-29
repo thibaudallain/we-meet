@@ -19,8 +19,6 @@
 
 .avatar-large {
   margin-left: 16px;
-  height: 54px;
-  width: 54px;
   border-radius: 50%;
 }
 
@@ -34,14 +32,14 @@
   position: relative;
   bottom: 30px;
   left: -50px;
-  color: #7DC980;
+  color: $green-a;
 }
 
 .fa-stopwatch {
   position: relative;
   bottom: 41px;
   left: 94px;
-  color: #7DC980;
+  color: $green-a;
 }
 
 .fa-check-circle {
@@ -61,7 +59,7 @@
 
 .fa-stopwatch {
   font-size:18px;
-  margin-left: 25px;
+  margin-left: 85px;
 }
 
 .red-clock {
