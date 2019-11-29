@@ -7,7 +7,8 @@
     <div class="card">
       <% @event.meetings.where(attending: true).each do |meeting| %>
     <div class="card-participant">
-      <%= image_tag "avatars/avatar-0#{meeting.user.photo_number}.png", class: "avatar-large", alt: "avatar-large" %>
+      <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
+      <%= image_tag link, class: "avatar-large", alt: "avatar-large" %>
        <div class="card-participant-infos">
         <h2><%= meeting.user.name %></h2>
         <p>Dispo à l'heure</p>
@@ -32,4 +33,7 @@
     </div>
 
 </div>
+<!--
+<div></div>
 
+ -->
