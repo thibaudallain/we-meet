@@ -64,6 +64,6 @@ class MeetingsController < ApplicationController
   end
 
   def meeting_params
-    params.require(:meeting).permit(:address)
+    params.require(:meeting).permit(:address, :available_time)
   end
 end

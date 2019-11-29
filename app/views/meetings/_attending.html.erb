@@ -35,19 +35,19 @@
           </div>
           <br>
           <div class="dispo-question">
-            <p><%= @event.users.first.name %> est disponible à <%= @event.start_time %>. Et toi ?</p>
+            <p><%= @event.users.first.name %> est disponible à <%= @event.start_time.strftime("%Hh%M") %>. Et toi ?</p>
           </div>
           <div class="buttons-toggle">
             <div class="btn-group" data-toggle="buttons">
               <label class="btn btn-primary form-check-label">
-              <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off">
+              <input class="form-check-input" type="radio" name="meeting[available_time]" id="option1" autocomplete="off" value="plus tôt">
                 Plus tôt
               </label>
               <label class="btn btn-primary form-check-label active">
-                <input class="form-check-input" type="radio" name="options" id="option2" autocomplete="off" checked> Pareil
+                <input class="form-check-input" type="radio" name="meeting[available_time]" id="option2" autocomplete="off" value="pareil" checked> Pareil
               </label>
               <label class="btn btn-primary form-check-label">
-                <input class="form-check-input" type="radio" name="options" id="option3" autocomplete="off"> Plus tard
+                <input class="form-check-input" type="radio" name="meeting[available_time]" id="option3" autocomplete="off" value="plus tard"> Plus tard
               </label>
             </div>
           </div>
