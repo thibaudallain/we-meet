@@ -43,3 +43,32 @@
   left: 94px;
   color: #7DC980;
 }
+
+.fa-check-circle {
+  color: $green-a;
+  font-size:14px;
+  margin-left:-10px;
+  margin-top:30px;
+  font-size: 22px;
+}
+
+.fa-times-circle {
+  font-size:14px;
+  margin-left:-10px;
+  margin-top:30px;
+  font-size: 22px;
+}
+
+.fa-stopwatch {
+  font-size:18px;
+  margin-left: 25px;
+}
+
+.red-clock {
+  color: $red;
+}
+
+.normal-clock {
+  color: $green-a;
+}
+
