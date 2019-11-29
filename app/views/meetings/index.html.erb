@@ -11,14 +11,17 @@
         <i class="fas fa-check-circle"></i>
        <div class="card-participant-infos">
         <h2><%= meeting.user.name %></h2>
-        <p>Dispo <%= meeting.available_time %> </p><i class="fas fa-stopwatch"></i>
+        <p>Dispo <%= meeting.available_time %> </p>
+        <% if meeting.available_time == "plus tôt" || meeting.available_time == "plus tard" %>
+          <i class="fas fa-stopwatch red-clock"></i>
+        <% else %>
+          <i class="fas fa-stopwatch normal-clock"></i>
+        <% end  %>
         </div>
       </div>
       <% end %>
     </div>
-
-<hr>
-
+  <hr>
     <div class="card">
       <% @event.meetings.where(attending: false).each do |meeting| %>
       <div class="card-participant">
