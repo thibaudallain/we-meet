@@ -29,7 +29,7 @@ class MeetingsController < ApplicationController
   end
 
   def update
-    if params['commit'] == "je vote"
+    if params['commit'] == "Je vote"
       @suggested_bars = Meeting.find(params[:id]).event.suggested_bars
       a = []
       @suggested_bars.each do |bar|
@@ -39,10 +39,10 @@ class MeetingsController < ApplicationController
       @meeting = Meeting.find(params[:id])
       @meeting.update(voted: true)
       redirect_to event_suggested_bars_path(Event.find(params[:event_id]))
-    elsif params['commit'] == "On la prévient"
+    elsif params['commit'] == "Prévenir #{Event.find(params[:event_id]).users.first.name}"
       @meeting = Meeting.find(params[:id])
       @name = params[:name]
-      @meeting.update(name: @name)
+      @meeting.update(name: @name, photo_number: rand(1..8))
       @meeting.save
       redirect_to root_path
     else
