@@ -5,7 +5,7 @@
   </div>
 
   <div class="container-link link-to-share">
-    <% link = "/meetings/new" %>
+    <% link = "/events/" + @event.id.to_s + "/meetings/new" %>
     <%= link %>
   </div>
   <p class="share-p">Clique sur le bouton <em>Partage ton événement</em> pour inviter les amis de ton choix</p>
