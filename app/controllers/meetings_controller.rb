@@ -2,7 +2,7 @@ class MeetingsController < ApplicationController
 
   def index
     @event = Event.find(params[:event_id])
-    @meetings = @event.meetings.where.not(address: nil)
+    @meetings = @event.meetings.where.not(name: nil)
   end
 
   def new
