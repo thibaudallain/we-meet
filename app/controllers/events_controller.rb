@@ -32,16 +32,14 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-
     # marker du point de départ
     # @starting_point = @event.meetings.where(user: current_user)
-    @starting_point = @event.meetings.find_by(user: User.first)# A CHANGER
-
+    @starting_point = @event.meetings.find_by(user: current_user)# A CHANGER
     # marker du bar choisi
-    @ending_point = @event.suggested_bars.find_by(chosen: true).bar
-
+    @chosen_bar = @event.suggested_bars.max_by{ |k| k[:votes] }
+    @chosen_bar.update(chosen: true)
+    @ending_point = @chosen_bar.bar
     @points = [ @starting_point, @ending_point ]
-
     # @event = Event.geocoded # returns gps coordinates
     # # @event = current_user.meetings.find(event: @event).where(suggested_bar.chosen == true)
     @markers = @points.map do |point|
