@@ -47,8 +47,6 @@ class MeetingsController < ApplicationController
       redirect_to root_path
     else
       @meeting = Meeting.find(params[:id])
-      # @meeting.address = params[:address]
-      # @meeting.save
       if @user = User.find_by(phone_number: params[:phone_number])
         @meeting.update(meeting_params)
         @meeting.user = @user
