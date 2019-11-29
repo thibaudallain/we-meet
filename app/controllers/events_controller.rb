@@ -41,8 +41,8 @@ class EventsController < ApplicationController
     @markers = @points.map do |point|
       {
         lat: point.latitude,
-        lng: point.longitude
-        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+        lng: point.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { point: point })
       }
     end
 
