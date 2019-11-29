@@ -4,7 +4,7 @@
   </div>
 
     <div class="card">
-      <% @meetings.where(attending: true, organizer: true).each do |meeting| %>
+      <% @meetings_attending.where(attending: true, organizer: true).each do |meeting| %>
       <div class="card-participant">
         <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
         <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
@@ -21,7 +21,7 @@
 
 
     <div class="card">
-      <% @meetings.where(attending: true, organizer: false).each do |meeting| %>
+      <% @meetings_attending.where(attending: true, organizer: false).each do |meeting| %>
       <div class="card-participant">
         <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
         <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
@@ -42,7 +42,7 @@
 
   <hr>
     <div class="card">
-      <% @meetings.where(attending: false).each do |meeting| %>
+      <% @meetings_declined.where(attending: false).each do |meeting| %>
       <div class="card-participant">
         <% link_non = "avatars/avatar-0#{rand(1..8)}.png" %>
         <%= image_tag link_non, class: "avatar-large nondispo", alt: "avatar-large" %>

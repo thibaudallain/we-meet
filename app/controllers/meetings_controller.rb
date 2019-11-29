@@ -2,7 +2,9 @@ class MeetingsController < ApplicationController
 
   def index
     @event = Event.find(params[:event_id])
-    @meetings = @event.meetings.where.not(name: nil)
+    @meetings_attending = @event.meetings.where.not(address: nil)
+    @meetings_declined = @event.meetings.where.not(name: nil)
+
   end
 
   def new
