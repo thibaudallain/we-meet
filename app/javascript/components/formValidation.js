@@ -21,7 +21,7 @@ const validateForm = () => {
 const name = document.getElementById('name');
 const phone = document.getElementById('phone_number');
 const start = document.getElementById("event_start_time");
-const deadline = document.getElementById("event_deadline");
+const deadlines = document.querySelectorAll(".label-deadline");
 const address = document.getElementById('address');
 const addressMeeting = document.getElementById('meeting_address');
 const btn = document.getElementById('new-event');
@@ -37,7 +37,7 @@ if (btnMeeting) {
   btnMeeting.classList.add('btn-disabled');
 }
 
-if (name && phone) {
+if (start && name && phone && address) {
   // name
   name.addEventListener('blur', (event) => {
     if (event.currentTarget.value) {
@@ -50,27 +50,16 @@ if (name && phone) {
   phone.addEventListener('blur', (event) => {
     testRegex(phone, /0(6|7)\d{8}/);
   });
-};
-
-if (start && deadline && address) {
-
-  start.addEventListener('blur', (event) => {
-    if (event.currentTarget.value) {
-      valid(event.currentTarget);
-    } else {
-      invalid(event.currentTarget);
-    };
-  });
-
-  deadline.addEventListener('blur', (event) => {
-    if (event.currentTarget.value) {
-      valid(event.currentTarget);
-    } else {
-      invalid(event.currentTarget);
-    };
-  });
 
   address.addEventListener('blur', (event) => {
+    if (event.currentTarget.value) {
+      valid(event.currentTarget);
+    } else {
+      invalid(event.currentTarget);
+    };
+  });
+
+  start.addEventListener('blur', (event) => {
     if (event.currentTarget.value) {
       valid(event.currentTarget);
     } else {

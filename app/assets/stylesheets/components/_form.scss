@@ -127,13 +127,13 @@ input[type="time"] {
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
     color: white;
-    background-color: $darker-grey;
-    border-color: $darker-grey;
+    background-color: $blue;
+    border-color: $blue;
 }
 .btn-primary:hover {
     color: #fff;
-    background-color: $darker-grey;
-    border-color: $darker-grey;
+    background-color: $blue;
+    border-color: $blue;
 }
 .buttons-toggle {
   margin: 0 auto;
@@ -162,3 +162,21 @@ input[type="time"] {
   margin: 0 auto;
   text-align: center;
 }
+
+#event_start_times {
+  border: none;
+  padding: 1em 1em;
+  font-size: 24px;
+  background-color: $lighter-grey;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+#rest-of-form {
+  padding-top: 5em;
+}
+
+

@@ -1,16 +1,96 @@
-<div class="bg-image-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1546171753-97d7676e4602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60)">
-  <div class="container">
-    <div class="d-flex align-items-start pt-3 pb-3">
-      <%= image_tag "WeMeet-white.png", class: "logo-white"  %>
-    </div>
-      <div class="home-description">
-        <h1>Sale journée ? Promotion à fêter ? Sors ce soir !</h1>
-      </div>
-      <div class= "pt-4">
-        <%= link_to "Crée ton événement", new_event_path, class: "btn-white-wm" %>
-      </div>
-  </div>
-  <div class="footer">
-    <p>Avec WeMeet, tu envoies l’invit mais on se charge du reste. Liste des participants, bar arrangeant pour tout le monde, itinéraire : on s’en occupe !</p>
-  </div>
+<div class="loading-screen" id="loading-screen">
+  <%= image_tag "WeMeet-white.png", class: "logo-white" %>
 </div>
+
+<div id="home" class="d-none">
+
+  <div class="home-first">
+
+    <div class="home-top">
+      <%= image_tag "WeMeet-white.png", class: "logo-white" %>
+      <div>
+        <h1>Un verre ce soir ?</h1>
+        <h3>Envoies l’invitation et c'est tout. On se charge du reste.</h2>
+      </div>
+    </div>
+    <div class="home-bottom-invisible">
+      <div class="home-bottom">
+        <%= form_tag(events_path, method: "post") do %>
+        <%= time_field_tag("event[start_times]", "20:00")  %>
+        <% end %>
+        <%= label_tag do %>
+          On fixe un lieu :
+        <% end %>
+
+        <div class="buttons-toggle">
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary form-check-label label-deadline">
+            <input class="form-check-input" type="radio" name="meeting[available_time]" id="option1" autocomplete="off" value="1">
+              1h <br> avant
+            </label>
+            <label class="btn btn-primary form-check-label label-deadline">
+              <input class="form-check-input" type="radio" name="meeting[available_time]" id="option2" autocomplete="off" value="2">
+              2h <br> avant
+            </label>
+            <label class="btn btn-primary form-check-label label-deadline">
+              <input class="form-check-input" type="radio" name="meeting[available_time]" id="option3" autocomplete="off" value="3">
+              3h <br> avant
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- end of first part of form -->
+
+
+
+  <div class="container-wm" id="rest-of-form">
+  <%= form_tag(events_path, method: "post") do %>
+    <div class="form-step1">
+      <div class="form-container">
+        <div id="form-user">
+          <%= label_tag 'NOM' %>
+          <%= text_area_tag :name, "", class: 'form-control form-input', placeholder: "Marie", required: true%>
+          <br>
+          <%= label_tag 'Téléphone' %>
+          <%= text_area_tag :phone_number, "", class: 'form-control form-input', placeholder: "0660832635", required: true %>
+        </div>
+
+      </div>
+      <div class="btn-bottom">
+        <div class="next-btn">
+          <span class="next btn-red-wm">Suivant</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-step2">
+
+      <div id="form-availability">
+        <div class="form-container">
+          <div class="times">
+
+
+
+          </div>
+            <%= label_tag "Adresse" %>
+            <%= text_field_tag :address, "", class: 'form-control form-input', placeholder: "16 villa Gaudelet, 75011", required: true %>
+        </div>
+      </div>
+      <div class="btn-bottom">
+        <div class="next-btn">
+          <%= submit_tag "Crée ton événement", class: "btn-red-wm no-border", id: "new-event" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+</div>
+

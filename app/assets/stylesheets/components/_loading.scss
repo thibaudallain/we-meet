@@ -1,0 +1,48 @@
+.loading-screen {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  padding: 3em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-top {
+  padding: 2em 3em 5em 3em;
+  background-color: $blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: 60vh;
+  width: 100vw;
+  h3 {
+    color: white;
+  }
+  h1 {
+    color: white;
+  }
+}
+
+.home-bottom {
+  padding-bottom: 3em;
+  height: 45vh;
+  width: 100vw;
+  top: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+}
+
+.home-bottom-invisible {
+  height: 45vh;
+  width: 100vw;
+}
+
+.home-first {
+  position: relative;
+}
