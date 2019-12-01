@@ -74,7 +74,7 @@ label {
 }
 
 .btn-bottom {
-  bottom: 2em;
+  bottom: 5em;
   width: 100%;
   position: absolute;
   display: flex;
@@ -98,10 +98,11 @@ input[type="time"] {
 // share
 
 .container-link {
-  border: 2px solid $red-na;
+  border: 2px solid $green-a;
+  border-radius: 20px;
   text-decoration: none;
   text-align: center;
-  background-color: $lighter-grey;
+  background-color: white;
   color: $light-grey;
   width: 80%;
   margin: 0 auto;
@@ -114,14 +115,15 @@ input[type="time"] {
 .center-top {
   width: 80%;
   margin: 0 auto;
-  padding: 3em 0;
+  padding: 5em 0;
   text-align: center;
   i {
-    font-size: 48px;
-    color: $green-a;
+    font-size: 80px;
+    color: $darker-grey;
   }
   h1 {
     margin: 1em 0;
+    color: $darker-grey;
   }
 }
 
@@ -163,7 +165,7 @@ input[type="time"] {
   text-align: center;
 }
 
-#event_start_times {
+#event_start_time {
   border: none;
   padding: 1em 1em;
   font-size: 24px;

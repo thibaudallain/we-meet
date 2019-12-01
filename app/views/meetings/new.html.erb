@@ -1,16 +1,15 @@
-<div class="bg-image-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80)">
-  <div class="container">
-    <div class="d-flex align-items-start pt-3 pb-3">
-      <%= image_tag "WeMeet-white.png", class: "logo-white"  %>
-    </div>
-    <div class="text-dispo">
-       <p><%= @event.users.first.name %> a envie de boire un verre ce soir !</p>
-    </div>
-    <div class="event-dispo">
-      <%= link_to "Dispo", event_meetings_path(@event, attending: true, organizer: false), method: :post, class: "btn-white-wm btn-dispo" %>
-    </div>
-    <div class="link-white">
-      <%= link_to "Pas ce soir malheureusement", event_meetings_path(@event, attending: false, organizer: false), method: :post, class: "non-dispo" %>
-    </div>
+<div class="share-top">
+  <%= image_tag "WeMeet-white.png", class: "logo-white" %>
+  <h1><%= @event.users.first.name %> a envie de boire un verre ce soir !</h1>
+</div>
+
+<div class="share-bottom">
+  <div class="event-dispo">
+    <%= link_to "Dispo", event_meetings_path(@event, attending: true, organizer: false), method: :post, class: "btn-blue-wm btn-dispo" %>
+  </div>
+  <div class="link-not-available">
+    <%= link_to "Pas ce soir malheureusement", event_meetings_path(@event, attending: false, organizer: false), method: :post, class: "non-dispo" %>
   </div>
 </div>
+
+

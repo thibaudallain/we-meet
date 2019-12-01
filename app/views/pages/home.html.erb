@@ -14,10 +14,9 @@
       </div>
     </div>
     <div class="home-bottom-invisible">
+      <%= form_tag(events_path, method: "post") do %>
       <div class="home-bottom">
-        <%= form_tag(events_path, method: "post") do %>
-        <%= time_field_tag("event[start_times]", "20:00")  %>
-        <% end %>
+        <%= time_field_tag "event[start_time]", "20:00", class: 'valid-input'  %>
         <%= label_tag do %>
           On fixe un lieu :
         <% end %>
@@ -25,15 +24,15 @@
         <div class="buttons-toggle">
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary form-check-label label-deadline">
-            <input class="form-check-input" type="radio" name="meeting[available_time]" id="option1" autocomplete="off" value="1">
+            <input class="form-check-input deadline" type="radio" name="event[available_time]" id="option1" autocomplete="off" value="1">
               1h <br> avant
             </label>
             <label class="btn btn-primary form-check-label label-deadline">
-              <input class="form-check-input" type="radio" name="meeting[available_time]" id="option2" autocomplete="off" value="2">
+              <input class="form-check-input deadline" type="radio" name="event[available_time]" id="option2" autocomplete="off" value="2">
               2h <br> avant
             </label>
             <label class="btn btn-primary form-check-label label-deadline">
-              <input class="form-check-input" type="radio" name="meeting[available_time]" id="option3" autocomplete="off" value="3">
+              <input class="form-check-input deadline" type="radio" name="event[available_time]" id="option3" autocomplete="off" value="3">
               3h <br> avant
             </label>
           </div>
@@ -49,7 +48,6 @@
 
 
   <div class="container-wm" id="rest-of-form">
-  <%= form_tag(events_path, method: "post") do %>
     <div class="form-step1">
       <div class="form-container">
         <div id="form-user">
