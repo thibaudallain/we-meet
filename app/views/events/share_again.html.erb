@@ -1,15 +1,15 @@
-<div class="container-wm">
+<div class="container-wm bg-wm">
   <div class="center-top">
     <i class="fas fa-check-circle"></i>
   </div>
 
-  <div class="container-link link-to-share">
+  <div class="container-link link-to-share d-none">
     <% link = "/events/" + @event.id.to_s + "/meetings/new" %>
     <%= link %>
   </div>
 
   <div class="btn-bottom">
-    <%= link_to "Voir la liste des participants", event_meetings_path(@event), class: "btn-red-wm" %>
+    <%= link_to "Voir la liste des participants", event_meetings_path(@event), class: "btn-blue-wm" %>
     <%= link_to "Partage ton événement de nouveau", event_share_again_path(@event), class: "link-red-wm share", data: { event: params[:event_id] } %>
   </div>
 

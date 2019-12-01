@@ -3,7 +3,7 @@ import places from 'places.js';
 const able = () => {
   const name = document.getElementById('name');
   const phone = document.getElementById('phone_number');
-  const start = document.getElementById("event_start_times");
+  const start = document.getElementById("event_start_time");
   const deadlines = document.querySelectorAll(".label-deadline");
   const btn = document.getElementById('new-event');
   let fir = name.classList.contains('valid-input');

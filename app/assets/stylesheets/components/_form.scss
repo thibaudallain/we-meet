@@ -14,7 +14,6 @@ position: relative
 }
 
 .onglet-form {
-  margin-top: 1em;
   margin-bottom: 1em;
   padding: 0 2em;
   display: flex;
@@ -23,7 +22,7 @@ position: relative
 }
 
 .onglet {
-  padding: 0.2em 1em;
+  padding: 4em 1em 1em 1em;
   margin: 0 1em;
   color: $light-grey;
   border-bottom: solid 1px $light-grey;
@@ -31,7 +30,7 @@ position: relative
 
 .active {
   color: $darker-grey;
-  border-bottom: solid 1px $red-na;
+  border-bottom: solid 1px $blue;
 }
 
 .form-container {
@@ -39,8 +38,12 @@ position: relative
   margin: 2em auto;
 }
 
+.dispo-question {
+  margin-top: 3em;
+}
+
 label {
-  margin-top: 2em;
+  margin-top: 3em;
   font-family: $body-font;
   color: $darker-grey;
   span {
@@ -74,13 +77,12 @@ label {
 }
 
 .btn-bottom {
-  bottom: 5em;
   width: 100%;
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 10em;
   a {
     margin-top: 5em;
   }
@@ -140,6 +142,7 @@ input[type="time"] {
 .buttons-toggle {
   margin: 0 auto;
   display: block;
+  padding: 1em 0;
   text-align: center;
 }
 
@@ -161,13 +164,13 @@ input[type="time"] {
 
 .dispo-question {
   display: block;
-  margin: 0 auto;
+  margin: 3em 0 1em 0;
   text-align: center;
 }
 
 #event_start_time {
   border: none;
-  padding: 1em 1em;
+  padding: 1.5em 1em;
   font-size: 24px;
   background-color: $lighter-grey;
   border-radius: 20px;
@@ -179,6 +182,17 @@ input[type="time"] {
 
 #rest-of-form {
   padding-top: 5em;
+}
+
+.home-bottom {
+  label {
+    margin-top: 1em;
+  }
+}
+
+#rest-of-form {
+  margin: 0;
+  padding: 0;
 }
 
 

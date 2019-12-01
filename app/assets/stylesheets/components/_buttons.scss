@@ -63,9 +63,6 @@
   margin-bottom: 3em;
 }
 
-.btn-disabled {
-  background-color: $light-grey;
-}
 
 .btn-map.btn-red-wm {
       text-align: center;
@@ -95,9 +92,11 @@
     box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
 }
 
-
 .btn-blue-wm:hover {
     color: white;
     text-decoration: none;
 }
 
+.btn-disabled {
+  background-color: $light-grey;
+}
