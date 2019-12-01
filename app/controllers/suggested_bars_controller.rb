@@ -51,13 +51,22 @@ class SuggestedBarsController < ApplicationController
           )
       end
     end
-    @markers = @bars.map do |bar|
+    @markers_bars = @bars.map do |bar|
       {
         lat: bar.latitude,
         lng: bar.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { bar: bar })
+        infoWindow: render_to_string(partial: "info_window", locals: { bar: bar }),
+        image_url: helpers.asset_url('avatars/avatar-01.png')
       }
     end
+    @markers_people = @event.meetings.where(attending: true).map do |person|
+      {
+        lat: person.latitude,
+        lng: person.longitude,
+        image_url: helpers.asset_url('avatars/avatar-02.png')
+      }
+    end
+    @markers = @markers_people + @markers_bars
     @meeting = Meeting.where(event: @event, user: current_user)[0]
   end
 
