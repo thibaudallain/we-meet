@@ -25,9 +25,9 @@ const able = () => {
   const address = document.getElementById('address');
   let fir = name.classList.contains('valid-input');
   let sec = phone.classList.contains('valid-input');
-  let fif = document.getElementById('valid-input');
   let thi = start.classList.contains('valid-input');
   let fou = deadlines[0].classList.contains('active') || deadlines[1].classList.contains('active') || deadlines[2].classList.contains('active') ;
+  let fif = address.classList.contains('valid-input');
   if (fir && sec && thi && fou && fif) {
     btn.disabled = false;
     btn.classList.remove('btn-disabled');

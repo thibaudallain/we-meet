@@ -82,3 +82,8 @@
 #   address: "1 rue de charonne, 75011",
 #   organizer: false
 #   )
+
+SuggestedBar.destroy_all
+Meeting.destroy_all
+Event.destroy_all
+User.destroy_all
