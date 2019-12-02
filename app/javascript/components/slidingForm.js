@@ -23,8 +23,7 @@ const slideForm = () => {
     firstArrow.addEventListener('click', (event) => {
       secondPart.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       able();
-    })
-  });
+    });
 
   const secondArrow = document.querySelector('#second-arrow');
   const thirdPart = document.getElementById('form-3');
