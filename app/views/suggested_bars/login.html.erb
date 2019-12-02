@@ -1,0 +1,7 @@
+<%= form_tag event_suggested_bars_path(@event) do %>
+Qui es-tu ?
+
+  <% @users.each do |user| %>
+    <%= link_to user.name, event_suggested_bars_path(@event, login_sb: user.phone_number), class: "link-login" %>
+  <% end %>
+<% end %>

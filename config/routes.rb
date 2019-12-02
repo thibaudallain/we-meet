@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   resources :events, only: [:show] do
     resources :suggested_bars, only: [:index]
+    get "/suggested_bars/login", to: "suggested_bars#login"
   end
 end
