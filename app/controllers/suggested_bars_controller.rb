@@ -59,14 +59,14 @@ class SuggestedBarsController < ApplicationController
           lat: bar.latitude,
           lng: bar.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { bar: bar }),
-          image_url: helpers.asset_url('avatars/avatar-01.png')
+          image_url: helpers.asset_url('icon_bar.png')
         }
       end
       @markers_people = @event.meetings.where(attending: true).map do |person|
         {
           lat: person.latitude,
           lng: person.longitude,
-          image_url: helpers.asset_url('avatars/avatar-02.png')
+          image_url: helpers.asset_url('avatars/avatar-01.png')
         }
       end
       @markers = @markers_people + @markers_bars
