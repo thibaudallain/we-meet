@@ -29,7 +29,7 @@ position: relative
 }
 
 .active {
-  color: $darker-grey;
+  color: $wm-purple;
   border-bottom: solid 1px $blue;
 }
 
@@ -45,7 +45,7 @@ position: relative
 label {
   margin-top: 3em;
   font-family: $body-font;
-  color: $darker-grey;
+  color: $wm-purple;
   span {
     font-style: italic;
     color: $light-grey;
@@ -60,7 +60,7 @@ label {
   border: none;
   border-bottom: 2px solid $light-grey;
   padding: 0;
-  height: 30px !important;
+  height: 40px !important;
 }
 
 .valid-input {
@@ -82,9 +82,9 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10em;
+  margin-top: 465px;
   a {
-    margin-top: 5em;
+    margin-top: 465px;
   }
 }
 
@@ -121,35 +121,37 @@ input[type="time"] {
   text-align: center;
   i {
     font-size: 80px;
-    color: $darker-grey;
+    color: $wm-purple;
   }
   h1 {
     margin: 1em 0;
-    color: $darker-grey;
+    color: $wm-purple;
   }
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
     color: white;
-    background-color: $blue;
-    border-color: $blue;
+    background-color: $wm-orange;
+    border-color: $wm-orange;
 }
 .btn-primary:hover {
     color: #fff;
-    background-color: $blue;
-    border-color: $blue;
+    background-color: $wm-orange;
+    border-color: $wm-orange;
 }
 .buttons-toggle {
   margin: 0 auto;
   display: block;
   padding: 1em 0;
   text-align: center;
+  height: 100vh;
 }
 
 .btn-primary {
     color: $lighter-grey;
     background-color: $lighter-grey;
     border-color: $lighter-grey;
+    font-size: 28px;
 }
 
 .form-check-input {
@@ -178,6 +180,7 @@ input[type="time"] {
   display: flex;
   justify-content: center;
   margin-bottom: 2em;
+  padding-left: 40px;
 }
 
 #rest-of-form {
@@ -195,4 +198,58 @@ input[type="time"] {
   padding: 0;
 }
 
+.tag-home {
+  font-size: 20px;
+}
 
+.tag-home-hour {
+  font-size: 24px;
+  margin-bottom: 0px;
+}
+
+.fa-chevron-down {
+  font-size: 50px;
+  color: $wm-pink;
+}
+
+.arrows {
+  display: block;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  justify-content: end;
+}
+
+#first-arrow {
+  margin-top: 0px;
+}
+
+#second-arrow {
+  margin-top: 355px;
+}
+
+#third-arrow {
+  margin-top: 530px;
+}
+
+#fourth-arrow {
+  margin-top: 530px;
+}
+
+#fifth-arrow {
+  margin-top: 530px;
+}
+
+#form-3 {
+  font-size: 20px;
+}
+#form-4 {
+  font-size: 20px;
+}
+#form-5 {
+  font-size: 20px;
+}
+
+.form-control {
+  font-size: 22px;
+}
