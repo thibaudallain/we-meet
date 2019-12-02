@@ -17,14 +17,16 @@ class EventsController < ApplicationController
   end
 
   def create
+    start = Time.new(Time.now.year, Time.now.month, Time.now.day, params["event"]["start_time"].split(":")[0].to_i, params["event"]["start_time"].split(":")[1].to_i)
+    deadline = start - 3600 * params["event"]["available_time"].to_i
     if @user = User.find_by(phone_number: params[:phone_number])
+      @user.update(name: params[:name])
       sign_in(@user)
     else
       @user = User.create(name: params[:name], phone_number: params[:phone_number], photo_number: rand(1..8))
       sign_in(@user)
     end
-    @event = Event.new(event_params)
-    @event.date = Date.today
+    @event = Event.new(start_time: start, deadline: deadline, date: Date.today)
     if @event.save
       @meeting = Meeting.create(event_id: @event.id, user_id: @user.id, attending: true, address: params[:address], organizer: true)
       redirect_to event_share_path(@event)
@@ -49,7 +51,7 @@ class EventsController < ApplicationController
       @markers = @points.map do |point|
         {
           lat: point.latitude,
-          lng: point.longitude,
+          lng: point.longitude
           # infoWindow: render_to_string(partial: "info_window", locals: { point: point })
         }
       end
