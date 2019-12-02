@@ -14,7 +14,6 @@ position: relative
 }
 
 .onglet-form {
-  margin-top: 1em;
   margin-bottom: 1em;
   padding: 0 2em;
   display: flex;
@@ -23,7 +22,7 @@ position: relative
 }
 
 .onglet {
-  padding: 0.2em 1em;
+  padding: 4em 1em 1em 1em;
   margin: 0 1em;
   color: $light-grey;
   border-bottom: solid 1px $light-grey;
@@ -31,7 +30,7 @@ position: relative
 
 .active {
   color: $darker-grey;
-  border-bottom: solid 1px $red-na;
+  border-bottom: solid 1px $blue;
 }
 
 .form-container {
@@ -39,8 +38,12 @@ position: relative
   margin: 2em auto;
 }
 
+.dispo-question {
+  margin-top: 3em;
+}
+
 label {
-  margin-top: 2em;
+  margin-top: 3em;
   font-family: $body-font;
   color: $darker-grey;
   span {
@@ -74,13 +77,12 @@ label {
 }
 
 .btn-bottom {
-  bottom: 2em;
   width: 100%;
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 10em;
   a {
     margin-top: 5em;
   }
@@ -98,10 +100,11 @@ input[type="time"] {
 // share
 
 .container-link {
-  border: 2px solid $red-na;
+  border: 2px solid $green-a;
+  border-radius: 20px;
   text-decoration: none;
   text-align: center;
-  background-color: $lighter-grey;
+  background-color: white;
   color: $light-grey;
   width: 80%;
   margin: 0 auto;
@@ -114,30 +117,32 @@ input[type="time"] {
 .center-top {
   width: 80%;
   margin: 0 auto;
-  padding: 3em 0;
+  padding: 5em 0;
   text-align: center;
   i {
-    font-size: 48px;
-    color: $green-a;
+    font-size: 80px;
+    color: $darker-grey;
   }
   h1 {
     margin: 1em 0;
+    color: $darker-grey;
   }
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
     color: white;
-    background-color: $darker-grey;
-    border-color: $darker-grey;
+    background-color: $blue;
+    border-color: $blue;
 }
 .btn-primary:hover {
     color: #fff;
-    background-color: $darker-grey;
-    border-color: $darker-grey;
+    background-color: $blue;
+    border-color: $blue;
 }
 .buttons-toggle {
   margin: 0 auto;
   display: block;
+  padding: 1em 0;
   text-align: center;
 }
 
@@ -159,6 +164,35 @@ input[type="time"] {
 
 .dispo-question {
   display: block;
-  margin: 0 auto;
+  margin: 3em 0 1em 0;
   text-align: center;
 }
+
+#event_start_time {
+  border: none;
+  padding: 1.5em 1em;
+  font-size: 24px;
+  background-color: $lighter-grey;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+#rest-of-form {
+  padding-top: 5em;
+}
+
+.home-bottom {
+  label {
+    margin-top: 1em;
+  }
+}
+
+#rest-of-form {
+  margin: 0;
+  padding: 0;
+}
+
+

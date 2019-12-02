@@ -16,12 +16,50 @@ const testRegex = (field, regex) => {
   }
 };
 
+const able = () => {
+  const name = document.getElementById('name');
+  const phone = document.getElementById('phone_number');
+  const start = document.getElementById("event_start_time");
+  const deadlines = document.querySelectorAll(".label-deadline");
+  const btn = document.getElementById('new-event');
+  const address = document.getElementById('address');
+  let fir = name.classList.contains('valid-input');
+  let sec = phone.classList.contains('valid-input');
+  let fif = document.getElementById('valid-input');
+  let thi = start.classList.contains('valid-input');
+  let fou = deadlines[0].classList.contains('active') || deadlines[1].classList.contains('active') || deadlines[2].classList.contains('active') ;
+  if (fir && sec && thi && fou && fif) {
+    btn.disabled = false;
+    btn.classList.remove('btn-disabled');
+  } else {
+    btn.disabled = true;
+    btn.classList.add('btn-disabled');
+  };
+}
+
+const ableMeeting = () => {
+  const name = document.getElementById('name');
+  const phone = document.getElementById('phone_number');
+  const addressMeeting = document.getElementById('meeting_address');
+  const btn = document.getElementById('new-attending');
+  let fir = name.classList.contains('valid-input');
+  let sec = phone.classList.contains('valid-input');
+  let thi = addressMeeting.classList.contains('valid-input');
+  if (fir && sec && thi) {
+    btn.disabled = false;
+    btn.classList.remove('btn-disabled');
+  } else {
+    btn.disabled = true;
+    btn.classList.add('btn-disabled');
+  };
+}
+
 const validateForm = () => {
 
 const name = document.getElementById('name');
 const phone = document.getElementById('phone_number');
 const start = document.getElementById("event_start_time");
-const deadline = document.getElementById("event_deadline");
+const deadlines = document.querySelectorAll(".label-deadline");
 const address = document.getElementById('address');
 const addressMeeting = document.getElementById('meeting_address');
 const btn = document.getElementById('new-event');
@@ -37,11 +75,12 @@ if (btnMeeting) {
   btnMeeting.classList.add('btn-disabled');
 }
 
-if (name && phone) {
+if (start && name && phone && address) {
   // name
   name.addEventListener('blur', (event) => {
     if (event.currentTarget.value) {
       valid(event.currentTarget)
+      able();
     } else {
       invalid(event.currentTarget)
     };
@@ -49,27 +88,10 @@ if (name && phone) {
   // phone
   phone.addEventListener('blur', (event) => {
     testRegex(phone, /0(6|7)\d{8}/);
-  });
-};
-
-if (start && deadline && address) {
-
-  start.addEventListener('blur', (event) => {
-    if (event.currentTarget.value) {
-      valid(event.currentTarget);
-    } else {
-      invalid(event.currentTarget);
-    };
+    able();
   });
 
-  deadline.addEventListener('blur', (event) => {
-    if (event.currentTarget.value) {
-      valid(event.currentTarget);
-    } else {
-      invalid(event.currentTarget);
-    };
-  });
-
+  //address
   address.addEventListener('blur', (event) => {
     if (event.currentTarget.value) {
       valid(event.currentTarget);
@@ -77,7 +99,34 @@ if (start && deadline && address) {
       invalid(event.currentTarget);
     };
   });
+
+  //startTime
+  start.addEventListener('blur', (event) => {
+    if (event.currentTarget.value) {
+      valid(event.currentTarget);
+      able();
+    } else {
+      invalid(event.currentTarget);
+    };
+  });
 };
+
+if (name && phone && addressMeeting) {
+  // name
+  name.addEventListener('blur', (event) => {
+    if (event.currentTarget.value) {
+      valid(event.currentTarget)
+      ableMeeting();
+    } else {
+      invalid(event.currentTarget)
+    };
+  });
+  // phone
+  phone.addEventListener('blur', (event) => {
+    testRegex(phone, /0(6|7)\d{8}/);
+    ableMeeting();
+  });
+}
 
 if (addressMeeting) {
   addressMeeting.addEventListener('blur', (event) => {

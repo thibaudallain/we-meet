@@ -11,23 +11,17 @@
 }
 
 .event-dispo {
-  padding-top: 180px;
+  margin: 5em 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.btn-dispo {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .non-dispo {
-    color: white;
+    color: $blue;
     text-decoration: underline;
     background-color: transparent !important;
     justify-content: center;
     display: flex;
-    margin-top: 220px;
+    margin-bottom: 5em;
 }
