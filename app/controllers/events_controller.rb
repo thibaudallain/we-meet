@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   # before_action :authenticate_user!
   def share
     @event = Event.find(params[:event_id])
+    @meetings = @event.meetings
   end
 
   def login
