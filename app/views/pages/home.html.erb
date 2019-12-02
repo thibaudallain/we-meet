@@ -17,11 +17,11 @@
 
   <div id="form-availability">
     <div class="home-bottom-invisible">
-      <div class="home-bottom">
         <p class= "tag-home-hour"><%= label_tag "Quelle heure ?"%></p>
-        <%= time_field_tag "event[start_time]", "20:00", class: 'form-input valid-input'%>
+        <div>
+          <%= time_field_tag "event[start_time]", "20:00", class: 'form-input valid-input'%>
+        </div>
         <i class="fas fa-chevron-down" id="first-arrow"></i>
-      </div>
     </div>
   </div>
 

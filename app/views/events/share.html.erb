@@ -1,7 +1,10 @@
   <div class="container-wm bg-wm">
     <div class="center-top">
-      <i class="fas fa-check-circle"></i>
-      <h1> Ton événement a bien été créé !</h1>
+      <i class="fas fa-check-circle event-created"></i>
+      <h1>Événement créé</h1>
+      <h2>Ce soir, à <%= @event.start_time.strftime("%Hh%M") %></h2>
+      <br>
+      <h2>Tu pars de : <%= @meetings.first.address %></h2>
     </div>
 
     <div class="container-link link-to-share d-none">
@@ -11,6 +14,7 @@
 
     <div class="center-btn">
 
-      <%= link_to "Partage ton événement", event_share_again_path(@event), class: "btn-blue-wm share", data: { event: params[:event_id] } %>
+
     </div>
+<%= link_to "Partage ton événement", event_share_again_path(@event), class: "btn-blue-wm share bouton-bas", data: { event: params[:event_id] } %>
   </div>

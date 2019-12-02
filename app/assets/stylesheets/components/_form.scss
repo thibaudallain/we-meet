@@ -30,7 +30,7 @@ position: relative
 
 .active {
   color: $wm-purple;
-  border-bottom: solid 1px $blue;
+  border-bottom: solid 1px $wm-orange;
 }
 
 .form-container {
@@ -179,7 +179,6 @@ input[type="time"] {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
   justify-content: center;
-  margin-bottom: 2em;
   padding-left: 40px;
 }
 

@@ -8,7 +8,7 @@
 .bg-wm {
   height: 100vh;
   width: 100vw;
-  background-image: url('wemeet-bg.png');
+  background-image: url('wm-bg-redorange.png');
   background-size: cover;
   background-position: center;
 }
@@ -45,3 +45,14 @@
   color: $blue;
 }
 
+.event-created:before {
+  color: $wm-pink;
+  font-size: 90px;
+}
+
+
+.bouton-bas {
+  margin-top: 19vh;
+  width: 100%;
+  font-size: 24px;
+}

@@ -44,7 +44,7 @@ class MeetingsController < ApplicationController
     elsif params['commit'] == "Prévenir #{Event.find(params[:event_id]).users.first.name}"
       @meeting = Meeting.find(params[:id])
       @name = params[:name]
-      @meeting.update(name: @name, photo_number: rand(1..8))
+      @meeting.update(name: @name, photo_number: rand(1..19))
       @meeting.save
       redirect_to root_path
     else

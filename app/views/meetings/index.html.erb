@@ -1,39 +1,30 @@
-<div class="container-wm">
-  <div class="d-flex align-items-start pt-3 pb-3">
-    <%= image_tag "WeMeet-black.png", class: "logo-black"  %>
-  </div>
-
+<div class="container">
+<h2>Dispo</h2>
     <div class="card">
       <% @meetings_attending.where(attending: true, organizer: true).each do |meeting| %>
       <div class="card-participant">
         <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
         <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
-        <i class="fas fa-check-circle"></i>
        <div class="card-participant-infos">
         <h2><%= meeting.user.name %></h2>
-        <p>Dispo à <%= @event.start_time.strftime("%Hh%M") %></p>
-          <i class="fas fa-stopwatch normal-clock"></i>
+        <p>Dispo à <strong><%= @event.start_time.strftime("%Hh%M") %></strong></p>
         </div>
       </div>
       <% end %>
     </div>
 
-
+<!-- <div class="spinner-border text-danger" role="status">
+  <span class="sr-only">Loading...</span>
+</div> -->
 
     <div class="card">
       <% @meetings_attending.where(attending: true, organizer: false).each do |meeting| %>
       <div class="card-participant">
         <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
         <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
-        <i class="fas fa-check-circle"></i>
        <div class="card-participant-infos">
         <h2><%= meeting.user.name %></h2>
-        <p>Dispo <%= meeting.available_time %></p>
-        <% if meeting.available_time == "plus tôt" || meeting.available_time == "plus tard" %>
-          <i class="fas fa-stopwatch red-clock"></i>
-        <% else %>
-          <i class="fas fa-stopwatch normal-clock"></i>
-        <% end  %>
+        <p>Dispo <strong><%= meeting.available_time %></strong></p>
         </div>
       </div>
       <% end %>
@@ -41,15 +32,15 @@
 
 
   <hr>
+  <h2>Ceux qui ont piscine</h2>
     <div class="card">
       <% @meetings_declined.where(attending: false).each do |meeting| %>
       <div class="card-participant">
-        <% link_non = "avatars/avatar-0#{rand(1..8)}.png" %>
+        <% link_non = "avatars/avatar-0#{rand(1..19)}.png" %>
         <%= image_tag link_non, class: "avatar-large nondispo", alt: "avatar-large" %>
-        <i class="fas fa-times-circle"></i>
        <div class="card-participant-infos">
         <h2><%= meeting.name %></h2>
-        <p>Pas dispo</p><i class="fa"></i>
+        <p>Pas dispo</p>
        </div>
       </div>
       <% end %>

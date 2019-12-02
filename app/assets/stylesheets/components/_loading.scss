@@ -41,9 +41,16 @@
 }
 
 .home-bottom-invisible {
-  height: 45vh;
-  width: 100vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.home-bottom-invisible > div {
+  flex-grow: 1;
+}
+
 
 .home-first {
   position: relative;
