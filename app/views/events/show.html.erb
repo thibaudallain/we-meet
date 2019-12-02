@@ -78,12 +78,17 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <br>
-  <div class= "btn-map btn-red-wm">
-    <h3>Ton temps de trajet est de <%#=  @t.travel_time_minutes%> 10 minutes </h3>
+   <div class= "btn-map btn-red-wm">
+   <%= link_to @city_mapper_url, class: "d-flex justify-content-center" do %>
+      <%= image_tag("city-mapper-logo.png", class: "city-mapper avatar") %>
+      <h1 class="city-mapper-link">Ton temps de trajet est de <%#=  @t.travel_time_minutes%> 10 minutes </h1>
+  <% end %>
   </div>
 </div>
 
 
+<!--
+ -->
 
 
 
