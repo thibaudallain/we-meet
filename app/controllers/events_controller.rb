@@ -46,7 +46,9 @@ class EventsController < ApplicationController
       @chosen_bar = @event.suggested_bars.max_by{ |k| k[:votes] }
       @chosen_bar.update(chosen: true)
       @ending_point = @chosen_bar.bar
+      @bar_name = @ending_point.name
       @points = [ @starting_point, @ending_point ]
+      @bar = Bar.find(@chosen_bar.bar_id)
       # @event = Event.geocoded # returns gps coordinates
       # # @event = current_user.meetings.find(event: @event).where(suggested_bar.chosen == true)
       @markers = @points.map do |point|
@@ -56,6 +58,7 @@ class EventsController < ApplicationController
           # infoWindow: render_to_string(partial: "info_window", locals: { point: point })
         }
       end
+    @city_mapper_url = "https://citymapper.com/directions?startcoord=#{@starting_point.latitude}%2C#{@starting_point.longitude}&startaddress=#{@starting_point.address}&endcoord=#{@ending_point.latitude}%2C#{@ending_point.longitude}&endname=#{@bar_name}&endaddress=#{@bar.address}"
     elsif params["login_show"]
       @event = Event.find(params["id"])
       @user = User.where(phone_number: params["login_show"])[0]
@@ -73,11 +76,12 @@ class EventsController < ApplicationController
     # end
 
     # @t = Citywrapper::TravelTime.between(
-    #   start_coordinates: [@starting_point.latitude,@starting_point.longitude],
+    #   start_coordinates: [@starting_point.latitude, @starting_point.longitude],
     #   end_coordinates: [@ending_point.latitude, @ending_point.longitude],
     #   time: DateTime.now.iso8601,
     #   time_type: :arrival
     # )
+
 
   end
 

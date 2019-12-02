@@ -1,39 +1,39 @@
-<div class="container-wm">
   <h1 style="text-align: center"> À ce soir à <%= @event.start_time.strftime("%Hh%M") %> </h1>
+  <div class="card-show-event">
+    <div class="card">
+          <% @event.meetings.where(attending: true, organizer: true).each do |meeting| %>
+          <div class="card-participant">
+            <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
+            <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
+            <i class="fas fa-check-circle"></i>
+           <div class="card-participant-infos">
+            <h2><%= meeting.user.name %></h2>
+            <p>Dispo à <%= @event.start_time.strftime("%Hh%M") %></p>
+              <i class="fas fa-stopwatch normal-clock"></i>
+            </div>
+          </div>
+          <% end %>
+        </div>
 
-<div class="card">
-      <% @event.meetings.where(attending: true, organizer: true).each do |meeting| %>
+    <div class="card">
+      <% @event.meetings.where(attending: true, organizer: false).each do |meeting| %>
       <div class="card-participant">
         <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
         <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
         <i class="fas fa-check-circle"></i>
        <div class="card-participant-infos">
         <h2><%= meeting.user.name %></h2>
-        <p>Dispo à <%= @event.start_time.strftime("%Hh%M") %></p>
+        <p>Dispo <%= meeting.available_time %> </p>
+        <% if meeting.available_time == "plus tôt" || meeting.available_time == "plus tard" %>
+          <i class="fas fa-stopwatch red-clock"></i>
+        <% else %>
           <i class="fas fa-stopwatch normal-clock"></i>
+        <% end  %>
         </div>
       </div>
       <% end %>
     </div>
-
-<div class="card">
-  <% @event.meetings.where(attending: true, organizer: false).each do |meeting| %>
-  <div class="card-participant">
-    <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
-    <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
-    <i class="fas fa-check-circle"></i>
-   <div class="card-participant-infos">
-    <h2><%= meeting.user.name %></h2>
-    <p>Dispo <%= meeting.available_time %> </p>
-    <% if meeting.available_time == "plus tôt" || meeting.available_time == "plus tard" %>
-      <i class="fas fa-stopwatch red-clock"></i>
-    <% else %>
-      <i class="fas fa-stopwatch normal-clock"></i>
-    <% end  %>
-    </div>
   </div>
-  <% end %>
-</div>
 
 
 <div class="container-wm">
@@ -72,16 +72,16 @@
 
 
   <div id="map"
-    style="width: 100%;
-    height: 500px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <br>
-  <div class= "btn-map btn-red-wm">
-    <h3>Ton temps de trajet est de <%#=  @t.travel_time_minutes%> 10 minutes </h3>
+   <div class= "btn-map btn-red-wm">
+   <%= link_to @city_mapper_url, class: "d-flex justify-content-center" do %>
+      <%= image_tag("city-mapper-logo.png", class: "city-mapper avatar") %>
+      <p class="city-mapper-link">Ton temps de trajet est de <%#=  @t.travel_time_minutes%> <strong>10</strong> minutes </p>
+  <% end %>
   </div>
-</div>
+
 
 
 
