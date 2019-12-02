@@ -1,56 +1,61 @@
 <% if @meeting.voted == true %>
   <%= render "shared/waiting_after_vote", event: @event %>
 <% else %>
-  <div id="map" style="width: 100%; height: 70vh;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-markers="<%= @markers.to_json %>"></div>
-
-  <%= form_tag event_meeting_path(@event, @meeting), method: :patch do %>
 
   <div class="container-wm">
+  <div id="map" style="width: 100%; height: 50vh;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-markers="<%= @markers.to_json %>"></div>
+  <%= form_tag event_meeting_path(@event, @meeting), method: :patch do %>
     <% counter = 1 %>
-    <% @bars.each do |bar| %>
-      <%= text_field_tag bar.id,nil ,hidden: true%>
-      <div class="card-bar">
-        <div class="transparent-target" id="heart<%= bar.id %>">
-
-          <div class="card-img-name">
-            <%= cl_image_tag bar.photo.key, alt: "alttext"%>
-          </div>
-          <div class="card-bar-infos">
-            <h2><%= counter.to_s + ". " + bar.name %><h1>
-            <% counter += 1 %>
-            <h3><%= bar.address %></h2>
-            <div class="card-bar-ratings-price">
-              <div>
-                <% bar.rating.times do %>
-                  <i class="fa fa-star"></i>
-                <% end %>
-                <% (5 - bar.rating).times do %>
-                  <i class="far fa-star"></i>
-                <% end %>
+    <div class="horizontal-flexbox-cards">
+      <% @bars.each do |bar| %>
+        <%= text_field_tag bar.id,nil ,hidden: true%>
+        <div class="card-bar">
+          <div class="transparent-target" id="heart<%= bar.id %>">
+            <div class="card-img-name">
+              <%= cl_image_tag bar.photo.key, alt: "alttext"%>
+            </div>
+            <div class="bar-ratings">
+              <div class="bottom-like" id="t<%= bar.id %>">
+                <i class="fa fa-heart card-bar-heart"></i>
               </div>
-              <div>
-                <% 3.times do %>
-                  <i class="fas fa-euro-sign"></i>
-                <% end %>
-                <% 2.times do %>
-                  <i class="fas fa-euro-sign cheap"></i>
-                <% end %>
+              <div class="card-bar-ratings-price">
+                <div>
+                  <% bar.rating.times do %>
+                    <i class="fa fa-star"></i>
+                  <% end %>
+                  <% (5 - bar.rating).times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                </div>
+                <div>
+                  <% 3.times do %>
+                    <i class="fas fa-euro-sign"></i>
+                  <% end %>
+                  <% 2.times do %>
+                    <i class="fas fa-euro-sign cheap"></i>
+                  <% end %>
+                </div>
               </div>
             </div>
+            <div class="card-bar-infos">
+              <h2><%= counter.to_s + ". " + bar.name %><h1>
+              <% counter += 1 %>
+              <h3><%= bar.address %></h2>
+
+            </div>
+
           </div>
-        <div class="bottom-like" id="t<%= bar.id %>">
-          <i class="fa fa-heart card-bar-heart"></i>
-        </div>
-        </div>
-        </div>
+          </div>
 
 
-    <% end %>
-  <div class="center-btn confirm-choice">
+      <% end %>
+
+    </div>
+</div>
+  <div class="confirm-choice">
     <%= submit_tag "Je vote", class: "btn-blue-wm" %>
   </div>
 <% end %>
-</div>
 
 <% end %>
 
