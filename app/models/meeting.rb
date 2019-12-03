@@ -14,12 +14,22 @@ class Meeting < ApplicationRecord
 
   def broadcast_message
     ActionCable.server.broadcast("event_#{event.id}", {
-        message_partial: ApplicationController.renderer.render(
+      message_partial: ApplicationController.renderer.render(
         partial: "meetings/participant_attending",
         locals: { meeting: self }
       ),
-        attending: attending,
-        voted: voted
+      btn_partial: ApplicationController.renderer.render(
+        partial: "meetings/btn",
+        locals: { event: self.event }
+      ),
+      btn_recap_partial: ApplicationController.renderer.render(
+        partial: "meetings/recap",
+        locals: { event: self.event }
+      ),
+      attending: attending,
+      voted: voted
     })
   end
+
+
 end

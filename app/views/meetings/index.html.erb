@@ -59,18 +59,20 @@
 </div>
 
 <% if current_user == @meetings_attending.where(attending: true, organizer: true)[0].user %>
-  <% if @meetings_attending.where(attending: true, organizer: false).length == 0 %>
-    <div class="btn-bottom">
-      <div class="container-link link-to-share d-none">
-        <% link = "/events/" + @event.id.to_s + "/meetings/new" %>
-        <%= link %>
+  <div id="share-or-vote">
+    <% if @meetings_attending.where(attending: true, organizer: false).length == 0 %>
+      <div class="btn-bottom">
+        <div class="container-link link-to-share d-none">
+          <% link = "/events/" + @event.id.to_s + "/meetings/new" %>
+          <%= link %>
+        </div>
       </div>
-    </div>
-      <%= link_to "Repartage ton événement", event_share_again_path(@event), class: "btn-red-wm share", data: { event: params[:event_id] } %>
-  <% else %>
-    <div class="btn-bottom">
-      <%= link_to "Passe aux votes pour les bars",  event_suggested_bars_path(@event), class: "btn-red-wm", data: { event: params[:event_id] } %>
-    </div>
-  <% end %>
+        <%= link_to "Repartage ton événement", event_share_again_path(@event), class: "btn-red-wm share", data: { event: params[:event_id] } %>
+    <% else %>
+      <div class="btn-bottom">
+        <%= link_to "Passe aux votes pour les bars",  event_suggested_bars_path(@event), class: "btn-red-wm", data: { event: params[:event_id] } %>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 
