@@ -7,7 +7,7 @@
   <div class="event-dispo">
     <%= link_to "Dispo", event_meetings_path(@event, attending: true, organizer: false), method: :post, class: "btn-blue-wm btn-dispo" %>
   </div>
-  <div class="link-not-available">
+  <div>
     <%= link_to "Pas ce soir malheureusement", event_meetings_path(@event, attending: false, organizer: false), method: :post, class: "non-dispo" %>
   </div>
 </div>

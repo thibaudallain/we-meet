@@ -28,6 +28,8 @@
   }
   h1 {
     color: white;
+    text-align: center;
+    padding-top: 180px;
   }
 }
 
@@ -41,10 +43,6 @@
   align-items: center;
 }
 
-.link-not-available {
-  margin: 0;
-  color: $blue;
-}
 
 .event-created:before {
   color: $wm-pink;
@@ -53,7 +51,8 @@
 
 
 .bouton-bas {
-  margin-top: 19vh;
+  position: absolute;
+  bottom: 0;
   width: 100%;
   font-size: 24px;
 }

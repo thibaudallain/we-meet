@@ -1,11 +1,11 @@
 <div class="container-wm bg-wm">
   <div class="center-top">
     <i class="fas fa-check-circle"></i>
-  <h1>Nous avons bien enregistré tes votes pour l'événement</h1>
+  <h1>Votes bien enregistrés</h1>
 
-  <h2>Nous t'enverrons le récapitulatif pour l'événement à <%= (event.deadline + 1800).to_s(:time) %></h2>
+  <h2>Tu recevras le récap' de l'événement à <%= (event.deadline + 1800).to_s(:time) %></h2>
 
-  <h1><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %></span>/<%= @event.meetings.where(attending: true).count %></h1>
+  <h2><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %> <%= @event.meetings.where(attending: true, voted: true).count > 1 ? "personnes ont voté" : "personne a voté"%></span> sur <%= @event.meetings.where(attending: true).count %> <%= @event.meetings.where(attending: true).count > 1 ? "participants" : "participant" %></h2>
   </div>
 
   <div class="container-link link-to-share d-none">
