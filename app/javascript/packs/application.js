@@ -9,6 +9,7 @@ import { validateForm } from "../components/formValidation";
 import { initAutocompleteMeeting } from "../plugins/init_autocomplete_meeting";
 import { loadScreen } from "../components/loadingScreen";
 import { slideForm } from "../components/slidingForm";
+import { slideInvite } from "../components/slidingInvite";
 import { initActionCable } from "../plugins/init_action_cable";
 
 share();
@@ -31,6 +32,10 @@ if (document.getElementById('loading-screen')) {
 
 if (document.querySelector('.label-deadline')) {
   slideForm();
+}
+
+if (document.querySelector('#invite-arrow-1')) {
+  slideInvite();
 }
 
 initActionCable();
