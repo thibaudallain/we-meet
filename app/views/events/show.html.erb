@@ -5,11 +5,9 @@
       <div class="card-participant">
         <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
         <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
-        <i class="fas fa-check-circle"></i>
        <div class="card-participant-infos">
         <h2><%= meeting.user.name %></h2>
         <p>Dispo à <%= @event.start_time.strftime("%Hh%M") %></p>
-          <i class="fas fa-stopwatch normal-clock"></i>
         </div>
       </div>
       <% end %>
@@ -21,14 +19,11 @@
         <div class="card-participant">
           <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
           <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
-          <i class="fas fa-check-circle"></i>
          <div class="card-participant-infos">
           <h2><%= meeting.user.name %></h2>
           <p>Dispo <%= meeting.available_time %> </p>
           <% if meeting.available_time == "plus tôt" || meeting.available_time == "plus tard" %>
-            <i class="fas fa-stopwatch red-clock"></i>
           <% else %>
-            <i class="fas fa-stopwatch normal-clock"></i>
           <% end  %>
           </div>
         </div>
