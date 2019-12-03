@@ -5,7 +5,7 @@
 
   <h2>Nous t'enverrons le récapitulatif pour l'événement à <%= (event.deadline + 1800).to_s(:time) %></h2>
 
-  <h1><%= @event.meetings.where(attending: true, voted: true).count %>/<%= @event.meetings.where(attending: true).count %></h1>
+  <h1><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %></span>/<%= @event.meetings.where(attending: true).count %></h1>
   </div>
 
   <div class="container-link link-to-share d-none">

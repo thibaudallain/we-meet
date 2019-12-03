@@ -1,29 +1,28 @@
 <div class="container-wm">
 
-<%= form_tag event_suggested_bars_path(@event) do %>
-<div class="center-top">
-  <h1>Qui es-tu ?</h1>
+  <%= form_tag event_suggested_bars_path(@event) do %>
 
-</div>
-<div class="card">
+    <div class="center-top">
+      <h1>Qui es-tu ?</h1>
+    </div>
 
-
+    <div class="card">
       <% @users.each do |user| %>
-      <%= link_to event_suggested_bars_path(@event, login_sb: user.phone_number), class: "link-login" do %>
-      <div class="card-participant">
-        <% link = "avatars/avatar-0#{user.photo_number}.png" %>
-        <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
-        <i class="fas fa-check-circle"></i>
-       <div class="card-participant-infos">
-        <h2 class="qui-es-tu"><%= user.name %></h2>
-        <p>Dispo à <%= @event.start_time.strftime("%Hh%M") %></p>
-          <i class="fas fa-stopwatch normal-clock"></i>
-        </div>
-      </div>
+        <%= link_to event_suggested_bars_path(@event, login_sb: user.phone_number), class: "link-login" do %>
+          <div class="card-participant">
+            <% link = "avatars/avatar-0#{user.photo_number}.png" %>
+            <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
+            <i class="fas fa-check-circle"></i>
+            <div class="card-participant-infos">
+              <h2 class="qui-es-tu"><%= user.name %></h2>
+              <p>Dispo à <%= @event.start_time.strftime("%Hh%M") %></p>
+              <i class="fas fa-stopwatch normal-clock"></i>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
 
-    <% end %>
-<% end %>
+  <% end %>
 </div>
 

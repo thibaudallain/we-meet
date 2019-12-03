@@ -18,7 +18,8 @@ class Meeting < ApplicationRecord
         partial: "meetings/participant_attending",
         locals: { meeting: self }
       ),
-        attending: attending
+        attending: attending,
+        voted: voted
     })
   end
 end
