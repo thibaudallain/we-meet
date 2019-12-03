@@ -82,10 +82,8 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 465px;
-  a {
-    margin-top: 465px;
-  }
+
+
 }
 
 input[type="time"] {
@@ -209,6 +207,11 @@ input[type="time"] {
 .fa-chevron-down {
   font-size: 50px;
   color: $wm-pink;
+  padding-bottom: 20px;
+}
+
+.middle {
+  padding-top: 20px;
 }
 
 .arrows {
@@ -223,32 +226,44 @@ input[type="time"] {
   margin-top: 0px;
 }
 
-#second-arrow {
-  margin-top: 355px;
-}
 
-#third-arrow {
-  margin-top: 530px;
-}
-
-#fourth-arrow {
-  margin-top: 530px;
-}
-
-#fifth-arrow {
-  margin-top: 530px;
+#form-2 {
+  font-size: 20px;
+  height: 100vh;
 }
 
 #form-3 {
   font-size: 20px;
+  height: 100vh;
 }
+
 #form-4 {
   font-size: 20px;
+  height: 100vh;
 }
 #form-5 {
   font-size: 20px;
+  height: 91vh;
 }
 
 .form-control {
   font-size: 22px;
+}
+
+.form-bottom {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .container-wm {
+    min-height: 100%;
+    flex-grow: 1;
+  }
+  .form-container {
+    margin-bottom: 0px;
+  }
+}
+
+textarea::placeholder,
+input::placeholder {
+  opacity: 0.3 !important;
 }

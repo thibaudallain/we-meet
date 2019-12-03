@@ -1,5 +1,16 @@
 <div class="container">
-<h2>Dispo</h2>
+<br>
+<br>
+<div class="index-top">
+<h2>La soirée s'organise</h2>
+
+<%= image_tag "avatars/Spinner-1s-200px.gif", class: "spinner" %>
+<p>Vote pour le bar à <%= @event.deadline.strftime("%Hh%M") %></p>
+</div>
+<hr>
+<h3>Dispo - <%= @meetings_attending.where(attending: true).count %>
+<%= @meetings_attending.where(attending: true).count > 1 ? "personnes" : "personne" %>
+</h3>
     <div class="card">
       <% @meetings_attending.where(attending: true, organizer: true).each do |meeting| %>
       <div class="card-participant">
@@ -13,9 +24,6 @@
       <% end %>
     </div>
 
-<!-- <div class="spinner-border text-danger" role="status">
-  <span class="sr-only">Loading...</span>
-</div> -->
 
     <div class="card" id="attending-participants" data-event=<%= @event.id %>>
       <% @meetings_attending.where(attending: true, organizer: false).each do |meeting| %>
@@ -32,11 +40,14 @@
 
 
   <hr>
-  <h2>Ceux qui ont piscine</h2>
+
+  <h3>Ceux qui ont piscine</h3>
+
     <div class="card" id="declined-participants" data-event=<%= @event.id %>>
+
       <% @meetings_declined.where(attending: false).each do |meeting| %>
       <div class="card-participant">
-        <% link_non = "avatars/avatar-0#{rand(1..19)}.png" %>
+        <% link_non = "avatars/piscine.jpg" %>
         <%= image_tag link_non, class: "avatar-large nondispo", alt: "avatar-large" %>
        <div class="card-participant-infos">
         <h2><%= meeting.name %></h2>
@@ -54,8 +65,8 @@
         <% link = "/events/" + @event.id.to_s + "/meetings/new" %>
         <%= link %>
       </div>
-      <%= link_to "Partage ton événement de nouveau", event_share_again_path(@event), class: "btn-red-wm share", data: { event: params[:event_id] } %>
     </div>
+      <%= link_to "Repartage ton événement", event_share_again_path(@event), class: "btn-red-wm share", data: { event: params[:event_id] } %>
   <% else %>
     <div class="btn-bottom">
       <%= link_to "Passe aux votes pour les bars",  event_suggested_bars_path(@event), class: "btn-red-wm", data: { event: params[:event_id] } %>
