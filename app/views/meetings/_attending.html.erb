@@ -1,34 +1,48 @@
 <div class="container-wm relative">
-  <div class="onglet-form">
-    <h3 class="onglet step-1 active">Identité</h3>
-    <h3 class="onglet step-2">Ce soir</h3>
-  </div>
-  <%= form_tag(event_meeting_path(@event, @meeting), method: :patch) do %>
-    <div class="form-step1">
+
+  <div class="container-wm">
       <div class="form-container">
-        <div id="form-user">
-          <%= label_tag 'NOM' %>
-          <%= text_area_tag :name, "", class: 'form-control form-input', placeholder: "Marie", required: true%>
-          <br>
-          <%= label_tag 'Téléphone' %>
-          <%= text_area_tag :phone_number, "", class: 'form-control form-input', placeholder: "0660832635", required: true %>
+        <%= form_tag(event_meeting_path(@event, @meeting), method: :patch) do %>
+          <div id="invite-1">
+            <%= label_tag 'NOM' %>
+            <%= text_area_tag :name, "", class: 'form-control form-input', placeholder: "Marie", required: true%>
+            <div class="arrows">
+              <i class="fas fa-chevron-down middle" id="invite-arrow-1"></i>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="btn-bottom">
-        <div class="next-btn">
-          <span class="next btn-blue-wm">Suivant</span>
+
+      <div class="container-wm">
+        <div class="form-container">
+          <div id="invite-2">
+            <%= label_tag 'Téléphone' %>
+            <%= text_area_tag :phone_number, "", class: 'form-control form-input', placeholder: "0660832635", required: true %>
+          <div class="arrows">
+          <i class="fas fa-chevron-down middle" id="invite-arrow-2"></i>
+          </div>
         </div>
       </div>
     </div>
-    <div class="form-step2 d-none">
-      <div id="form-availability">
+
+
+      <div class="container-wm">
         <div class="form-container">
-          <div>
-            <%= label_tag "Adresse" %>
+          <div id="invite-3">
+            <%= label_tag 'Adresse' %>
             <%= text_field_tag "meeting[address]", "", class: 'form-control form-input', placeholder: "16 villa Gaudelet, 75011", required: true %>
+            <div class="arrows">
+              <i class="fas fa-chevron-down middle" id="invite-arrow-3"></i>
+            </div>
           </div>
-          <br>
-          <div class="dispo-question">
+        </div>
+      </div>
+    </div>
+
+
+      <div class="container-wm">
+        <div class="form-container">
+          <div class="dispo-question" id="invite-4">
             <p><%= @event.users.first.name %> est disponible à <%= @event.start_time.strftime("%Hh%M") %>. Et toi ?</p>
           </div>
           <div class="buttons-toggle">
@@ -46,14 +60,18 @@
                 Plus tard
               </label>
             </div>
+            <div class="arrows">
+              <i class="fas fa-chevron-down middle" id="invite-arrow-4"></i>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="btn-bottom">
-        <div class="next-btn">
+        <div class="next-btn" id="invite-5">
           <%= submit_tag "Je confirme", class: "btn-blue-wm no-border", id: "new-attending" %>
         </div>
       </div>
-    </div>
+  </div>
   <% end %>
 </div>

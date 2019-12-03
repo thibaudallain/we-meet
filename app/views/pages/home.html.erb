@@ -74,12 +74,15 @@
         <div class="form-container">
           <div id="form-5"><%= label_tag "Adresse" %>
               <%= text_field_tag :address, "", class: 'form-control form-input', placeholder: "16 villa Gaudelet, 75011", required: true %>
+              <div class="arrows">
+                <i class="fas fa-chevron-down middle" id="fifth-arrow"></i>
+              </div>
           </div>
         </div>
       </div>
-
-      <%= submit_tag "Crée ton événement", class: "btn-blue-wm no-border", id: "new-event" %>
-
+      <div id="form-6">
+        <%= submit_tag "Crée ton événement", class: "btn-blue-wm no-border", id: "new-event" %>
+      </div>
     </div>
   <% end %>
 </div>

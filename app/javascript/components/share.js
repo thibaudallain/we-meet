@@ -10,7 +10,7 @@ if (btn) {
       console.log("it's working");
       navigator.share({
         title: "We Meet",
-        text: "We Meet - Invitation pour ce soir",
+        text: "On sort ce soir ? Pour l'organisation, c'est We Meet",
         url: `${link.innerText}`
       }).then(() => {
         console.log("Link shared");

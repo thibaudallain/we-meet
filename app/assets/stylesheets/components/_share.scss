@@ -5,14 +5,6 @@
   text-align: center;
 }
 
-.bg-wm {
-  height: 100vh;
-  width: 100vw;
-  background-image: url('wm-bg-redorange.png');
-  background-size: cover;
-  background-position: center;
-}
-
 .share-top {
   padding: 2em 3em 5em 3em;
   background: rgb(2,0,36);
@@ -28,6 +20,8 @@
   }
   h1 {
     color: white;
+    text-align: center;
+    padding-top: 180px;
   }
 }
 
@@ -41,10 +35,6 @@
   align-items: center;
 }
 
-.link-not-available {
-  margin: 0;
-  color: $blue;
-}
 
 .event-created:before {
   color: $wm-pink;
@@ -53,7 +43,8 @@
 
 
 .bouton-bas {
-  margin-top: 19vh;
+  position: absolute;
+  bottom: 0;
   width: 100%;
   font-size: 24px;
 }
