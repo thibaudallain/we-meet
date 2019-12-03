@@ -9,6 +9,7 @@ import { validateForm } from "../components/formValidation";
 import { initAutocompleteMeeting } from "../plugins/init_autocomplete_meeting";
 import { loadScreen } from "../components/loadingScreen";
 import { slideForm } from "../components/slidingForm";
+import { initActionCable } from "../plugins/init_action_cable";
 
 share();
 multipleForm();
@@ -31,5 +32,7 @@ if (document.getElementById('loading-screen')) {
 if (document.querySelector('.label-deadline')) {
   slideForm();
 }
+
+initActionCable();
 
 

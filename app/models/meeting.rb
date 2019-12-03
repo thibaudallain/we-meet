@@ -8,4 +8,17 @@ class Meeting < ApplicationRecord
   validates_inclusion_of :attending, in: [true, false]
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  after_update :broadcast_message
+
+  private
+
+  def broadcast_message
+    ActionCable.server.broadcast("event_#{event.id}", {
+        message_partial: ApplicationController.renderer.render(
+        partial: "meetings/participant_attending",
+        locals: { meeting: self }
+      ),
+        attending: attending
+    })
+  end
 end
