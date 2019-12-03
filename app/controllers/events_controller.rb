@@ -53,13 +53,25 @@ class EventsController < ApplicationController
       @bar = Bar.find(@chosen_bar.bar_id)
       # @event = Event.geocoded # returns gps coordinates
       # # @event = current_user.meetings.find(event: @event).where(suggested_bar.chosen == true)
-      @markers = @points.map do |point|
+
+       @markers = [
         {
-          lat: point.latitude,
-          lng: point.longitude
-          # infoWindow: render_to_string(partial: "info_window", locals: { point: point })
-        }
-      end
+          lat: @ending_point.latitude,
+          lng: @ending_point.longitude,
+          infoWindow: render_to_string(partial: "info_window_event", locals: { bar: @bar })
+        },
+
+        {
+          lat: @starting_point.latitude,
+          lng: @starting_point.longitude,
+          infoWindow: render_to_string(partial: "info_window")
+
+        }]
+
+
+
+
+
     @city_mapper_url = "https://citymapper.com/directions?startcoord=#{@starting_point.latitude}%2C#{@starting_point.longitude}&startaddress=#{@starting_point.address}&endcoord=#{@ending_point.latitude}%2C#{@ending_point.longitude}&endname=#{@bar_name}&endaddress=#{@bar.address}"
     elsif params["login_show"]
       @event = Event.find(params["id"])
