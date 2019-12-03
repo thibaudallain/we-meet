@@ -66,7 +66,8 @@ class SuggestedBarsController < ApplicationController
         {
           lat: person.latitude,
           lng: person.longitude,
-          image_url: helpers.asset_url('avatars/avatar-01.png')
+          infoWindow: render_to_string(partial: "info_window_coming", locals: { user: person.user }),
+          image_url: helpers.asset_url('avatar_sb.png')
         }
       end
       @markers = @markers_people + @markers_bars

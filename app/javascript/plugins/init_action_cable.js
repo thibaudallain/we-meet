@@ -2,9 +2,9 @@ const appendParticipant = (element) => {
   const divAttending = document.getElementById('attending-participants');
   const divDeclined = document.getElementById('declined-participants');
   const btnShareOrVote = document.getElementById('share-or-vote');
-  if (element.attending === false) {
+  if (element.attending === false && element.voted !== true) {
     divDeclined.insertAdjacentHTML('beforeend', element.message_partial);
-  } else {
+  } else if (element.attending === true && element.voted !== true) {
     divAttending.insertAdjacentHTML('beforeend', element.message_partial);
     btnShareOrVote.innerHTML = element.btn_partial;
   }
