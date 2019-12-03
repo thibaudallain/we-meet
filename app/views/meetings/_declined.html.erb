@@ -1,7 +1,7 @@
 <div class="share-top">
-  <%= image_tag "WeMeet-white.png", class: "logo-white" %>
-  <div class="text-dispo pt-3">
-    <p>Dommage, une prochaine <br>fois !</p>
+
+  <div class="text-dispo home-top3">
+    <h1>Dommage, une prochaine fois !</h1>
   </div>
 </div>
 
@@ -12,12 +12,7 @@
           <br>
         </div>
       </div>
-      <div class="btn-bottom">
-        <div class="next-btn">
-          <%= submit_tag "Prévenir #{@event.users.first.name}", class: "btn-blue-wm no-border" %>
-        </div>
-      </div>
-    </div>
+    <%= submit_tag "Prévenir #{@event.users.first.name}", class: "btn-blue-wm no-border button-dommage" %>
   <% end %>
 
   </div>

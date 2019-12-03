@@ -31,6 +31,24 @@ const slideForm = () => {
       thirdPart.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   });
 
+  const deadline1 = document.querySelector('#label1');
+  const fourthPart2 = document.getElementById('form-3');
+    deadline1.addEventListener('click', (event) => {
+      fourthPart2.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  });
+
+  const deadline2 = document.querySelector('#label2');
+  const fourthPart3 = document.getElementById('form-3');
+    deadline2.addEventListener('click', (event) => {
+      fourthPart3.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  });
+
+  const deadline3 = document.querySelector('#label3');
+  const fourthPart4 = document.getElementById('form-3');
+    deadline3.addEventListener('click', (event) => {
+      fourthPart4.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  });
+
   const thirdArrow = document.querySelector('#third-arrow');
   const fourthPart = document.getElementById('form-4');
     thirdArrow.addEventListener('click', (event) => {

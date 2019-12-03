@@ -14,76 +14,73 @@
   </div>
 
   <%= form_tag(events_path, method: "post") do %>
-
-  <div id="form-availability">
-    <div class="home-bottom-invisible">
-        <p class= "tag-home-hour"><%= label_tag "Quelle heure ?"%></p>
-        <div>
-          <%= time_field_tag "event[start_time]", "20:00", class: 'form-input valid-input'%>
-        </div>
-        <i class="fas fa-chevron-down" id="first-arrow"></i>
-    </div>
-  </div>
-
-  <div class="buttons-toggle" id="form-2">
-    <p class= "tag-home-hour"> <%= label_tag "Réponse souhaitée…"%></p>
-      <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary form-check-label label-deadline">
-        <input class="form-check-input deadline" type="radio" name="event[available_time]" id="option1" autocomplete="off" value="1">
-          1h <br> avant
-        </label>
-        <label class="btn btn-primary form-check-label label-deadline">
-          <input class="form-check-input deadline" type="radio" name="event[available_time]" id="option2" autocomplete="off" value="2">
-          2h <br> avant
-        </label>
-        <label class="btn btn-primary form-check-label label-deadline">
-          <input class="form-check-input deadline" type="radio" name="event[available_time]" id="option3" autocomplete="off" value="3">
-          3h <br> avant
-        </label>
-      </div>
-      <div class="arrows">
-        <i class="fas fa-chevron-down" id="second-arrow"></i>
-      </div>
-  </div>
-
-
-
-  <div class="container-wm">
-    <div class="form-container">
-      <div id="form-3"><%= label_tag 'NOM' %>
-        <%= text_area_tag :name, "", class: 'form-control form-input', placeholder: "Marie", required: true%>
-        <div class="arrows">
-          <i class="fas fa-chevron-down" id="third-arrow"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-wm">
-    <div class="form-container">
-      <div id="form-4"><%= label_tag 'Téléphone' %>
-        <%= text_area_tag :phone_number, "", class: 'form-control form-input', placeholder: "0660832635", required: true %>
-        <div class="arrows">
-          <i class="fas fa-chevron-down" id="fourth-arrow"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-wm">
-    <div class="form-container">
-      <div id="form-5"><%= label_tag "Adresse" %>
-          <%= text_field_tag :address, "", class: 'form-control form-input', placeholder: "16 villa Gaudelet, 75011", required: true %></div>
-        <div class="btn-bottom">
-          <div class="next-btn">
-            <%= submit_tag "Crée ton événement", class: "btn-blue-wm no-border mt-5", id: "new-event" %>
+    <div id="form-availability">
+      <div class="home-bottom-invisible">
+          <p class= "tag-home-hour"><%= label_tag "Quelle heure ?"%></p>
+          <div>
+            <%= time_field_tag "event[start_time]", "20:00", class: 'form-input valid-input'%>
           </div>
-         </div>
+          <i class="fas fa-chevron-down" id="first-arrow"></i>
       </div>
     </div>
-  </div>
+
+    <div class="buttons-toggle" id="form-2">
+      <p class= "tag-home-hour"> <%= label_tag "Réponse souhaitée…"%></p>
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary form-check-label label-deadline" id="label1">
+          <input class="form-check-input deadline" type="radio" name="event[available_time]" id="option1" autocomplete="off" value="1">
+            1h <br> avant
+          </label>
+          <label class="btn btn-primary form-check-label label-deadline" id="label2">
+            <input class="form-check-input deadline" type="radio" name="event[available_time]" id="option2" autocomplete="off" value="2">
+            2h <br> avant
+          </label>
+          <label class="btn btn-primary form-check-label label-deadline" id="label3">
+            <input class="form-check-input deadline" type="radio" name="event[available_time]" id="option3" autocomplete="off" value="3">
+            3h <br> avant
+          </label>
+        </div>
+        <div class="arrows">
+          <i class="fas fa-chevron-down middle" id="second-arrow"></i>
+        </div>
+    </div>
+
+
+
+    <div class="container-wm">
+      <div class="form-container">
+        <div id="form-3"><%= label_tag 'NOM' %>
+          <%= text_area_tag :name, "", class: 'form-control form-input', placeholder: "Marie", required: true%>
+          <div class="arrows">
+            <i class="fas fa-chevron-down middle" id="third-arrow"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-wm">
+      <div class="form-container">
+        <div id="form-4"><%= label_tag 'Téléphone' %>
+          <%= text_area_tag :phone_number, "", class: 'form-control form-input', placeholder: "0660832635", required: true %>
+          <div class="arrows">
+            <i class="fas fa-chevron-down middle" id="fourth-arrow"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-bottom">
+      <div class="container-wm">
+        <div class="form-container">
+          <div id="form-5"><%= label_tag "Adresse" %>
+              <%= text_field_tag :address, "", class: 'form-control form-input', placeholder: "16 villa Gaudelet, 75011", required: true %>
+          </div>
+        </div>
+      </div>
+
+      <%= submit_tag "Crée ton événement", class: "btn-blue-wm no-border", id: "new-event" %>
+
+    </div>
+  <% end %>
 </div>
-</div>
-</div>
-<% end %>
-</div>
+
