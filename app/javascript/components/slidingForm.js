@@ -56,14 +56,14 @@ const slideForm = () => {
   });
 
   const fourthArrow = document.querySelector('#fourth-arrow');
-  const fifthPart = document.getElementById('form-4');
+  const fifthPart = document.getElementById('form-5');
     fourthArrow.addEventListener('click', (event) => {
       fifthPart.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   });
 
   const fifthArrow = document.querySelector('#fifth-arrow');
-  const sixthPart = document.getElementById('form-5');
-    fourthArrow.addEventListener('click', (event) => {
+  const sixthPart = document.getElementById('form-6');
+    fifthArrow.addEventListener('click', (event) => {
       sixthPart.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   });
 
