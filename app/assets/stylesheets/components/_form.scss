@@ -127,6 +127,11 @@ input[type="time"] {
   }
 }
 
+.cheers {
+  text-align: center;
+  padding-top: 40px;
+}
+
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
     color: white;
     background-color: $wm-orange;
@@ -170,7 +175,7 @@ input[type="time"] {
     color: $lighter-grey;
     background-color: $lighter-grey;
     border-color: $lighter-grey;
-    font-size: 28px;
+    font-size: 22px;
 }
 
 .btn-secondary {
@@ -298,4 +303,8 @@ input::placeholder {
 
 .dispo-question p{
   font-size: 22px;
+}
+
+#invite-1, #invite-2, #invite-3, #invite-4, #invite-5 {
+  font-size: 20px;
 }

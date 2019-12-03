@@ -1,5 +1,7 @@
 <div class="container-wm relative">
-
+  <div class="cheers">
+    <%= image_tag "avatars/cheers.gif"%>
+  </div>
 <%= form_tag(event_meeting_path(@event, @meeting), method: :patch) do %>
   <div class="container-wm">
       <div class="form-container">
@@ -66,7 +68,7 @@
         </div>
       </div>
       <div id="invite-5">
-        <%= submit_tag "Je confirme", class: "btn-blue-wm no-border", id: "new-attending" %>
+        <%= submit_tag "Confirme", class: "btn-blue-wm no-border", id: "new-attending" %>
       </div>
     </div>
   </div>
