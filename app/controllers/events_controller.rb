@@ -11,6 +11,8 @@ class EventsController < ApplicationController
   def share_again
     sleep(5)
     @event = Event.find(params[:event_id])
+    redirect_to event_meetings_path(@event)
+
   end
 
   def new
