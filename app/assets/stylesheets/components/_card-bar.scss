@@ -1,3 +1,8 @@
+.container-show {
+  width: 98vw;
+  margin: 0 auto;
+}
+
 .card-bar {
   background: white;
   width: 90%;
@@ -7,6 +12,15 @@
   position: relative;
   min-width: 350px;
 }
+
+// .card-bar-show {
+//   // margin: 0 auto;
+// }
+
+// .card-meeting-show {
+//   margin: 0, auto;
+//   width: 100%;
+// }
 
 .transparent-target {
   width: 100%;
@@ -56,6 +70,10 @@
   text-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
 }
 
+.event.card-bar-ratings-price {
+    margin-top: 145px;
+}
+
 .bottom-like {
   background-color: white;
   border-bottom-left-radius: 10px;
@@ -74,6 +92,17 @@
   padding: 0.25em 1em;
 }
 
+.card-bar-infos-show h2 {
+  // padding: 0.25em 1em;
+    padding: 35px 15px 0 0px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.bar-name-show h1{
+  font-size: 24px;
+}
+
 .cheap {
   color: $light-grey;
 }
@@ -85,11 +114,12 @@
 
 .confirm-choice {
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   background-color: $green-a;
   height: 10vh;
-  position: sticky;
+  position: absolute;
   bottom: 0;
   z-index: 2;
 }
@@ -104,4 +134,10 @@
   overflow: auto;
 }
 
+
+.event-show .card-bar {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 1em;
+}
 

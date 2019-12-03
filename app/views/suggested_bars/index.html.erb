@@ -11,13 +11,9 @@
         <%= text_field_tag bar.id,nil ,hidden: true%>
         <div class="card-bar">
           <div class="transparent-target" id="heart<%= bar.id %>">
-            <div class="card-img-name">
-              <%= cl_image_tag bar.photo.key, alt: "alttext"%>
-            </div>
+            <div class="card-img-name"><%= cl_image_tag bar.photo.key, alt: "alttext"%></div>
             <div class="bar-ratings">
-              <div class="bottom-like" id="t<%= bar.id %>">
-                <i class="fa fa-heart card-bar-heart"></i>
-              </div>
+              <div class="bottom-like" id="t<%= bar.id %>"><i class="fa fa-heart card-bar-heart"></i></div>
               <div class="card-bar-ratings-price">
                 <div>
                   <% bar.rating.times do %>
@@ -41,13 +37,9 @@
               <h2><%= counter.to_s + ". " + bar.name %><h1>
               <% counter += 1 %>
               <h3><%= bar.address %></h2>
-
             </div>
-
           </div>
-          </div>
-
-
+        </div>
       <% end %>
 
     </div>

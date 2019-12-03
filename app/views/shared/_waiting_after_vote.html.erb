@@ -4,7 +4,31 @@
   <h1>Nous avons bien enregistré tes votes pour l'événement</h1>
 
   <h2>Nous t'enverrons le récapitulatif pour l'événement à <%= (event.deadline + 1800).to_s(:time) %></h2>
+
+  <h1><%= @event.meetings.where(attending: true, voted: true).count %>/<%= @event.meetings.where(attending: true).count %></h1>
   </div>
+
+  <div class="container-link link-to-share d-none">
+      <% link = "/events/" + @event.id.to_s + "/suggested_bars" %>
+      <%= link %>
+    </div>
+
+    <div class="center-btn">
+
+
+    </div>
+
+<% if current_user == @event.meetings.where(attending: true, organizer: true)[0].user %>
+
+    <%if event.meetings.where(attending: true, voted: true).count == @event.meetings.where(attending: true).count %>
+      <%= link_to "Le récap", event_path(@event), class: "btn-blue-wm share bouton-bas", data: { event: params[:event_id] } %>
+    <% else %>
+      <%= link_to "Fais voter tes amis", event_suggested_bars_path(@event), class: "btn-blue-wm share bouton-bas", data: { event: params[:event_id] } %>
+    <% end %>
+  </div>
+
+  <% end %>
+
 
 
 </div>
