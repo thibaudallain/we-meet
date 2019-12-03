@@ -85,11 +85,12 @@
 
 .confirm-choice {
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   background-color: $green-a;
   height: 10vh;
-  position: sticky;
+  position: absolute;
   bottom: 0;
   z-index: 2;
 }
