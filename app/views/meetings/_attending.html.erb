@@ -1,8 +1,8 @@
 <div class="container-wm relative">
 
+<%= form_tag(event_meeting_path(@event, @meeting), method: :patch) do %>
   <div class="container-wm">
       <div class="form-container">
-        <%= form_tag(event_meeting_path(@event, @meeting), method: :patch) do %>
           <div id="invite-1">
             <%= label_tag 'NOM' %>
             <%= text_area_tag :name, "", class: 'form-control form-input', placeholder: "Marie", required: true%>
