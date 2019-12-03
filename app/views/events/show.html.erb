@@ -13,7 +13,7 @@
             </div>
           </div>
           <% end %>
-        </div>
+    </div>
 
     <div class="card">
       <% @event.meetings.where(attending: true, organizer: false).each do |meeting| %>
@@ -33,43 +33,38 @@
       </div>
       <% end %>
     </div>
+      <div class="card-bar">
+        <div class="card-img-name">
+          <%= cl_image_tag@ending_point.photo.key, alt: "alttext" %>
+          <div class="bar-name-show">
+            <h1><%=@ending_point.name %><h1>
+          </div>
+        </div>
+
+        <div class="card-bar-infos-show">
+          <h2><%=@ending_point.address %></h2>
+          <div class="card-bar-ratings-price">
+            <div>
+              <% @ending_point.rating.times do %>
+                <i class="fa fa-star"></i>
+              <% end %>
+              <% (5 - @ending_point.rating).times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            </div>
+
+            <div>
+              <% 3.times do %>
+                <i class="fas fa-euro-sign"></i>
+              <% end %>
+              <% 2.times do %>
+                <i class="fas fa-euro-sign cheap"></i>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
   </div>
-
-
-<div class="container-wm">
-  <div class="card-bar">
-    <div class="card-img-name">
-      <%= cl_image_tag@ending_point.photo.key, alt: "alttext" %>
-      <div class="bar-name">
-        <h1><%=@ending_point.name %><h1>
-      </div>
-    </div>
-
-    <div class="card-bar-infos">
-      <h2><%=@ending_point.address %></h2>
-      <div class="card-bar-ratings-price">
-        <div>
-          <% @ending_point.rating.times do %>
-            <i class="fa fa-star"></i>
-          <% end %>
-          <% (5 - @ending_point.rating).times do %>
-            <i class="far fa-star"></i>
-          <% end %>
-        </div>
-
-        <div>
-          <% 3.times do %>
-            <i class="fas fa-euro-sign"></i>
-          <% end %>
-          <% 2.times do %>
-            <i class="fas fa-euro-sign cheap"></i>
-          <% end %>
-        </div>
-
-      </div>
-    </div>
-</div>
-
 
   <div id="map"
     data-markers="<%= @markers.to_json %>"

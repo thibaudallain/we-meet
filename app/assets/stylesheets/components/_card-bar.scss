@@ -47,6 +47,8 @@
   width: 100%;
 }
 
+
+
 .card-bar-ratings-price {
   width: 100%;
   padding: 0.25em 1em;
@@ -72,6 +74,17 @@
 
 .card-bar-infos {
   padding: 0.25em 1em;
+}
+
+.card-bar-infos-show h2 {
+  // padding: 0.25em 1em;
+    padding: 35px 15px 0 0px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.bar-name-show h1{
+  font-size: 24px;
 }
 
 .cheap {
@@ -103,5 +116,6 @@
   justify-content: start;
   overflow: auto;
 }
+
 
 
