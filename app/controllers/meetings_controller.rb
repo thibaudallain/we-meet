@@ -30,7 +30,7 @@ class MeetingsController < ApplicationController
   end
 
   def update
-    if params['commit'] == "Je vote"
+    if params['commit'] == "Vote"
       @suggested_bars = Meeting.find(params[:id]).event.suggested_bars
       a = []
       @suggested_bars.each do |bar|
