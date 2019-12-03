@@ -18,16 +18,17 @@
 
     </div>
 
+
 <% if current_user == @event.meetings.where(attending: true, organizer: true)[0].user %>
-
-    <%if event.meetings.where(attending: true, voted: true).count == @event.meetings.where(attending: true).count %>
-      <%= link_to "Le récap", event_path(@event), class: "btn-blue-wm share bouton-bas", data: { event: params[:event_id] } %>
-    <% else %>
-      <%= link_to "Fais voter tes amis", event_suggested_bars_path(@event), class: "btn-blue-wm share bouton-bas", data: { event: params[:event_id] } %>
-    <% end %>
+  <div id="recap-or-vote">
+      <%if event.meetings.where(attending: true, voted: true).count == @event.meetings.where(attending: true).count %>
+        <%= link_to "Le récap", event_path(@event), class: "btn-blue-wm share bouton-bas", data: { event: params[:event_id] } %>
+      <% else %>
+        <%= link_to "Fais voter tes amis", event_suggested_bars_path(@event), class: "btn-blue-wm share bouton-bas", data: { event: params[:event_id] } %>
+      <% end %>
+    </div>
   </div>
-
-  <% end %>
+<% end %>
 
 
 

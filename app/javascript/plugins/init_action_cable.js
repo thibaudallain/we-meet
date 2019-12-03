@@ -1,17 +1,21 @@
 const appendParticipant = (element) => {
   const divAttending = document.getElementById('attending-participants');
   const divDeclined = document.getElementById('declined-participants');
+  const btnShareOrVote = document.getElementById('share-or-vote');
   if (element.attending === false) {
-    divDeclined.insertAdjacentHTML('beforeend', element["message_partial"]);
+    divDeclined.insertAdjacentHTML('beforeend', element.message_partial);
   } else {
-    divAttending.insertAdjacentHTML('beforeend', element["message_partial"]);
+    divAttending.insertAdjacentHTML('beforeend', element.message_partial);
+    btnShareOrVote.innerHTML = element.btn_partial;
   }
 }
 
 const addVote = (element) => {
   const votes = document.getElementById('votes');
+  const btnVoteOrRecap = document.getElementById('recap-or-vote');
   if (element.voted === true) {
     votes.innerText = (Number.parseInt(votes.innerText) + 1).toString();
+    btnVoteOrRecap.innerHTML = element.btn_recap_partial;
   }
 }
 
