@@ -1,13 +1,12 @@
 <div class="container-wm">
 
-<%= form_tag event_suggested_bars_path(@event) do %>
-<div class="center-top">
-  <h1>Qui es-tu ?</h1>
-
-</div>
+<%= form_tag event_path(@event) do %>
+  <div class="center-top">
+    <h1>Qui es-tu ?</h1>
+  </div>
 <div class="card">
       <% @users.each do |user| %>
-      <%= link_to event_suggested_bars_path(@event, login_sb: user.phone_number), class: "link-login" do %>
+      <%= link_to event_path(@event, login_show: user.phone_number), class: "link-login" do %>
       <div class="card-participant">
         <% link = "avatars/avatar-0#{user.photo_number}.png" %>
         <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>

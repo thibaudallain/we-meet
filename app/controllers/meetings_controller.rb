@@ -51,6 +51,7 @@ class MeetingsController < ApplicationController
     else
       @meeting = Meeting.find(params[:id])
       if @user = User.find_by(phone_number: params[:phone_number])
+        @user.update(name: params[:name])
         @meeting.assign_attributes(meeting_params)
         @meeting.user = @user
         @meeting.save

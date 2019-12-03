@@ -10,10 +10,10 @@
       <% @bars.each do |bar| %>
         <%= text_field_tag bar.id,nil ,hidden: true%>
         <div class="card-bar">
-          <div class="transparent-target" id="heart<%= bar.id %>">
+          <div class="transparent-target" data-barid="<%= bar.id %>">
             <div class="card-img-name"><%= cl_image_tag bar.photo.key, alt: "alttext"%></div>
             <div class="bar-ratings">
-              <div class="bottom-like" id="t<%= bar.id %>"><i class="fa fa-heart card-bar-heart"></i></div>
+              <div class="bottom-like" id="div<%= bar.id %>"><i class="fa fa-heart card-bar-heart"></i></div>
               <div class="card-bar-ratings-price">
                 <div>
                   <% bar.rating.times do %>
