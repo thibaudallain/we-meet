@@ -40,7 +40,8 @@ class MeetingsController < ApplicationController
       end
       @meeting = Meeting.find(params[:id])
       @meeting.update(voted: true)
-      redirect_to event_suggested_bars_path(Event.find(params[:event_id]))
+      @event = Event.find(params[:event_id])
+      redirect_to event_suggested_bars_path(@event)
     elsif params['commit'] == "Prévenir #{Event.find(params[:event_id]).users.first.name}"
       @meeting = Meeting.find(params[:id])
       @name = params[:name]
