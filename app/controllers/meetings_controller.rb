@@ -45,19 +45,19 @@ class MeetingsController < ApplicationController
     elsif params['commit'] == "Prévenir #{Event.find(params[:event_id]).users.first.name}"
       @meeting = Meeting.find(params[:id])
       @name = params[:name]
-      @meeting.update(name: @name, photo_number: rand(1..19))
+      @meeting.assign_attributes(name: @name, photo_number: rand(1..19))
       @meeting.save
       redirect_to root_path
     else
       @meeting = Meeting.find(params[:id])
       if @user = User.find_by(phone_number: params[:phone_number])
-        @meeting.update(meeting_params)
+        @meeting.assign_attributes(meeting_params)
         @meeting.user = @user
         @meeting.save
         sign_in(@user)
       else
         @user = User.create(name: params[:name], phone_number: params[:phone_number], photo_number: rand(1..8))
-        @meeting.update(meeting_params)
+        @meeting.assign_attributes(meeting_params)
         @meeting.user = @user
         @meeting.save
         sign_in(@user)
