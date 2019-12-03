@@ -132,11 +132,32 @@ input[type="time"] {
     background-color: $wm-orange;
     border-color: $wm-orange;
 }
+
+.btn-secondqry:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+    color: white;
+    background-color: $wm-orange;
+    border-color: $wm-orange;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    color: white;
+    background-color: $wm-orange;
+    border-color: $wm-orange;
+}
+
+
 .btn-primary:hover {
     color: #fff;
     background-color: $wm-orange;
     border-color: $wm-orange;
 }
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: $wm-orange;
+    border-color: $wm-orange;
+}
+
 .buttons-toggle {
   margin: 0 auto;
   display: block;
@@ -150,6 +171,13 @@ input[type="time"] {
     background-color: $lighter-grey;
     border-color: $lighter-grey;
     font-size: 28px;
+}
+
+.btn-secondary {
+    color: $lighter-grey;
+    background-color: $lighter-grey;
+    border-color: $lighter-grey;
+    font-size:18px;
 }
 
 .form-check-input {
