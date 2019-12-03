@@ -73,14 +73,15 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <div class= "btn-map btn-red-wm">
-    <%= link_to @city_mapper_url, class: "d-flex justify-content-center" do %>
-      <%= image_tag("city-mapper-logo.png", class: "city-mapper avatar") %>
-      <p class="city-mapper-link">Ton temps de trajet est de <%#=  @t.travel_time_minutes%> <strong>10</strong> minutes</p>
+  <div class= "btn-blue-wm">
+    <%= link_to @city_mapper_url, class: "d-flex justify-content-center align-items-center goto" do %>
+      <%= image_tag("route.svg", class: "goto-icon") %>
+      <div class="goto-it">
+        <p class="city-mapper-link"> <%#=  @t.travel_time_minutes%> <strong>10</strong> minutes</p>
+      </div>
     <% end %>
   </div>
 </div>
-
 
 
 
