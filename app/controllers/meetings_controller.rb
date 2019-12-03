@@ -4,7 +4,6 @@ class MeetingsController < ApplicationController
     @event = Event.find(params[:event_id])
     @meetings_attending = @event.meetings.where.not(address: nil)
     @meetings_declined = @event.meetings.where.not(name: nil)
-
   end
 
   def new
