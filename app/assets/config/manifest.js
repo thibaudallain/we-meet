@@ -2,5 +2,3 @@
 //= link_directory ../javascripts .js
 //= link_directory ../stylesheets .css
 //= link_directory ../javascripts .json
-//= link manifest.json
-//= link application.css
