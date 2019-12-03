@@ -3,8 +3,7 @@
     <i class="fas fa-check-circle"></i>
   <h1>Votes bien enregistrés</h1>
 
-  <h2>Tu recevras le récap' de l'événement à <%= (event.deadline + 1800).to_s(:time) %></h2>
-
+  <h2>Tu recevras le récap' de l'événement à <%= (event.deadline + 1800).strftime("%Hh%M") %></h2>
   <h2><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %> <%= @event.meetings.where(attending: true, voted: true).count > 1 ? "personnes ont voté" : "personne a voté"%></span> sur <%= @event.meetings.where(attending: true).count %> <%= @event.meetings.where(attending: true).count > 1 ? "participants" : "participant" %></h2>
   </div>
 
@@ -21,7 +20,7 @@
 <% if current_user == @event.meetings.where(attending: true, organizer: true)[0].user %>
 
     <%if event.meetings.where(attending: true, voted: true).count == @event.meetings.where(attending: true).count %>
-      <%= link_to "Le récap", event_path(@event), class: "btn-blue-wm share bouton-bas", data: { event: params[:event_id] } %>
+      <%= link_to "Le récap'", event_path(@event), class: "btn-blue-wm share bouton-bas", data: { event: params[:event_id] } %>
     <% else %>
       <%= link_to "Fais voter tes amis", event_suggested_bars_path(@event), class: "btn-blue-wm share bouton-bas", data: { event: params[:event_id] } %>
     <% end %>
