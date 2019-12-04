@@ -1,11 +1,11 @@
-<div class="container btn-space">
+<div class="container btn-space" id="index-meetings>
 <br>
 <br>
 <div class="index-top">
 <h2>La soirée s'organise</h2>
 
-<%= image_tag "avatars/Spinner-1s-200px.gif", class: "spinner" %>
-<p>Vote pour le bar à <%= @event.deadline.strftime("%Hh%M") %></p>
+<%= image_tag "curve.gif", class: "spinner" %>
+<p>Le vote pour le bar sera lancé à <%= @event.deadline.strftime("%Hh%M") %></p>
 </div>
 <hr>
 <h3 id="nb-dispo">Dispo - <%= @meetings_attending.where(attending: true).count %>
