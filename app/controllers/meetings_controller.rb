@@ -56,7 +56,7 @@ class MeetingsController < ApplicationController
         @meeting.save
         sign_in(@user)
       else
-        @user = User.create(name: params[:name], phone_number: params[:phone_number], photo_number: rand(1..8))
+        @user = User.create(name: params[:name], phone_number: params[:phone_number], photo_number: rand(1..19))
         @meeting.assign_attributes(meeting_params)
         @meeting.user = @user
         @meeting.save

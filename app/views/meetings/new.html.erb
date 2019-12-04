@@ -1,6 +1,6 @@
 <div class="share-top">
 
-  <h1><%= @event.users.first.name %> a envie de boire un verre ce soir !</h1>
+  <h1><%= @event.meetings.where(organizer: true)[0].user.name %> a envie de boire un verre ce soir !</h1>
 </div>
 
 <div class="share-bottom">
