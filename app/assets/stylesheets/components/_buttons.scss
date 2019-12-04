@@ -9,6 +9,8 @@
     text-decoration: none;
     display: inline-block;
     box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+    position: fixed;
+    bottom: 0;
 }
 
 
@@ -78,6 +80,8 @@
   width: 100%;
   text-decoration: none;
   display: inline-block;
+  position: fixed;
+  bottom: 0;
   }
 
 .btn-blue-wm:hover {
