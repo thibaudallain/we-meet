@@ -26,6 +26,10 @@ class Meeting < ApplicationRecord
         partial: "meetings/recap",
         locals: { event: self.event }
       ),
+      dispos_partial: ApplicationController.renderer.render(
+        partial: "meetings/dispos",
+        locals: { event: self.event }
+      ),
       attending: attending,
       voted: voted
     })
