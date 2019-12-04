@@ -53,10 +53,19 @@
 }
 
 .link-red-wm {
-  color: $red;
+  color: $wm-light-purple;
   text-decoration: none;
   text-decoration: underline;
   margin-bottom: 3em;
+}
+
+.last-action-back {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  margin-top: 4em;
 }
 
 .btn-blue-wm {
@@ -129,9 +138,10 @@ p.goto-text {
 }
 
 .bouton-haut-last-action {
-  height: 1em;
+  height: 4em;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: $wm-pink;
+  margin-bottom: 2em;
 }

@@ -1,7 +1,11 @@
 <% if current_user == @event.meetings.where(attending: true, organizer: true)[0].user %>
       <%= link_to "Partage le récap", event_path(@event), class: "btn-blue-wm share bouton-haut-last-action", data: { event: params[:event_id] } %>
   <% end %>
+
   <div class="container event-show">
+    <h3 id="nb-dispo">Dispo - <%= @event.meetings.where(attending: true).count %>
+        <%= @event.meetings.where(attending: true).count > 1 ? "personnes" : "personne" %>
+    </h3>
     <div class="card">
       <% @event.meetings.where(attending: true, organizer: true).each do |meeting| %>
       <div class="card-participant">
@@ -90,8 +94,8 @@
 
     </div>
 
-<div class="last-action-calls">
-  <%= link_to "Crée un autre événement", root_path, class: "btn-blue-wm share bouton-bas-last-action", data: { event: params[:event_id] } %>
+<div class="last-action-back">
+  <%= link_to "Retour", root_path, class: "link-red-wm", data: { event: params[:event_id] } %>
 </div>
 
 
