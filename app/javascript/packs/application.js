@@ -27,7 +27,7 @@ if (document.getElementById('name')) {
 }
 
 if (document.getElementById('loading-screen')) {
-  setTimeout(loadScreen, 1000);
+  setTimeout(loadScreen, 2000);
 }
 
 if (document.querySelector('.label-deadline')) {
