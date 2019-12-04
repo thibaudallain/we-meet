@@ -10,6 +10,7 @@ import { initAutocompleteMeeting } from "../plugins/init_autocomplete_meeting";
 import { loadScreen } from "../components/loadingScreen";
 import { slideForm } from "../components/slidingForm";
 import { slideInvite } from "../components/slidingInvite";
+import { btnRecap } from "../components/btnRecap";
 import { initActionCable } from "../plugins/init_action_cable";
 
 share();
@@ -39,5 +40,6 @@ if (document.querySelector('#invite-arrow-1')) {
 }
 
 initActionCable();
+btnRecap();
 
 

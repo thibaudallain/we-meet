@@ -22,16 +22,16 @@ class Meeting < ApplicationRecord
         partial: "meetings/btn",
         locals: { event: self.event }
       ),
-      btn_recap_partial: ApplicationController.renderer.render(
-        partial: "meetings/recap",
-        locals: { event: self.event }
-      ),
       dispos_partial: ApplicationController.renderer.render(
         partial: "meetings/dispos",
         locals: { event: self.event }
       ),
       votants_partial: ApplicationController.renderer.render(
         partial: "meetings/votants",
+        locals: { event: self.event }
+      ),
+      voting_partial: ApplicationController.renderer.render(
+        partial: "meetings/voting",
         locals: { event: self.event }
       ),
       attending: attending,

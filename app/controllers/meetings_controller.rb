@@ -66,6 +66,68 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def tanguy
+  end
+
+  def sergio
+  end
+
+  def ade
+  end
+
+  def tanguycreate
+    tanguy = User.find_by(phone_number: "0111111111")
+
+    meeting = Meeting.create(
+      attending: true,
+      event_id: Event.last.id,
+      organizer: false,
+      voted: nil,
+      name: nil
+      )
+
+    meeting.assign_attributes(
+      user: tanguy,
+      address: "16 Villa Gaudelet, Paris 11e Arrondissement, Île-de-France, France",
+      available_time: "plus tard"
+      )
+
+    meeting.save
+  end
+
+  def sergiocreate
+    sergio = User.find_by(phone_number: "0222222222")
+
+    meeting = Meeting.create(
+      attending: true,
+      event_id: Event.last.id,
+      organizer: false,
+      voted: nil,
+      name: nil
+      )
+
+    meeting.assign_attributes(
+      user: sergio,
+      address: "11 Rue de l'Orillon, Paris 11e Arrondissement, Île-de-France, France",
+      available_time: "plus tard"
+      )
+
+    meeting.save
+  end
+
+  def adecreate
+    meeting = Meeting.create(
+      attending: false,
+      event_id: Event.last.id,
+      organizer: false,
+      voted: nil,
+      name: nil
+    )
+    meeting.assign_attributes(name: "Adélaïde")
+
+    meeting.save
+  end
+
   def meeting_params
     params.require(:meeting).permit(:address, :available_time)
   end

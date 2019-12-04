@@ -87,3 +87,15 @@ SuggestedBar.destroy_all
 Meeting.destroy_all
 Event.destroy_all
 User.destroy_all
+
+User.create(
+  name: "Sergio",
+  phone_number: "0222222222",
+  photo_number: 12
+  )
+
+tanguy = User.create(
+      name: "Tanguy",
+      phone_number: "0111111111",
+      photo_number: 15
+      )

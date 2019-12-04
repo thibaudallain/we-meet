@@ -3,6 +3,11 @@
   margin: 0 auto;
 }
 
+.card-participant.card-votes {
+  align-items: center;
+}
+
+
 .card-bar {
   background: white;
   width: 90%;
@@ -138,3 +143,7 @@
   margin: 1em auto 0 auto;
 }
 
+
+.card-participant-infos.card-infos-votes {
+  padding: 0;
+}
