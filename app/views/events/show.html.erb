@@ -1,4 +1,6 @@
-  <h1 style="text-align: center; margin-top: 1em"> À ce soir à <%= @event.start_time.strftime("%Hh%M") %> </h1>
+<% if current_user == @event.meetings.where(attending: true, organizer: true)[0].user %>
+      <%= link_to "Partage le récap", event_path(@event), class: "btn-blue-wm share bouton-haut-last-action", data: { event: params[:event_id] } %>
+  <% end %>
   <div class="container event-show">
     <div class="card">
       <% @event.meetings.where(attending: true, organizer: true).each do |meeting| %>
@@ -77,6 +79,21 @@
     <% end %>
   </div>
 </div>
+
+<div class="container-link link-to-share d-none" data-message="C'est dans la boite ! A ce soir.">
+      <% link = "/events/" + @event.id.to_s %>
+      <%= link %>
+    </div>
+
+    <div class="center-btn">
+
+
+    </div>
+
+<div class="last-action-calls">
+  <%= link_to "Crée un autre événement", root_path, class: "btn-blue-wm share bouton-bas-last-action", data: { event: params[:event_id] } %>
+</div>
+
 
 
 

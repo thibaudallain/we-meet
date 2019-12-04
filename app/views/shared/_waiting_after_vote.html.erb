@@ -7,7 +7,7 @@
   <h2><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %> <%= @event.meetings.where(attending: true, voted: true).count > 1 ? "personnes ont voté" : "personne a voté"%></span> sur <%= @event.meetings.where(attending: true).count %> <%= @event.meetings.where(attending: true).count > 1 ? "participants" : "participant" %></h2>
   </div>
 
-  <div class="container-link link-to-share d-none">
+  <div class="container-link link-to-share d-none" data-message="On a l'équipe ! Maintenant, place au choix du bar !">
       <% link = "/events/" + @event.id.to_s + "/suggested_bars" %>
       <%= link %>
     </div>

@@ -7,7 +7,7 @@
       <h2>Tu pars de : <%= @meetings.first.address %></h2>
     </div>
 
-    <div class="container-link link-to-share d-none">
+    <div class="container-link link-to-share d-none" data-message="On sort ce soir ? Pour l'organisation, c'est We Meet">
       <% link = "/events/" + @event.id.to_s + "/meetings/new" %>
       <%= link %>
     </div>
