@@ -1,24 +1,20 @@
-<div class="container-wm">
-  <div class="center-top">
-    <i class="fas fa-check-circle"></i>
-  <h1>Votes bien enregistrés</h1>
+  <div class="container-wm">
+    <div class="center-top">
+      <%= image_tag "avatars/cheers.gif"%>
+      <h1>Votes bien enregistrés</h1>
+      <div class="eventok">
+      <p>Tu recevras le récap' de l'événement à <%= (event.deadline + 1800).strftime("%Hh%M") %></p>
+      <p><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %> <%= @event.meetings.where(attending: true, voted: true).count > 1 ? "personnes ont voté" : "personne a voté"%></span> sur <%= @event.meetings.where(attending: true).count %> <%= @event.meetings.where(attending: true).count > 1 ? "participants" : "participant" %></p>
+       </div>
+    </div>
 
-  <h2>Tu recevras le récap' de l'événement à <%= (event.deadline + 1800).strftime("%Hh%M") %></h2>
-  <h2><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %> <%= @event.meetings.where(attending: true, voted: true).count > 1 ? "personnes ont voté" : "personne a voté"%></span> sur <%= @event.meetings.where(attending: true).count %> <%= @event.meetings.where(attending: true).count > 1 ? "participants" : "participant" %></h2>
-  </div>
-
-  <div class="container-link link-to-share d-none" data-message="On a l'équipe ! Maintenant, place au choix du bar !">
-      <% link = "/events/" + @event.id.to_s + "/suggested_bars" %>
+    <div class="container-link link-to-share d-none" data-message="On sort ce soir ? Pour l'organisation, c'est We Meet">
+      <% link = "/events/" + @event.id.to_s + "/meetings/new" %>
       <%= link %>
     </div>
 
-    <div class="center-btn">
-
-
-    </div>
-
-
   </div>
+
 <% if current_user == @event.meetings.where(attending: true, organizer: true)[0].user %>
   <div id="recap-or-vote">
       <%if event.meetings.where(attending: true, voted: true).count == @event.meetings.where(attending: true).count %>

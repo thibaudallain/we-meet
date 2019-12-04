@@ -2,9 +2,12 @@
     <div class="center-top">
       <%= image_tag "avatars/cheers.gif"%>
       <h1>Événement créé</h1>
-      <h2>Ce soir, à <%= @event.start_time.strftime("%Hh%M") %></h2>
+      <div class="eventok">
+      <p>Ce soir, à <strong><%= @event.start_time.strftime("%Hh%M") %></strong></p>
       <br>
-      <h2>Tu pars de : <%= @meetings.first.address %></h2>
+      <p>Tu pars de :</p>
+        <p><%= @meetings.first.address.split(' ')[0...-3].join(' ') %></p>
+      </div>
     </div>
 
     <div class="container-link link-to-share d-none" data-message="On sort ce soir ? Pour l'organisation, c'est We Meet">
