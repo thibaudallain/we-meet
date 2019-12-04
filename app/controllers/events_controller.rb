@@ -20,7 +20,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    start = Time.new(Time.now.year, Time.now.month, Time.now.day, params["event"]["start_time"].split(":")[0].to_i, params["event"]["start_time"].split(":")[1].to_i)
+    start = Time.zone.local(Time.now.year, Time.now.month, Time.now.day, params["event"]["start_time"].split(":")[0].to_i, params["event"]["start_time"].split(":")[1].to_i)
     deadline = start - 3600 * params["event"]["available_time"].to_i
     if @user = User.find_by(phone_number: params[:phone_number])
       @user.update(name: params[:name])
