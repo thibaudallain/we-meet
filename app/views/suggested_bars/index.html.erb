@@ -10,7 +10,11 @@
         <%= text_field_tag bar.id,nil ,hidden: true%>
         <div class="card-bar">
           <div class="transparent-target" data-barid="<%= bar.id %>">
+            <% if bar.photo.attached? %>
             <div class="card-img-name"><%= cl_image_tag bar.photo.key, alt: "alttext"%></div>
+            <% else %>
+            <div class="card-img-name"><%= image_tag "no-photo.png", alt: "alttext"%></div>
+            <% end %>
             <div class="bar-ratings">
               <div class="bottom-like" id="div<%= bar.id %>"><i class="fa fa-heart card-bar-heart"></i></div>
               <div class="card-bar-ratings-price">
