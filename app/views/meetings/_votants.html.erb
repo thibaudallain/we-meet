@@ -1,0 +1,1 @@
+<%= event.meetings.where(attending: true, voted: true).count %> <%= event.meetings.where(attending: true, voted: true).count > 1 ? "personnes ont voté" : "personne a voté"%>

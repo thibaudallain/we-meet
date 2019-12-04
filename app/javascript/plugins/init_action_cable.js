@@ -16,7 +16,7 @@ const addVote = (element) => {
   const votes = document.getElementById('votes');
   const btnVoteOrRecap = document.getElementById('recap-or-vote');
   if (element.voted === true) {
-    votes.innerText = (Number.parseInt(votes.innerText) + 1).toString();
+    votes.innerHTML = element.votants_partial;
     btnVoteOrRecap.innerHTML = element.btn_recap_partial;
   }
 }
