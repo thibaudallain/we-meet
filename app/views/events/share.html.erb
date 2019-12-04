@@ -4,7 +4,7 @@
       <h1>Événement créé</h1>
       <h2>Ce soir, à <%= @event.start_time.strftime("%Hh%M") %></h2>
       <br>
-      <h2>Tu pars de : <%= @meetings.first.address %></h2>
+      <h3>Tu pars de :<br><br> <%= @meetings.first.address %></h3>
     </div>
 
     <div class="container-link link-to-share d-none" data-message="On sort ce soir ? Pour l'organisation, c'est We Meet">
