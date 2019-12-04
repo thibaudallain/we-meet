@@ -39,7 +39,11 @@
 
       <div class="card-bar">
         <div class="transparent-target" id="heart<%= @bar.id %>">
-          <div class="card-img-name"><%= cl_image_tag @bar.photo.key, alt: "alttext"%></div>
+          <% if @bar.photo.attached? %>
+            <div class="card-img-name"><%= cl_image_tag @bar.photo.key, alt: "alttext"%></div>
+            <% else %>
+            <div class="card-img-name"><%= image_tag "no-photo.png", alt: "alttext"%></div>
+            <% end %>
           <div class="bar-ratings">
             <div class="event card-bar-ratings-price">
               <div>
