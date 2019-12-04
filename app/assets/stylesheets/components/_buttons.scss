@@ -9,7 +9,6 @@
     text-decoration: none;
     display: inline-block;
     box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
-
 }
 
 .btn-red-wm:hover {
@@ -146,4 +145,8 @@ p.goto-text {
   justify-content: center;
   background-color: $wm-pink;
   margin-bottom: 2em;
+}
+
+#btn-space {
+  margin-bottom: 100px;
 }
