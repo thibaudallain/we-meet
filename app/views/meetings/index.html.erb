@@ -62,7 +62,7 @@
   <div id="share-or-vote">
     <% if @meetings_attending.where(attending: true, organizer: false).length == 0 %>
       <div class="bouton-bas">
-        <div class="container-link link-to-share d-none">
+        <div class="container-link link-to-share d-none" data-message="On sort ce soir ? Pour l'organisation, c'est We Meet">
           <% link = "/events/" + @event.id.to_s + "/meetings/new" %>
           <%= link %>
         </div>
