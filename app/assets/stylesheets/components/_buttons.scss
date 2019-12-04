@@ -115,3 +115,23 @@ p.goto-text {
 .fa-clock {
 
 }
+
+.last-action-calls {
+  height: 5em;
+  margin-top: 5em;
+  .bouton-bas-last-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: $wm-pink;
+  }
+}
+
+.bouton-haut-last-action {
+  height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $wm-pink;
+}
