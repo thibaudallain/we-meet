@@ -5,20 +5,38 @@ class SuggestedBarsController < ApplicationController
   def index
     if user_signed_in?
       @event = Event.find(params[:event_id])
-      if Bar.near(Geocoder::Calculations.geographic_center(@event.meetings.where(attending: true)), 0.5).length >= 5
-        @message = "pas d'API"
-        @bars = Bar.near(Geocoder::Calculations.geographic_center(@event.meetings.where(attending: true)), 0.5).first(5)
+      if @event.meetings.geocoded.where(attending: true).length == 1
+        position_centrale = @event.meetings.geocoded.where(attending: true).first
       else
-        @result_lat = Geocoder::Calculations.geographic_center(@event.meetings.where(attending: true))[0]
-                                            .to_s
-                                            .split(".")
-                                            .map { |string| string.slice(0..5) }
-                                            .join(".")
-        @result_long = Geocoder::Calculations.geographic_center(@event.meetings.where(attending: true))[1]
-                                             .to_s
-                                             .split(".")
-                                             .map { |string| string.slice(0..5) }
-                                             .join(".")
+        position_centrale = Geocoder::Calculations.geographic_center(@event.meetings.geocoded.where(attending: true))
+      end
+      if Bar.near(position_centrale, 0.5).length >= 5
+        @message = "pas d'API"
+        @bars = Bar.near(position_centrale, 0.5).first(5)
+      else
+        if position_centrale.class == Meeting
+          @result_lat = position_centrale.latitude
+                                              .to_s
+                                              .split(".")
+                                              .map { |string| string.slice(0..5) }
+                                              .join(".")
+          @result_long = position_centrale.longitude
+                                               .to_s
+                                               .split(".")
+                                               .map { |string| string.slice(0..5) }
+                                               .join(".")
+        else
+          @result_lat = position_centrale[0]
+                                              .to_s
+                                              .split(".")
+                                              .map { |string| string.slice(0..5) }
+                                              .join(".")
+          @result_long = position_centrale[1]
+                                               .to_s
+                                               .split(".")
+                                               .map { |string| string.slice(0..5) }
+                                               .join(".")
+        end
         @message = "API"
         @response = retrieve_bars("#{@result_lat},#{@result_long}")
         @bars = @response['results']
@@ -62,7 +80,7 @@ class SuggestedBarsController < ApplicationController
           image_url: helpers.asset_url('icon_bar.png')
         }
       end
-      @markers_people = @event.meetings.where(attending: true).map do |person|
+      @markers_people = @event.meetings.where(attending: true).geocoded.map do |person|
         {
           lat: person.latitude,
           lng: person.longitude,
