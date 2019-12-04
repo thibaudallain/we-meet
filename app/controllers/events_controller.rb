@@ -45,8 +45,12 @@ class EventsController < ApplicationController
       # @starting_point = @event.meetings.where(user: current_user)
       @starting_point = @event.meetings.find_by(user: current_user)# A CHANGER
       # marker du bar choisi
-      @chosen_bar = @event.suggested_bars.max_by{ |k| k[:votes] }
-      @chosen_bar.update(chosen: true)
+      if @event.suggested_bars.where(chosen: true).length == 0
+        @chosen_bar = @event.suggested_bars.max_by{ |k| k[:votes] }
+        @chosen_bar.update(chosen: true) unless @event.suggested_bars.where(chosen: true).length > 0
+      else
+        @chosen_bar = @event.suggested_bars.where(chosen: true).first
+      end
       @ending_point = @chosen_bar.bar
       @bar_name = @ending_point.name
       @points = [ @starting_point, @ending_point ]
