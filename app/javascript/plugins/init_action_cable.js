@@ -2,11 +2,13 @@ const appendParticipant = (element) => {
   const divAttending = document.getElementById('attending-participants');
   const divDeclined = document.getElementById('declined-participants');
   const btnShareOrVote = document.getElementById('share-or-vote');
+  const nbAttending = document.getElementById('nb-dispo');
   if (element.attending === false && element.voted !== true) {
     divDeclined.insertAdjacentHTML('beforeend', element.message_partial);
   } else if (element.attending === true && element.voted !== true) {
     divAttending.insertAdjacentHTML('beforeend', element.message_partial);
     btnShareOrVote.innerHTML = element.btn_partial;
+    nbAttending.innerHTML = element.dispos_partial;
   }
 }
 

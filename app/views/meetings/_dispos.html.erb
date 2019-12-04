@@ -1,0 +1,3 @@
+Dispo - <%= event.meetings.where(attending: true).count %>
+<%= event.meetings.where(attending: true).count > 1 ? "personnes" : "personne" %>
+
