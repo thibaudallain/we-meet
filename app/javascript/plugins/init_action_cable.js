@@ -14,10 +14,10 @@ const appendParticipant = (element) => {
 
 const addVote = (element) => {
   const votes = document.getElementById('votes');
-  const btnVoteOrRecap = document.getElementById('recap-or-vote');
+  const cardVoters = document.getElementById('voting-participants');
   if (element.voted === true) {
     votes.innerHTML = element.votants_partial;
-    btnVoteOrRecap.innerHTML = element.btn_recap_partial;
+    cardVoters.innerHTML = element.voting_partial;
   }
 }
 

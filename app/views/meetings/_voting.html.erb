@@ -1,0 +1,9 @@
+<% event.meetings.where(attending: true, voted: true).each do |meeting| %>
+  <div class="card-participant card-votes">
+    <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
+    <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
+    <div class="card-participant-infos card-infos-votes">
+      <h2><%= meeting.user.name %></h2>
+    </div>
+  </div>
+<% end %>
