@@ -46,7 +46,7 @@
       <div class="container-wm">
         <div class="form-container">
           <div class="dispo-question" id="invite-4">
-            <p><%= @event.meetings.where(organizer: true)[0] %> est disponible à <%= @event.start_time.strftime("%Hh%M") %>. Et toi ?</p>
+            <p><%= @event.meetings.where(organizer: true)[0].user.name %> est disponible à <%= @event.start_time.strftime("%Hh%M") %>. Et toi ?</p>
           </div>
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-secondary form-check-label">
