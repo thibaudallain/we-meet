@@ -3,7 +3,6 @@ class Meeting < ApplicationRecord
   belongs_to :user, optional: true
   # validates :event_id, presence: true
   # validates :user_id, presence: true
-  validates :user_id, uniqueness: { scope: :event_id }
   validates_inclusion_of :organizer, in: [true, false]
   validates_inclusion_of :attending, in: [true, false]
   geocoded_by :address

@@ -52,9 +52,13 @@ class MeetingsController < ApplicationController
       if @user = User.find_by(phone_number: params[:phone_number])
         @user.update(name: params[:name])
         @meeting.assign_attributes(meeting_params)
-        @meeting.user = @user
-        @meeting.save
-        sign_in(@user)
+        if Event.find(params[:event_id]).meetings.where(user_id: @user.id).length > 0
+          @meeting.destroy
+        else
+          @meeting.user = @user
+          @meeting.save
+          sign_in(@user)
+        end
       else
         @user = User.create(name: params[:name], phone_number: params[:phone_number], photo_number: rand(1..19))
         @meeting.assign_attributes(meeting_params)
@@ -77,42 +81,44 @@ class MeetingsController < ApplicationController
 
   def tanguycreate
     tanguy = User.find_by(phone_number: "0111111111")
+    unless Event.last.meetings.where(user: tanguy).length > 0
+      meeting = Meeting.create(
+        attending: true,
+        event_id: Event.last.id,
+        organizer: false,
+        voted: nil,
+        name: nil
+        )
 
-    meeting = Meeting.create(
-      attending: true,
-      event_id: Event.last.id,
-      organizer: false,
-      voted: nil,
-      name: nil
-      )
+      meeting.assign_attributes(
+        user: tanguy,
+        address: "16 Villa Gaudelet, Paris 11e Arrondissement, Île-de-France, France",
+        available_time: ""
+        )
 
-    meeting.assign_attributes(
-      user: tanguy,
-      address: "16 Villa Gaudelet, Paris 11e Arrondissement, Île-de-France, France",
-      available_time: "plus tard"
-      )
-
-    meeting.save
+      meeting.save
+    end
   end
 
   def sergiocreate
     sergio = User.find_by(phone_number: "0222222222")
+    unless Event.last.meetings.where(user: sergio).length > 0
+      meeting = Meeting.create(
+        attending: true,
+        event_id: Event.last.id,
+        organizer: false,
+        voted: nil,
+        name: nil
+        )
 
-    meeting = Meeting.create(
-      attending: true,
-      event_id: Event.last.id,
-      organizer: false,
-      voted: nil,
-      name: nil
-      )
+      meeting.assign_attributes(
+        user: sergio,
+        address: "11 Rue de l'Orillon, Paris 11e Arrondissement, Île-de-France, France",
+        available_time: "plus tard"
+        )
 
-    meeting.assign_attributes(
-      user: sergio,
-      address: "11 Rue de l'Orillon, Paris 11e Arrondissement, Île-de-France, France",
-      available_time: "plus tard"
-      )
-
-    meeting.save
+      meeting.save
+    end
   end
 
   def adecreate
