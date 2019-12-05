@@ -9,10 +9,8 @@ class EventsController < ApplicationController
   end
 
   def share_again
-    sleep(5)
     @event = Event.find(params[:event_id])
     redirect_to event_meetings_path(@event)
-
   end
 
   def new
@@ -36,6 +34,13 @@ class EventsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(shared: true)
+    sleep(3)
+    redirect_to event_suggested_bars_path(@event)
   end
 
   def show
@@ -71,10 +76,6 @@ class EventsController < ApplicationController
           infoWindow: render_to_string(partial: "info_window")
 
         }]
-
-
-
-
 
     @city_mapper_url = "https://citymapper.com/directions?startcoord=#{@starting_point.latitude}%2C#{@starting_point.longitude}&startaddress=#{@starting_point.address}&endcoord=#{@ending_point.latitude}%2C#{@ending_point.longitude}&endname=#{@bar_name}&endaddress=#{@bar.address}"
     elsif params["login_show"]
