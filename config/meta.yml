@@ -1,0 +1,6 @@
+meta_product_name: "We Meet"
+meta_title: "We Meet - We Meet, l’appli pour aller boire des verres avec tes potes sur un coup de tête, sans te prendre la tête !"
+meta_description: "Il y a trop d'étapes pour se retrouver avec ses amis dans un bars. Ces étapes ont besoin d'être supervisées par une seule personne.
+Ceci est possible avec WeMeet: on collecte les adresses, propose les bars qui vous arrangent, et on vous affiche l'itinéraire."
+meta_image: "WM-white.png" # should exist in `app/assets/images/`
+twitter_account: "@Dillinger75"   # required for Twitter Cards
