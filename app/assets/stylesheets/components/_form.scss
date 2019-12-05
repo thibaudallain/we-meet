@@ -125,6 +125,11 @@ input[type="time"] {
     margin: 1em 0;
     color: $wm-purple;
   }
+  &.show {
+    padding-top: 5em;
+    padding-bottom: 1em;
+    width: 100%;
+  }
 }
 
 .cheers {

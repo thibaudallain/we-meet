@@ -1,0 +1,21 @@
+.last-secondary-actions {
+  display: flex;
+  padding: 1em 0.5em;
+  justify-content: space-between;
+  align-items: center;
+  i {
+    font-size: 24px;
+    color: $wm-orange;
+  }
+}
+
+.home {
+  height: 24px;
+  width: 24px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.map-container {
+  margin-bottom: 90px;
+}
