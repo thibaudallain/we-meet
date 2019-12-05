@@ -7,7 +7,7 @@
 
 
         <div class="card" id="voting-participants" data-event=<%= @event.id %>>
-        <p><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %></span> / <%= @event.meetings.where(attending: true).count %></p>
+        <p><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %></span> / <%= @event.meetings.where.not(user_id: nil).count %></p>
 
     <% @event.meetings.where(attending: true, voted: true).each do |meeting| %>
       <div class="card-participant card-votes">
@@ -21,17 +21,19 @@
   </div>
     </div>
 
-    <div class="container-link link-to-share d-none" data-message="On sort ce soir ? Pour l'organisation, c'est We Meet">
+    <div class="container-link link-to-share d-none" data-message="Oyé oyé, c'est l'heure de voter pour un bar.">
       <% link = "/events/" + @event.id.to_s + "/suggested_bars" %>
       <%= link %>
     </div>
 
   </div>
 
+</div>
+
 <% if current_user == @event.meetings.where(attending: true, organizer: true)[0].user %>
   <div id="recap-or-vote" data-event="<%= @event.id %>">
     <% if @event.shared %>
-      <%= link_to "Le récap", event_path(event), class: "btn-blue-wm share btn-sticky", data: { event: params[:event_id] } %>
+      <%= link_to "Le récap'", event_path(event), class: "btn-blue-wm btn-sticky" %>
     <% else %>
       <%= link_to event_path(@event), method: :patch do %>
         <div id="btn-recap-or-vote" class="btn-blue-wm share no-border btn-sticky" data-event=<%= params[:event_id] %> > Fais voter tes amis </div>
