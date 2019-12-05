@@ -5,7 +5,7 @@ const btnRecap = () => {
     btn.addEventListener('click', (event) => {
       const link = "/events/" + div.dataset.event.toString();
       const eventId = div.dataset.event.toString();
-      const html = `<a href='${link}' data-event='${eventId}' class='btn-blue-wm share bouton-bas'>Le Récap</a>"`;
+      const html = `<a href='${link}' data-event='${eventId}' class='btn-blue-wm share btn-sticky'>Le récap'</a>"`;
       div.innerHTML = html;
     });
   }

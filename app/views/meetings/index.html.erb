@@ -5,7 +5,7 @@
 <h2>La soirée s'organise</h2>
 
 <%= image_tag "curve.gif", class: "spinner" %>
-<p>Le vote pour le bar sera lancé à <%= @event.deadline.strftime("%Hh%M") %></p>
+<p>Le vote pour le bar sera lancé</p><p>à <%= @event.deadline.strftime("%Hh%M") %> au plus tard</p>
 </div>
 <hr>
 <h3 id="nb-dispo">Dispo - <%= @meetings_attending.where(attending: true).count %>
