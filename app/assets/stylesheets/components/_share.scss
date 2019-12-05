@@ -56,20 +56,35 @@
 
 
 .eventok {
-  padding: 70px 0px;
+  padding: 32px 0px;
   border-top: 1px solid $wm-orange;
   p {
     font-size: 24px;
+    padding-bottom: 14px;
   }
 }
 
 #index-meetings {
   h3 {
-    margin-top: 1em;
+    width: 340px;
+    text-align: left;
   }
+}
+
+
+.index-top {
   p {
     font-size: 19px;
     margin-bottom: 0;
   }
 }
+
+#voting-participants {
+  border-top: 1px solid $wm-orange;
+  padding-top: 2em;
+  p {
+    font-size: 36px;
+  }
+}
+
 

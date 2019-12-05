@@ -8,10 +8,10 @@
 <p>Le vote pour le bar sera lancé</p><p>à <%= @event.deadline.strftime("%Hh%M") %> au plus tard</p>
 </div>
 <hr>
-<h3 id="nb-dispo">Dispo - <%= @meetings_attending.where(attending: true).count %>
-<%= @meetings_attending.where(attending: true).count > 1 ? "personnes" : "personne" %>
-</h3>
     <div class="card">
+      <h3 id="nb-dispo">Dispo - <%= @meetings_attending.where(attending: true).count %>
+      <%= @meetings_attending.where(attending: true).count > 1 ? "personnes" : "personne" %>
+      </h3>
       <% @meetings_attending.where(attending: true, organizer: true).each do |meeting| %>
       <div class="card-participant">
         <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
@@ -41,9 +41,9 @@
 
   <hr>
 
-  <h3>Ceux qui ont piscine</h3>
 
     <div class="card" id="declined-participants" data-event=<%= @event.id %>>
+      <h3>Ceux qui ont piscine</h3>
 
       <% @meetings_declined.where(attending: false).each do |meeting| %>
       <div class="card-participant">
