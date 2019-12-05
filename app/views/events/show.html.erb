@@ -18,8 +18,8 @@
 
 
     <div class="card show">
-      <h3 id="nb-dispo">Dispo - <%= @event.meetings.where(attending: true).count %>
-        <%= @event.meetings.where(attending: true).count > 1 ? "personnes" : "personne" %>
+      <h3 id="nb-dispo">Dispo - <%= @event.meetings.where.not(user_id: nil).count %>
+        <%= @event.meetings.where.not(user_id: nil).count > 1 ? "personnes" : "personne" %>
     </h3>
       <% @event.meetings.where(attending: true, organizer: true).each do |meeting| %>
       <div class="card-participant">
@@ -35,7 +35,7 @@
 
 
     <div class="card show-invite">
-      <% @event.meetings.where(attending: true, organizer: false).each do |meeting| %>
+      <% @event.meetings.where(attending: true, organizer: false).where.not(user_id: nil).each do |meeting| %>
         <div class="card-participant">
           <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
           <%= image_tag link, class: "avatar-large dispo", alt: "avatar-large" %>
@@ -109,9 +109,9 @@
 </div>
   <div class= "btn-sticky citymapper">
     <%= link_to @city_mapper_url, class: "d-flex justify-content-center align-items-center goto" do %>
-      <%= image_tag("route.svg", class: "goto-icon") %>
+      <%= image_tag "route.svg", class: "goto-icon" %>
       <div class="goto-it">
-        <p class="city-mapper-link">Itinéraire Citymapper<%#=  @t.travel_time_minutes%> </p>
+        <p class="city-mapper-link">Itinéraire <strong>Citymapper</strong><%#=  @t.travel_time_minutes%> </p>
       </div>
     <% end %>
   </div>

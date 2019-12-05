@@ -97,7 +97,7 @@ class SuggestedBarsController < ApplicationController
       redirect_to event_suggested_bars_path(@event)
     else
       @event = Event.find(params["event_id"])
-      @users = @event.meetings.where(attending: true).map { |meeting| meeting.user }
+      @users = @event.meetings.where.not(user: nil).map { |meeting| meeting.user }
       render :login
     end
   end
