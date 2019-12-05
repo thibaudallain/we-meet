@@ -13,10 +13,8 @@ const appendParticipant = (element) => {
 }
 
 const addVote = (element) => {
-  const votes = document.getElementById('votes');
   const cardVoters = document.getElementById('voting-participants');
   if (element.voted === true) {
-    votes.innerHTML = element.votants_partial;
     cardVoters.innerHTML = element.voting_partial;
   }
 }
