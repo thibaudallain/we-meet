@@ -109,9 +109,9 @@
 </div>
   <div class= "btn-sticky citymapper">
     <%= link_to @city_mapper_url, class: "d-flex justify-content-center align-items-center goto" do %>
-      <%= image_tag("route.svg", class: "goto-icon") %>
+      <%= image_tag "route.svg", class: "goto-icon" %>
       <div class="goto-it">
-        <p class="city-mapper-link">Itinéraire Citymapper<%#=  @t.travel_time_minutes%> </p>
+        <p class="city-mapper-link">Itinéraire <strong>Citymapper</strong><%#=  @t.travel_time_minutes%> </p>
       </div>
     <% end %>
   </div>

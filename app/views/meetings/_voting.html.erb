@@ -1,4 +1,4 @@
-<p><span id="votes" data-event="<%= event.id %>"><%= event.meetings.where(attending: true, voted: true).count %></span> / <%= event.meetings.where(attending: true).count %></p>
+<p><span id="votes" data-event="<%= event.id %>"><%= event.meetings.where(attending: true, voted: true).count %></span> / <%= event.meetings.where.not(user_id: nil).count %></p>
 
 <% event.meetings.where(attending: true, voted: true).each do |meeting| %>
   <div class="card-participant card-votes">

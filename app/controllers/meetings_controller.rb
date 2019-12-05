@@ -122,16 +122,18 @@ class MeetingsController < ApplicationController
   end
 
   def adecreate
-    meeting = Meeting.create(
-      attending: false,
-      event_id: Event.last.id,
-      organizer: false,
-      voted: nil,
-      name: nil
-    )
-    meeting.assign_attributes(name: "Adélaïde")
+    unless Event.last.meetings.where(name: "Adélaïde").length > 0
+      meeting = Meeting.create(
+        attending: false,
+        event_id: Event.last.id,
+        organizer: false,
+        voted: nil,
+        name: nil
+      )
+      meeting.assign_attributes(name: "Adélaïde")
 
-    meeting.save
+      meeting.save
+    end
   end
 
   def meeting_params
