@@ -138,7 +138,7 @@ input[type="time"] {
     border-color: $wm-orange;
 }
 
-.btn-secondqry:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
     color: white;
     background-color: $wm-orange;
     border-color: $wm-orange;
