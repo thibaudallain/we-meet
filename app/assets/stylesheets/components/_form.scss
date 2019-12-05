@@ -313,8 +313,9 @@ input::placeholder {
   label {
   font-size: 28px;
   }
+}
 
 .form-control:focus {
-    border-color: $wm-pink;
-    box-shadow: none;
+  border-color: $wm-pink;
+  box-shadow: none;
 }
