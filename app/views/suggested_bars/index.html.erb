@@ -27,11 +27,20 @@
                   <% end %>
                 </div>
                 <div>
-                  <% 3.times do %>
-                    <i class="fas fa-euro-sign"></i>
-                  <% end %>
-                  <% 2.times do %>
-                    <i class="fas fa-euro-sign cheap"></i>
+                  <% if bar.price_level %>
+                    <% bar.price_level.times do %>
+                      <i class="fas fa-euro-sign"></i>
+                    <% end %>
+                    <% (5 - bar.price_level).times do %>
+                      <i class="fas fa-euro-sign cheap"></i>
+                    <% end %>
+                  <% else %>
+                    <% 3.times do %>
+                      <i class="fas fa-euro-sign"></i>
+                    <% end %>
+                    <% 2.times do %>
+                      <i class="fas fa-euro-sign cheap"></i>
+                    <% end %>
                   <% end %>
                 </div>
               </div>
