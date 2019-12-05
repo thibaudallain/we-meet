@@ -7,7 +7,7 @@
 
 
         <div class="card" id="voting-participants" data-event=<%= @event.id %>>
-        <p><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %> / <%= @event.meetings.where(attending: true).count %></p>
+        <p><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %></span> / <%= @event.meetings.where(attending: true).count %></p>
 
     <% @event.meetings.where(attending: true, voted: true).each do |meeting| %>
       <div class="card-participant card-votes">
