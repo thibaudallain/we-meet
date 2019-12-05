@@ -61,6 +61,13 @@
   p {
     font-size: 24px;
   }
+  &.show {
+    padding: 0;
+  }
+  &.show-before-bar {
+    margin: 1em 0;
+    padding: 0;
+  }
 }
 
 #index-meetings {

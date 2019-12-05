@@ -163,4 +163,7 @@ p.goto-text {
   display: inline-block;
   position: fixed;
   bottom: 0;
+  &.citymapper {
+    z-index: 5;
+  }
 }

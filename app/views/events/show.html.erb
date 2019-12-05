@@ -1,12 +1,26 @@
-<% if current_user == @event.meetings.where(attending: true, organizer: true)[0].user %>
-      <%= link_to "Partage le récap", event_path(@event), class: "btn-blue-wm share bouton-haut-last-action", data: { event: params[:event_id] } %>
-  <% end %>
-
   <div class="container event-show">
-    <h3 id="nb-dispo">Dispo - <%= @event.meetings.where(attending: true).count %>
+    <div class="last-secondary-actions">
+      <%= link_to root_path do %>
+        <%= image_tag "WM-orange.png", alt: "alttext", class: "home" %>
+      <% end %>
+      <%= link_to event_path(@event), class: "share", data: { event: params[:event_id] } do %>
+        <div><i class="fas fa-share-alt-square"></i></div>
+      <% end %>
+    </div>
+
+    <div class="center-top show">
+      <%= image_tag "avatars/cheers.gif"%>
+      <h1>C'est dans la boîte !</h1>
+      <div class="eventok show">
+      </div>
+    </div>
+
+
+
+    <div class="card show">
+      <h3 id="nb-dispo">Dispo - <%= @event.meetings.where(attending: true).count %>
         <%= @event.meetings.where(attending: true).count > 1 ? "personnes" : "personne" %>
     </h3>
-    <div class="card">
       <% @event.meetings.where(attending: true, organizer: true).each do |meeting| %>
       <div class="card-participant">
         <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
@@ -20,7 +34,7 @@
     </div>
 
 
-    <div class="card-meeting-show">
+    <div class="card show-invite">
       <% @event.meetings.where(attending: true, organizer: false).each do |meeting| %>
         <div class="card-participant">
           <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
@@ -35,6 +49,9 @@
         </div>
       <% end %>
     </div>
+
+    <div class="eventok show">
+      </div>
 
 
       <div class="card-bar">
@@ -55,11 +72,20 @@
                 <% end %>
               </div>
               <div>
-                <% 3.times do %>
-                  <i class="fas fa-euro-sign"></i>
-                <% end %>
-                <% 2.times do %>
-                  <i class="fas fa-euro-sign cheap"></i>
+                <% if @bar.price_level %>
+                  <% @bar.price_level.times do %>
+                    <i class="fas fa-euro-sign"></i>
+                  <% end %>
+                  <% (5 - @bar.price_level).times do %>
+                    <i class="fas fa-euro-sign cheap"></i>
+                  <% end %>
+                <% else %>
+                  <% 3.times do %>
+                    <i class="fas fa-euro-sign"></i>
+                  <% end %>
+                  <% 2.times do %>
+                    <i class="fas fa-euro-sign cheap"></i>
+                  <% end %>
                 <% end %>
               </div>
             </div>
@@ -70,15 +96,18 @@
           </div>
         </div>
       </div>
-  </div>
 
+      <div class="eventok show-before-bar">
+      </div>
 
 
   <div id="map"
     data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    class="map-container">
   </div>
-  <div class= "btn-blue-wm">
+</div>
+  <div class= "btn-sticky citymapper">
     <%= link_to @city_mapper_url, class: "d-flex justify-content-center align-items-center goto" do %>
       <%= image_tag("route.svg", class: "goto-icon") %>
       <div class="goto-it">
@@ -86,20 +115,12 @@
       </div>
     <% end %>
   </div>
+
 </div>
 
 <div class="container-link link-to-share d-none" data-message="C'est dans la boîte ! À ce soir.">
       <% link = "/events/" + @event.id.to_s %>
       <%= link %>
-    </div>
-
-    <div class="center-btn">
-
-
-    </div>
-
-<div class="last-action-back">
-  <%= link_to "Retour", root_path, class: "link-red-wm", data: { event: params[:event_id] } %>
 </div>
 
 
