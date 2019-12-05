@@ -191,7 +191,7 @@ input[type="time"] {
 
 .form-check-label {
   width: 100px;
-  background-color: $light-grey;
+  background-color: $wm-purple;
   border: solid 1px ;
 }
 
@@ -308,6 +308,11 @@ input::placeholder {
 #invite-1, #invite-2, #invite-3, #invite-4, #invite-5 {
   font-size: 20px;
 }
+
+#attending-label {
+  label {
+  font-size: 28px;
+  }
 
 .form-control:focus {
     border-color: $wm-pink;

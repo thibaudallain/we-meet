@@ -3,11 +3,12 @@
       <%= image_tag "avatars/cheers.gif"%>
       <h1>Votes bien enregistrés</h1>
       <div class="eventok">
-      <p>Tu recevras le récap' de l'événement à <strong><%= (@event.deadline + 1800).strftime("%Hh%M") %></strong></p>
-      <p><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %> <%= @event.meetings.where(attending: true, voted: true).count > 1 ? "personnes ont voté" : "personne a voté"%></span> sur <%= @event.meetings.where(attending: true).count %> <%= @event.meetings.where(attending: true).count > 1 ? "participants" : "participant" %></p>
-       </div>
+      <p>Tu recevras le récap' de l'événement à <strong><%= (event.deadline + 1800).strftime("%Hh%M") %></strong></p>
+
 
         <div class="card" id="voting-participants" data-event=<%= @event.id %>>
+        <p><span id="votes" data-event="<%= @event.id %>"><%= @event.meetings.where(attending: true, voted: true).count %> / <%= @event.meetings.where(attending: true).count %></p>
+
     <% @event.meetings.where(attending: true, voted: true).each do |meeting| %>
       <div class="card-participant card-votes">
         <% link = "avatars/avatar-0#{meeting.user.photo_number}.png" %>
