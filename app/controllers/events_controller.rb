@@ -39,7 +39,6 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.update(shared: true)
-    sleep(3)
     redirect_to event_suggested_bars_path(@event)
   end
 
