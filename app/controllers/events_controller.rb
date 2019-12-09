@@ -1,5 +1,19 @@
 class EventsController < ApplicationController
   # before_action :authenticate_user!
+  def search
+  end
+
+  def index
+    if @user = User.find_by(phone_number: params["phone_number"])
+      sign_in(@user)
+      @events = Meeting.where(user: @user, organizer: true).where("created_at >= ?", Date.today).map do |meeting|
+        meeting.event
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
   def share
     @event = Event.find(params[:event_id])
     @meetings = @event.meetings

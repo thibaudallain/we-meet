@@ -15,6 +15,22 @@
   .btn-red-wm {
       padding: 12px 24px;
   }
+
+.btn-purple-wm {
+    text-align: center;
+    padding: 10px 20px;
+    color: white;
+    background-color: $wm-light-purple;
+    font-family: $body-font;
+    font-size: 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    align-self: flex-end;
+    margin-bottom: 5em;
+    &:hover {
+      text-decoration: none;
+    }
 }
 
 .btn-red-wm:hover {

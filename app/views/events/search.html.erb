@@ -1,0 +1,11 @@
+<div class="bg-wm-linearg">
+  <div class="container-phone-search">
+    <div>
+      <%= form_tag(events_path, method: "get") do %>
+        <%= text_field_tag :phone_number, "", class: "form-input" %>
+        <%= submit_tag("Valider", class: "btn-purple-wm") %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
