@@ -1,5 +1,12 @@
 class EventsController < ApplicationController
   # before_action :authenticate_user!
+
+  def index
+    @events = Meeting.where(user: current_user, organizer: true).where("created_at >= ?", Date.today).map do |meeting|
+      meeting.event
+    end
+  end
+
   def share
     @event = Event.find(params[:event_id])
     @meetings = @event.meetings

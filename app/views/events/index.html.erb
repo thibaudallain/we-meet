@@ -1,0 +1,30 @@
+<div class="bg-wm-linearg">
+  <div class="container-wm">
+    <% @events.each do |event| %>
+
+      <% if event.suggested_bars == [] %>
+        <%= link_to event_meetings_path(event) do %>
+          <div class="card-event">
+            <h2>Date: <%= event.date %></h2>
+            <h3>Heure de début: <%= event.start_time.strftime("%Hh%M") %></h3>
+          </div>
+        <% end %>
+      <% elsif event.suggested_bars.length > 0 && event.suggested_bars.where(chosen: true).length == 0 %>
+        <%= link_to event_suggested_bars_path(event) do %>
+          <div class="card-event">
+            <h2>Date: <%= event.date %></h2>
+            <h3>Heure de début: <%= event.start_time.strftime("%Hh%M") %></h3>
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to event_path(event) do %>
+          <div class="card-event">
+            <h2>Date: <%= event.date %></h2>
+            <h3>Heure de début: <%= event.start_time.strftime("%Hh%M") %></h3>
+          </div>
+        <% end %>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>

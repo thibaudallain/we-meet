@@ -11,6 +11,24 @@
     box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
 }
 
+
+.btn-purple-wm {
+    text-align: center;
+    padding: 10px 20px;
+    color: white;
+    background-color: $wm-light-purple;
+    font-family: $body-font;
+    font-size: 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    align-self: flex-end;
+    margin-bottom: 5em;
+    &:hover {
+      text-decoration: none;
+    }
+}
+
 .btn-red-wm:hover {
     color: white;
     text-decoration: none;
