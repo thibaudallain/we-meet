@@ -7,7 +7,13 @@ class MeetingsController < ApplicationController
 
   def new
     @event = Event.find(params[:event_id])
-    @meeting = Meeting.new
+    if user_signed_in?
+      if @event.meetings.where(user_id: current_user.id).length > 0
+        redirect_to event_meetings_path(@event)
+      end
+    else
+      @meeting = Meeting.new
+    end
   end
 
   def create
