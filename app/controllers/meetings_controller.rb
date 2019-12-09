@@ -1,5 +1,4 @@
 class MeetingsController < ApplicationController
-
   def index
     @event = Event.find(params[:event_id])
     @meetings_attending = @event.meetings.where.not(address: nil)
@@ -67,72 +66,6 @@ class MeetingsController < ApplicationController
         sign_in(@user)
       end
       redirect_to event_meetings_path(@meeting.event)
-    end
-  end
-
-  def tanguy
-  end
-
-  def sergio
-  end
-
-  def ade
-  end
-
-  def tanguycreate
-    tanguy = User.find_by(phone_number: "0111111111")
-    unless Event.last.meetings.where(user: tanguy).length > 0
-      meeting = Meeting.create(
-        attending: true,
-        event_id: Event.last.id,
-        organizer: false,
-        voted: nil,
-        name: nil
-        )
-
-      meeting.assign_attributes(
-        user: tanguy,
-        address: "16 Villa Gaudelet, Paris 11e Arrondissement, Île-de-France, France",
-        available_time: ""
-        )
-
-      meeting.save
-    end
-  end
-
-  def sergiocreate
-    sergio = User.find_by(phone_number: "0222222222")
-    unless Event.last.meetings.where(user: sergio).length > 0
-      meeting = Meeting.create(
-        attending: true,
-        event_id: Event.last.id,
-        organizer: false,
-        voted: nil,
-        name: nil
-        )
-
-      meeting.assign_attributes(
-        user: sergio,
-        address: "11 Rue de l'Orillon, Paris 11e Arrondissement, Île-de-France, France",
-        available_time: "plus tard"
-        )
-
-      meeting.save
-    end
-  end
-
-  def adecreate
-    unless Event.last.meetings.where(name: "Adélaïde").length > 0
-      meeting = Meeting.create(
-        attending: false,
-        event_id: Event.last.id,
-        organizer: false,
-        voted: nil,
-        name: nil
-      )
-      meeting.assign_attributes(name: "Adélaïde")
-
-      meeting.save
     end
   end
 
