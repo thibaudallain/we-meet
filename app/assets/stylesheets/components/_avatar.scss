@@ -20,6 +20,14 @@
   margin: 20px 0 20px 0;
 }
 
+@media(max-width: 350px) {
+  .spinner {
+    width: 48px;
+    height: 48px;
+    margin: 12px 0 12px 0;
+  }
+}
+
 .avatar-bordered {
   width: 40px;
   height: 40px;
@@ -45,6 +53,12 @@
   color: white;
   text-align: left;
   margin-bottom: 0;
+}
+
+@media(max-width: 350px) {
+  .city-mapper-link {
+    font-size: 16px;
+  }
 }
 
 .city-mapper-link p {

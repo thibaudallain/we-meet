@@ -132,9 +132,35 @@ input[type="time"] {
   }
 }
 
+@media(max-width: 350px) {
+  .center-top {
+    &.show {
+      padding-top: 1em;
+    }
+  }
+}
+
+
+@media(max-width: 350px) {
+  .center-top {
+    padding: 3em 0;
+    text-align: center;
+    h1 {
+      font-size: 20px;
+    }
+  }
+}
+
 .cheers {
   text-align: center;
   padding-top: 40px;
+}
+
+@media(max-width: 350px) {
+  .cheers {
+    height: 94px;
+    padding-top: 0px;
+  }
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
@@ -218,6 +244,12 @@ input[type="time"] {
   padding-left: 40px;
 }
 
+@media(max-width: 350px) {
+  #event_start_time {
+    font-size: 18px;
+  }
+}
+
 #rest-of-form {
   padding-top: 5em;
 }
@@ -264,6 +296,11 @@ input[type="time"] {
   margin-top: 0px;
 }
 
+@media(max-width: 350px) {
+  #first-arrow, #second-arrow, #third-arrow, #fourth-arrow, #fifth-arrow {
+    height: 50px;
+  }
+}
 
 #form-2 {
   font-size: 20px;
@@ -286,6 +323,12 @@ input[type="time"] {
 
 .form-control {
   font-size: 22px;
+}
+
+@media(max-width: 350px) {
+  .form-control {
+    font-size: 16px;
+}
 }
 
 .form-bottom {
