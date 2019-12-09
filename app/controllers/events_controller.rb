@@ -1,9 +1,16 @@
 class EventsController < ApplicationController
   # before_action :authenticate_user!
+  def search
+  end
 
   def index
-    @events = Meeting.where(user: current_user, organizer: true).where("created_at >= ?", Date.today).map do |meeting|
-      meeting.event
+    if @user = User.find_by(phone_number: params["phone_number"])
+      sign_in(@user)
+      @events = Meeting.where(user: @user, organizer: true).where("created_at >= ?", Date.today).map do |meeting|
+        meeting.event
+      end
+    else
+      redirect_to root_path
     end
   end
 

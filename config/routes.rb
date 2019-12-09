@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :suggested_bars, only: [:index]
     get "/suggested_bars/login", to: "suggested_bars#login"
   end
+  get "/search", to: "events#search"
   mount ActionCable.server => "/cable"
 end
