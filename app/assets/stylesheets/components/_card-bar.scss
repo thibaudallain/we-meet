@@ -7,6 +7,12 @@
   align-items: center;
 }
 
+@media(max-width: 350px) {
+  .card-participant.card-votes {
+    height: 70px;
+  }
+}
+
 
 .card-bar {
   background: white;
@@ -18,6 +24,14 @@
   min-width: 350px;
   min-height: 280px
 }
+
+@media(max-width: 350px) {
+  .card-bar {
+    min-width: 260px;
+    min-height: 248px;
+  }
+}
+
 
 // .card-bar-show {
 //   // margin: 0 auto;
@@ -95,6 +109,17 @@
 
 .card-bar-infos {
   padding: 0.25em 1em;
+}
+
+@media(max-width: 350px) {
+  .card-bar-infos {
+    h2 {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+  }
 }
 
 .card-bar-infos-show h2 {

@@ -71,10 +71,48 @@
   }
 }
 
+@media(max-width: 350px) {
+  .eventok {
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+
 #index-meetings {
   h3 {
     width: 340px;
     text-align: left;
+  }
+}
+
+
+@media(max-width: 350px) {
+  #index-meetings {
+    h3 {
+      width: 260px;
+      font-size: 16px;
+    }
+  }
+
+  hr {
+    width: 72%;
+  }
+
+  .card-participant {
+    width: 260px;
+    h2 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .avatar-large {
+    width: 48px;
+    height: 48px;
   }
 }
 
@@ -86,6 +124,18 @@
   }
 }
 
+@media(max-width: 350px) {
+  .index-top {
+    p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    h2 {
+      font-size: 20px;
+    }
+  }
+}
+
 #voting-participants {
   border-top: 1px solid $wm-orange;
   padding-top: 2em;
@@ -93,5 +143,21 @@
     font-size: 36px;
   }
 }
+
+@media(max-width: 350px) {
+  #voting-participants {
+  padding-top: 1em;
+  }
+}
+
+@media(max-width: 350px) {
+  #voting-participants {
+    p {
+      font-size: 24px;
+      margin-bottom: 0rem;
+    }
+  }
+}
+
 
 

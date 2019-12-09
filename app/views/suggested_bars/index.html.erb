@@ -3,7 +3,7 @@
 <% else %>
 
   <div class="container-wm">
-  <div id="map" style="width: 100%; height: 50vh;" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-markers="<%= @markers.to_json %>"></div>
+  <div id="map" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-markers="<%= @markers.to_json %>"></div>
   <%= form_tag event_meeting_path(@event, @meeting), method: :patch do %>
     <div class="horizontal-flexbox-cards">
       <% @bars.each do |bar| %>
@@ -56,7 +56,7 @@
     </div>
 </div>
   <div class="confirm-choice">
-    <%= submit_tag "Vote", class: "btn-blue-wm no-border" %>
+    <%= submit_tag "Vote", class: "btn-blue-wm no-border btn-sticky" %>
   </div>
 <% end %>
 

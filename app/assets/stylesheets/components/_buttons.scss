@@ -11,6 +11,12 @@
     box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
 }
 
+@media(max-width: 350px) {
+  .btn-red-wm {
+      padding: 12px 24px;
+  }
+}
+
 .btn-red-wm:hover {
     color: white;
     text-decoration: none;
@@ -79,7 +85,12 @@
   display: inline-block;
   }
 
-
+@media(max-width: 350px) {
+  .btn-blue-wm {
+    padding: 12px 24px;
+    font-size: 18px;
+  }
+}
 
 .btn-blue-wm:hover {
     color: white;
@@ -167,3 +178,15 @@ p.goto-text {
     z-index: 5;
   }
 }
+
+@media(max-width: 350px) {
+  .btn-sticky {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+}
+
+
+
+
+
