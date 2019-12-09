@@ -15,6 +15,24 @@
   }
 }
 
+.card-event {
+  padding: 1em;
+  margin: 2em auto 0 auto;
+  width: 80%;
+  background-color: $lighter-grey;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.bg-wm-linearg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(199,0,57,1) 0%, rgba(255,87,51,1) 100%);
+}
+
 .card-participant {
   overflow: hidden;
   height: 100px;
