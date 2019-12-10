@@ -1,6 +1,9 @@
 class EventsController < ApplicationController
   # before_action :authenticate_user!
   def search
+    if params["result"] == "false"
+      @message = "Désolé, nous n'avons trouvé aucun événement associé à ce numéro."
+    end
   end
 
   def index
@@ -9,8 +12,11 @@ class EventsController < ApplicationController
       @events = Meeting.where(user: @user, organizer: true).where("created_at >= ?", Date.today).map do |meeting|
         meeting.event
       end
+      if @events.length == 0
+        redirect_to search_path(result: false)
+      end
     else
-      redirect_to root_path
+      redirect_to search_path(result: false)
     end
   end
 
