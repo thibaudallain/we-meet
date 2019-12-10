@@ -33,10 +33,10 @@
 <% if current_user == @event.meetings.where(attending: true, organizer: true)[0].user %>
   <div id="recap-or-vote" data-event="<%= @event.id %>">
     <% if @event.shared %>
-      <%= link_to "Le récap'", event_path(event), class: "btn-blue-wm btn-sticky" %>
+      <%= link_to "Le récap'", event_path(event), class: "btn-red-wm btn-sticky" %>
     <% else %>
       <%= link_to event_path(@event), method: :patch do %>
-        <div id="btn-recap-or-vote" class="btn-blue-wm share no-border btn-sticky" data-event=<%= params[:event_id] %> > Fais voter tes amis </div>
+        <div id="btn-recap-or-vote" class="btn-red-wm share no-border btn-sticky" data-event=<%= params[:event_id] %> > Fais voter tes amis </div>
       <% end %>
     <% end %>
   </div>

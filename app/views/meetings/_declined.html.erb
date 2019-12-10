@@ -12,7 +12,7 @@
           <br>
         </div>
       </div>
-    <%= submit_tag "Prévenir #{@event.meetings.where(organizer: true)[0].user.name}", class: "btn-blue-wm no-border button-dommage" %>
+    <%= submit_tag "Prévenir #{@event.meetings.where(organizer: true)[0].user.name}", class: "btn-red-wm no-border button-dommage" %>
   <% end %>
 
   </div>
