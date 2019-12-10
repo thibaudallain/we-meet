@@ -1,11 +1,17 @@
-<div class="bg-wm-linearg">
-  <div class="container-phone-search">
+<div class="home-top">
     <div>
-      <%= form_tag(events_path, method: "get") do %>
-        <%= text_field_tag :phone_number, "", class: "form-input" %>
-        <%= submit_tag("Valider", class: "btn-purple-wm") %>
-      <% end %>
+      <%= link_to "Retour", root_path, class: "btn-purple-wm"  %>
+      <h1>Renseigne ton numéro de téléphone</h1>
+      <br>
+      <h2><%= @message %></h2>
     </div>
   </div>
+<div class="bottom-phone">
+  <%= form_tag(events_path, method: "get") do %>
+  <%= text_field_tag :phone_number, "", placeholder: "0610121314", class: "form-input" %>
 </div>
+  <%= submit_tag("Chercher", class: "btn-red-wm btn-sticky") %>
+  <% end %>
+
+
 
