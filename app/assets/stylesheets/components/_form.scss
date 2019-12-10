@@ -220,12 +220,19 @@ input[type="time"] {
   display: none;
 }
 
+
+
 .form-check-label {
   width: 100px;
   background-color: $wm-purple;
   border: solid 1px ;
 }
 
+@media(max-width: 350px) {
+  .form-check-label {
+  width: 74px;
+  }
+}
 .dispo-question {
   display: block;
   margin: 3em 0 1em 0;
@@ -328,7 +335,7 @@ input[type="time"] {
 @media(max-width: 350px) {
   .form-control {
     font-size: 16px;
-}
+  }
 }
 
 .form-bottom {
@@ -363,7 +370,22 @@ input::placeholder {
   }
 }
 
+@media(max-width: 350px) {
+  #attending-label {
+    label {
+    font-size: 20px;
+    }
+  }
+}
+
 .form-control:focus {
   border-color: $wm-pink;
   box-shadow: none;
 }
+
+@media(max-width: 350px) {
+  #option2 {
+    padding-top: 18px;
+  }
+}
+

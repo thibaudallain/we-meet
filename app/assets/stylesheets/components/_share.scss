@@ -25,6 +25,16 @@
   }
 }
 
+@media(max-width: 350px) {
+  .share-top {
+    h1 {
+      padding-top: 100px;
+    }
+  }
+}
+
+
+
 .share-bottom {
   padding-bottom: 3em;
   height: 40vh;
