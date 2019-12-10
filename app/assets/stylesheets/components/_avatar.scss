@@ -14,20 +14,6 @@
   object-position: cover;
 }
 
-.spinner {
-  width: 80px;
-  height: 80px;
-  margin: 20px 0 20px 0;
-}
-
-@media(max-width: 350px) {
-  .spinner {
-    width: 48px;
-    height: 48px;
-    margin: 12px 0 12px 0;
-  }
-}
-
 .avatar-bordered {
   width: 40px;
   height: 40px;
@@ -46,30 +32,6 @@
   object-position: cover;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
-}
-
-.city-mapper-link {
-  font-size: 25px;
-  color: white;
-  text-align: left;
-  margin-bottom: 0;
-}
-
-@media(max-width: 350px) {
-  .city-mapper-link {
-    font-size: 16px;
-  }
-}
-
-.city-mapper-link p {
-  font-size: 23px;
-}
-
-.city-mapper {
-  margin-right: 10px;
-  height: 65px;
-  width: 65px;
-  margin-top: 19px;
 }
 
 .avatar-invite{

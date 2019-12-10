@@ -1,0 +1,39 @@
+.city-mapper-link {
+  font-size: 25px;
+  color: white;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+@media(max-width: 350px) {
+  .city-mapper-link {
+    font-size: 16px;
+  }
+}
+
+.city-mapper-link p {
+  font-size: 23px;
+}
+
+.city-mapper {
+  margin-right: 10px;
+  height: 65px;
+  width: 65px;
+  margin-top: 19px;
+}
+
+.goto {
+  margin-top: 8px;
+  height: 34px;
+}
+
+.goto-icon {
+  width: 40px;
+  margin-top: -15px;
+  margin-top: -2px;
+}
+
+.goto-it{
+  margin-left:30px;
+  text-align:left;
+}

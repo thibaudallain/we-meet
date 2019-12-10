@@ -1,0 +1,13 @@
+.spinner {
+  width: 80px;
+  height: 80px;
+  margin: 20px 0 20px 0;
+}
+
+@media(max-width: 350px) {
+  .spinner {
+    width: 48px;
+    height: 48px;
+    margin: 12px 0 12px 0;
+  }
+}
