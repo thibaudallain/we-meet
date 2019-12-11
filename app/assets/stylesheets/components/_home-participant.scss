@@ -17,6 +17,12 @@
   align-items: center;
 }
 
+@media(max-width: 350px) {
+  .event-dispo {
+    margin: 4em 0;
+  }
+}
+
 .non-dispo {
     color: $wm-orange;
     text-decoration: underline;
