@@ -19,10 +19,10 @@
               <div class="bottom-like" id="div<%= bar.id %>"><i class="fa fa-heart card-bar-heart"></i></div>
               <div class="card-bar-ratings-price">
                 <div>
-                  <% bar.rating.times do %>
+                  <% bar.rating.to_i.times do %>
                     <i class="fa fa-star"></i>
                   <% end %>
-                  <% (5 - bar.rating).times do %>
+                  <% (5 - bar.rating.to_i).times do %>
                     <i class="far fa-star"></i>
                   <% end %>
                 </div>
